@@ -11,8 +11,8 @@ class GameView:
         # Fill the window with white
         self.window.fill((255, 255, 255))
 
-        # Define 8 tones of gray
-        colors = [(64 + i*16, 64 + i*16, 64 + i*16) for i in range(8)]
+        # Define 8 distinct, moderately saturated colors for the L-shapes
+        colors = [(255, 79, 134), (211, 105, 156), (189, 122, 173), (158, 131, 184), (128, 126, 184), (108, 149, 208), (93, 173, 233), (81, 203, 255)]
 
         # Draw the grid
         for i in range(8):
@@ -22,12 +22,7 @@ class GameView:
                 pygame.draw.rect(self.window, color, (i*100, j*100, 100, 100))
 
                 # Draw border around each cell
-                pygame.draw.rect(self.window, (255, 255, 255), (i*100, j*100, 100, 100), 1)
-
-        # Draw thicker border around each L-level
-        for i in range(4):
-            pygame.draw.rect(self.window, (255, 255, 255), (i*100, i*100, (8-2*i)*100, (8-2*i)*100), 3)
-            pygame.draw.rect(self.window, (255, 255, 255), ((7-i)*100, (7-i)*100, (8-2*i)*100, (8-2*i)*100), 3)
+                pygame.draw.rect(self.window, (0, 0, 0), (i*100, j*100, 100, 100), 1)
 
         # Update the display
         pygame.display.update()
