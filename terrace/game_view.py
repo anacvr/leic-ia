@@ -31,5 +31,3 @@ class GameView:
 
         # Update the display
         pygame.display.update()
-
-        ### This is the code right now, but i still don't like it. You need to create L levels from each diagonal and they will meet at the center. But it needs to be better because right now it is still very against accssessibility :
