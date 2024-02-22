@@ -16,6 +16,7 @@ class GameController:
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     x, y = pygame.mouse.get_pos()
-                    self.model.make_move(x, y, player=1)
+                    self.model.move_piece(x, y, player=1)
+
             self.model.ai_move()
             self.view.draw()

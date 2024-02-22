@@ -40,5 +40,16 @@ class GameView:
         # Draw a thicker border around the entire board
         pygame.draw.rect(self.window, (0, 0, 0), (self.margin, self.margin, 800, 800), 5)
 
+
+        # Draw the pieces
+        for i in range(8):
+            for j in range(8):
+                piece = self.model.grid[i][j]
+                if piece == 1:  # Player piece
+                    pygame.draw.circle(self.window, (0, 0, 0), (self.margin + i*100 + 50, self.margin + j*100 + 50), 40)
+                elif piece == 2:  # AI piece
+                    pygame.draw.circle(self.window, (255, 255, 255), (self.margin + i*100 + 50, self.margin + j*100 + 50), 40)
+
+
         # Update the display
         pygame.display.update()
