@@ -10,6 +10,12 @@ class GameView:
 
         self.window = pygame.display.set_mode((self.window_size, self.window_size))
 
+        # Define the colors for the pieces
+        self.colorPlayer = (0, 0, 0)
+        self.colorOpponent = (255, 255, 255)
+        self.piecesColors = [(255, 0, 0), (0, 0, 255), (0, 255, 0), (255, 255, 0)]
+        self.piecesSizes = [20, 25, 30, 35]
+
         pygame.display.set_caption("Terrace Game (LEIC-IA Group 112)")
 
     def draw(self):
@@ -36,20 +42,45 @@ class GameView:
                 # Draw border around each cell
                 pygame.draw.rect(self.window, (0, 0, 0), (self.margin + i*100, self.margin + j*100, 100, 100), 1)
 
-
         # Draw a thicker border around the entire board
         pygame.draw.rect(self.window, (0, 0, 0), (self.margin, self.margin, 800, 800), 5)
 
-
         # Draw the pieces
-        for i in range(8):
-            for j in range(8):
-                piece = self.model.grid[i][j]
-                if piece == 1:  # Player piece
-                    pygame.draw.circle(self.window, (0, 0, 0), (self.margin + i*100 + 50, self.margin + j*100 + 50), 40)
-                elif piece == 2:  # AI piece
-                    pygame.draw.circle(self.window, (255, 255, 255), (self.margin + i*100 + 50, self.margin + j*100 + 50), 40)
-
+        self.draw_pieces()
 
         # Update the display
         pygame.display.update()
+
+
+    # Draw all the pieces on the board
+    def draw_pieces(self):
+
+        for i in range(8):
+            for j in range(8):
+                piece = self.model.grid[j][i]
+
+                # Skip empty cells
+                if piece == 0:
+                    continue
+                
+                # Extract player and type from the piece value
+                player = piece // 10
+                type = piece % 10
+
+                self.draw_piece(player, type, i, j)
+                
+
+    # Draw the specified piece
+    def draw_piece(self, player, type, x, y):
+        pos =  (self.margin + x*100 + 50, self.margin + y*100 + 50)
+
+        if player == 1:
+            pieceColor = self.colorPlayer
+        else:
+            pieceColor = self.colorOpponent
+
+        borderColor = self.piecesColors[type-1]
+        size = self.piecesSizes[type-1]
+
+        pygame.draw.circle(self.window, borderColor, pos, size + 3)
+        pygame.draw.circle(self.window, pieceColor, pos, size)

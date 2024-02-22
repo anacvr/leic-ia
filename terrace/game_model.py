@@ -1,15 +1,17 @@
 class GameModel:
     def __init__(self):
+
         # Create an 8x8 grid to represent the game board
-        self.grid = [[0 for _ in range(8)] for _ in range(8)]
-
-        # Initialize the pieces
-        for i in range(8):
-            self.grid[i][0] = 2  # Opponent's pieces
-            self.grid[i][1] = 2  # Opponent's pieces
-
-            self.grid[i][6] = 1  # Player's pieces
-            self.grid[i][7] = 1  # Player's pieces
+        # And initialize it with the starting position of the pieces
+        # 0: empty cell; 1x: player piece; 2x: opponent piece; x: piece size
+        self.grid = [[24, 24, 23, 23, 22, 22, 21, 21],
+                     [21, 21, 22, 22, 23, 23, 24, 24],
+                     [0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 0, 0, 0, 0, 0],
+                     [14, 14, 13, 13, 12, 12, 11, 11],
+                     [11, 11, 12, 12, 13, 13, 14, 14]]
 
     def move_piece(self, x, y, player):
         # Convert screen coordinates to grid coordinates
