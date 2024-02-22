@@ -37,7 +37,7 @@ The presentation should contain:
 
 - [ ] Definir o problema como um search problem para colocar nos slides a entregar no checkpoint
 
-- [ ] Melhorar a representação das peças, para terem diferentes tamanhos e serem facilmente indentificadas (talvez usar contorno de cores diferentes)
+- [x] Melhorar a representação das peças, para terem diferentes tamanhos e serem facilmente indentificadas (talvez usar contorno de cores diferentes)
 
 - [ ] Melhorar a representação das plataformas para ser mais facilmente distinguível quais estão mais acima e quais mais abaixo? Ou pôr uma legenda ao lado a explicar qual côr é a mais baixa e qual a mais alta?
 
