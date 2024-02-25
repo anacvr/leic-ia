@@ -5,10 +5,11 @@ class GameView:
         self.model = model
         pygame.init()
 
-        self.window_size = 860
+        self.window_height = 860
+        self.window_width = 960
         self.margin = 30
 
-        self.window = pygame.display.set_mode((self.window_size, self.window_size))
+        self.window = pygame.display.set_mode((self.window_width, self.window_height))
 
         # Define the colors for the pieces
         self.colorPlayer = (0, 0, 0)
@@ -31,6 +32,9 @@ class GameView:
                   (189, 122, 173),
                   (211, 105, 156),
                   (255, 79, 134)]
+        
+        # Define the elevation levels for the border thickness
+        elevation_levels = [1, 2, 3, 4, 5, 6, 7, 8]
 
         # Draw the grid
         for i in range(8):
@@ -39,14 +43,19 @@ class GameView:
                 color = colors[max(min(i, j), min(7-i, 7-j))]
                 pygame.draw.rect(self.window, color, (self.margin + i*100, self.margin + j*100, 100, 100))
 
-                # Draw border around each cell
-                pygame.draw.rect(self.window, (0, 0, 0), (self.margin + i*100, self.margin + j*100, 100, 100), 1)
+                # Get the elevation level for the current cell
+                elevation = elevation_levels[max(min(i, j), min(7-i, 7-j))]
+
+                # Draw border around each cell with variable thickness based on elevation
+                pygame.draw.rect(self.window, (0, 0, 0), (self.margin + i*100, self.margin + j*100, 100, 100), elevation)
 
         # Draw a thicker border around the entire board
         pygame.draw.rect(self.window, (0, 0, 0), (self.margin, self.margin, 800, 800), 5)
 
         # Draw the pieces
         self.draw_pieces()
+        
+        self.draw_legend()
 
         # Update the display
         pygame.display.update()
@@ -84,3 +93,18 @@ class GameView:
 
         pygame.draw.circle(self.window, borderColor, pos, size + 3)
         pygame.draw.circle(self.window, pieceColor, pos, size)
+
+
+    def draw_legend(self):
+        #define font and legend
+        legend_font = pygame.font.Font(None, 20)
+        legend_text = legend_font.render("Legend:", True, (0, 0, 0))
+        
+        #renders the legend text onto the game window
+        self.window.blit(legend_text, (self.window_width - 100, 50))
+        
+        #for each color, draw a rectangle and a text label
+        for i, color in enumerate([(81, 203, 255), (93, 173, 233), (108, 149, 208), (128, 126, 184), (158, 131, 184), (189, 122, 173), (211, 105, 156), (255, 79, 134)]):
+            pygame.draw.rect(self.window, color, (self.window_width - 40, 80 + i*40, 30, 30))
+            text = legend_font.render(f"Step {i+1}", True, (0, 0, 0))  #F-strings to format the string the right way
+            self.window.blit(text, (self.window_width - 100, 80 + i*40))
