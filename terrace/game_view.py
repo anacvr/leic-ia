@@ -1,4 +1,5 @@
 import pygame
+import time
 
 class GameView:
     def __init__(self, model):
@@ -16,6 +17,8 @@ class GameView:
         self.colorOpponent = (255, 255, 255)
         self.piecesColors = [(255, 0, 0), (0, 0, 255), (0, 255, 0), (255, 255, 0)]
         self.piecesSizes = [20, 25, 30, 35]
+
+        self.blink = False
 
         pygame.display.set_caption("Terrace Game (LEIC-IA Group 112)")
 
@@ -108,3 +111,14 @@ class GameView:
             pygame.draw.rect(self.window, color, (self.window_width - 40, 80 + i*40, 30, 30))
             text = legend_font.render(f"Step {i+1}", True, (0, 0, 0))  #F-strings to format the string the right way
             self.window.blit(text, (self.window_width - 100, 80 + i*40))
+
+    def blink_piece(self, x, y):
+        grid_x, grid_y = x // 100, y // 100
+        aux = self.model.grid[grid_y][grid_x]
+        while self.blink == True:
+            self.model.grid[grid_y][grid_x] = 0
+            self.draw()
+            time.sleep(0.5)
+            self.model.grid[grid_y][grid_x] = aux
+            self.draw()
+            time.sleep(0.5)
