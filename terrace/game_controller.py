@@ -1,5 +1,6 @@
 import pygame
 import sys
+import time
 from game_model import GameModel
 from game_view import GameView
 
@@ -16,6 +17,14 @@ class GameController:
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     x, y = pygame.mouse.get_pos()
+                    grid_x, grid_y = x // 100, y // 100
+                    aux = self.model.grid[grid_x][grid_y]
+                    while True:
+                        self.view.draw()
+                        time.sleep(2)
+                        self.model.grid[grid_x][grid_y] = 0
+                        self.view.draw()
+                        self.model.grid[grid_x][grid_y] = aux
                     self.model.move_piece(x, y, player=1)
 
             self.model.ai_move()
