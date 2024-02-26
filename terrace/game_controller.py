@@ -21,7 +21,6 @@ class GameController:
                     aux = self.model.grid[grid_x][grid_y]
                     while True:
                         self.view.draw()
-                        time.sleep(2)
                         self.model.grid[grid_x][grid_y] = 0
                         self.view.draw()
                         self.model.grid[grid_x][grid_y] = aux
