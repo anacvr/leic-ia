@@ -1,5 +1,22 @@
+from piece import Piece
+
 class GameModel:
     def __init__(self):
+
+        self.pieces = []
+
+        for i in range(8):
+            # smaller to bigger
+            type = int(i/2 % 4 + 1)
+
+            self.pieces.append(Piece(2, i, 1, type))
+            self.pieces.append(Piece(1, i, 7, type))
+            
+            # bigger to smaller
+            type = 1
+
+            self.pieces.append(Piece(2, i, 0, type))
+            self.pieces.append(Piece(1, i, 6, type))
 
         # Create an 8x8 grid to represent the game board
         # And initialize it with the starting position of the pieces

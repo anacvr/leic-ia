@@ -1,5 +1,4 @@
 import pygame
-import time
 
 class GameView:
     def __init__(self, model):
@@ -8,15 +7,12 @@ class GameView:
 
         self.window_height = 860
         self.window_width = 960
+
         self.margin = 30
 
         self.window = pygame.display.set_mode((self.window_width, self.window_height))
 
-        # Define the colors for the pieces
-        self.colorPlayer = (0, 0, 0)
-        self.colorOpponent = (255, 255, 255)
-        self.piecesColors = [(255, 0, 0), (0, 0, 255), (0, 255, 0), (255, 255, 0)]
-        self.piecesSizes = [20, 25, 30, 35]
+        self.board = pygame.Surface((800, 800))
 
         self.blink = False
         self.blink_piece_pos = None
@@ -66,7 +62,7 @@ class GameView:
         pygame.display.update()
 
 
-    # Draw all the pieces on the board
+    """ # Draw all the pieces on the board
     def draw_pieces(self):
 
         for i in range(8):
@@ -85,23 +81,12 @@ class GameView:
                 player = piece // 10
                 type = piece % 10
 
-                self.draw_piece(player, type, i, j)
+                self.piece.draw(self.window) """
+    
+    def draw_pieces(self):
+        for piece in self.model.pieces:
+            piece.draw(self.window)
                 
-
-    # Draw the specified piece
-    def draw_piece(self, player, type, x, y):
-        pos =  (self.margin + x*100 + 50, self.margin + y*100 + 50)
-
-        if player == 1:
-            pieceColor = self.colorPlayer
-        else:
-            pieceColor = self.colorOpponent
-
-        borderColor = self.piecesColors[type-1]
-        size = self.piecesSizes[type-1]
-
-        pygame.draw.circle(self.window, borderColor, pos, size + 3)
-        pygame.draw.circle(self.window, pieceColor, pos, size)
 
 
     def draw_legend(self):
