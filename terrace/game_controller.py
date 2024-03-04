@@ -10,6 +10,7 @@ class GameController:
         self.view = GameView(self.model)
 
     def run(self):
+
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -17,14 +18,13 @@ class GameController:
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     x, y = pygame.mouse.get_pos()
-                    grid_x, grid_y = x // 100, y // 100
-                    aux = self.model.grid[grid_x][grid_y]
-                    while True:
-                        self.view.draw()
-                        self.model.grid[grid_x][grid_y] = 0
-                        self.view.draw()
-                        self.model.grid[grid_x][grid_y] = aux
-                    self.model.move_piece(x, y, player=1)
+                    if self.view.blink == False:
+                        self.view.blink = True
+                        self.view.blink_piece(x, y)
+                    else:
+                        self.view.blink = False
+                        self.view.blink_piece_pos = None
+                        self.model.move_piece(x, y, player=1)
 
             self.model.ai_move()
             self.view.draw()

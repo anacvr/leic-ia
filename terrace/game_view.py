@@ -1,4 +1,5 @@
 import pygame
+import time
 
 class GameView:
     def __init__(self, model):
@@ -16,6 +17,10 @@ class GameView:
         self.colorOpponent = (255, 255, 255)
         self.piecesColors = [(255, 0, 0), (0, 0, 255), (0, 255, 0), (255, 255, 0)]
         self.piecesSizes = [20, 25, 30, 35]
+
+        self.blink = False
+        self.blink_piece_pos = None
+        self.blink_start_time = None
 
         pygame.display.set_caption("Terrace Game (LEIC-IA Group 112)")
 
@@ -71,6 +76,10 @@ class GameView:
                 # Skip empty cells
                 if piece == 0:
                     continue
+
+                # Skip the blinking piece if it should not be drawn
+                if (i, j) == self.blink_piece_pos and int((pygame.time.get_ticks() - self.blink_start_time) / 500) % 2 == 0:
+                    continue
                 
                 # Extract player and type from the piece value
                 player = piece // 10
@@ -108,3 +117,8 @@ class GameView:
             pygame.draw.rect(self.window, color, (self.window_width - 40, 80 + i*40, 30, 30))
             text = legend_font.render(f"Step {i+1}", True, (0, 0, 0))  #F-strings to format the string the right way
             self.window.blit(text, (self.window_width - 100, 80 + i*40))
+
+    def blink_piece(self, x, y):
+        grid_x, grid_y = x // 100, y // 100
+        self.blink_piece_pos = (grid_x, grid_y)
+        self.blink_start_time = pygame.time.get_ticks()
