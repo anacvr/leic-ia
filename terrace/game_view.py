@@ -19,6 +19,8 @@ class GameView:
         self.piecesSizes = [20, 25, 30, 35]
 
         self.blink = False
+        self.blink_piece_pos = None
+        self.blink_start_time = None
 
         pygame.display.set_caption("Terrace Game (LEIC-IA Group 112)")
 
@@ -74,6 +76,10 @@ class GameView:
                 # Skip empty cells
                 if piece == 0:
                     continue
+
+                # Skip the blinking piece if it should not be drawn
+                if (i, j) == self.blink_piece_pos and int((pygame.time.get_ticks() - self.blink_start_time) / 500) % 2 == 0:
+                    continue
                 
                 # Extract player and type from the piece value
                 player = piece // 10
@@ -114,11 +120,5 @@ class GameView:
 
     def blink_piece(self, x, y):
         grid_x, grid_y = x // 100, y // 100
-        aux = self.model.grid[grid_y][grid_x]
-        while self.blink == True:
-            self.model.grid[grid_y][grid_x] = 0
-            self.draw()
-            time.sleep(0.5)
-            self.model.grid[grid_y][grid_x] = aux
-            self.draw()
-            time.sleep(0.5)
+        self.blink_piece_pos = (grid_x, grid_y)
+        self.blink_start_time = pygame.time.get_ticks()

@@ -16,14 +16,15 @@ class GameController:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-                elif event.type == pygame.MOUSEBUTTONDOWN and self.view.blink == False:
+                elif event.type == pygame.MOUSEBUTTONDOWN:
                     x, y = pygame.mouse.get_pos()
-                    self.view.blink = True
-                    self.view.blink_piece(x, y)
-                elif event.type == pygame.MOUSEBUTTONDOWN and self.view.blink == True:
-                    self.view.blink = False
-                    x, y = pygame.mouse.get_pos()
-                    self.model.move_piece(x, y, player=1)
+                    if self.view.blink == False:
+                        self.view.blink = True
+                        self.view.blink_piece(x, y)
+                    else:
+                        self.view.blink = False
+                        self.view.blink_piece_pos = None
+                        self.model.move_piece(x, y, player=1)
 
             self.model.ai_move()
             self.view.draw()
