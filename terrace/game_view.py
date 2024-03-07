@@ -84,10 +84,13 @@ class GameView:
                 self.piece.draw(self.window) """
     
     def draw_pieces(self):
+        current_time = pygame.time.get_ticks()
         for piece in self.model.pieces:
+            piece_pos = (piece.x * 100 + 50, piece.y * 100 + 50)
+            if (piece.x, piece.y) == self.blink_piece_pos and self.blink and (current_time - self.blink_start_time) % 1000 < 500:
+                continue
             piece.draw(self.window)
-                
-
+    
 
     def draw_legend(self):
         #define font and legend

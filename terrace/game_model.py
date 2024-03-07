@@ -12,9 +12,9 @@ class GameModel:
             self.pieces.append(Piece(2, i, 1, type))
             self.pieces.append(Piece(1, i, 7, type))
             
-            # bigger to smaller
-            type = 1
-
+            #bigger to smaller
+            type = int((7-i)/2 % 4 + 1)
+            
             self.pieces.append(Piece(2, i, 0, type))
             self.pieces.append(Piece(1, i, 6, type))
 
