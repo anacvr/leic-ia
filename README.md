@@ -35,20 +35,20 @@ The presentation should contain:
 
 - [x] Criar representação básica do tabuleiro
 
-- [ ] Definir o problema como um search problem para colocar nos slides a entregar no checkpoint
+- [x] Fazer os slides
 
 - [x] Melhorar a representação das peças, para terem diferentes tamanhos e serem facilmente indentificadas (talvez usar contorno de cores diferentes)
 
-- [ ] Melhorar a representação das plataformas para ser mais facilmente distinguível quais estão mais acima e quais mais abaixo? Ou pôr uma legenda ao lado a explicar qual côr é a mais baixa e qual a mais alta?
+- [x] Melhorar a representação das plataformas para ser mais facilmente distinguível quais estão mais acima e quais mais abaixo? Ou pôr uma legenda ao lado a explicar qual côr é a mais baixa e qual a mais alta?
 
-- [ ] Criar um menu (menu state / state machine) para poder decidir qual o modo de jogo (player vs player, ai vs ai, ai vs player)
+- [x] Criar user input para selecionar e mover peças
 
-- [ ] Criar user input para selecionar e mover peças
+- [ ] Criar um menu para poder decidir qual o modo de jogo (player vs player, ai vs ai, ai vs player)
+
+- [ ] Definir o problema como um search problem para colocar nos slides a entregar no checkpoint
 
 - [ ] Dividir a implementação de AI para o seu próprio ficheiro
 
-- [ ] Definir estrutura de dados a usar para o jogo
-
-- [ ] Fazer os slides
+- [ ] Definir estrutura de dados a usar para o jogo ??
 
 - ...

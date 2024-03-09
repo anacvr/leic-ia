@@ -104,6 +104,7 @@ class GameModel:
 
 
     def capture_piece(self, piece):
+        # TODO: Implement piece capture
         self.pieces.remove(piece)
         del piece
 
