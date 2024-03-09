@@ -45,14 +45,21 @@ class Menu:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if play_button.checkForInput(menu_mouse_pos):
                         return "play"
-                    #create different options to play the game
+                    # TODO: Create different options to play the game
+
                     if instr_button.checkForInput(menu_mouse_pos):
                         return "instr"
-                    #create instructions page
+
                     if quit_button.checkForInput(menu_mouse_pos):
+                        pygame.quit()
+                        sys.exit()
+                
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
                         pygame.quit()
                         sys.exit()
 

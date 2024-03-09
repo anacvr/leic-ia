@@ -1,4 +1,3 @@
-# main.py
 import pygame
 from game_controller import GameController
 from menu import Menu

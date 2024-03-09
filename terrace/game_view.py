@@ -1,5 +1,4 @@
 import pygame
-import time
 
 class GameView:
     def __init__(self, model):
@@ -8,21 +7,18 @@ class GameView:
 
         self.window_height = 860
         self.window_width = 960
+
         self.margin = 30
 
         self.window = pygame.display.set_mode((self.window_width, self.window_height))
 
-        # Define the colors for the pieces
-        self.colorPlayer = (0, 0, 0)
-        self.colorOpponent = (255, 255, 255)
-        self.piecesColors = [(255, 0, 0), (0, 0, 255), (0, 255, 0), (255, 255, 0)]
-        self.piecesSizes = [20, 25, 30, 35]
+        self.board = self.model.board
 
         self.blink = False
         self.blink_piece_pos = None
         self.blink_start_time = None
 
-        pygame.display.set_caption("Terrace Game (LEIC-IA Group 112)")
+        pygame.display.set_caption("Terrace (LEIC-IA Group 112)")
 
     def draw(self):
         # Fill the window with white
@@ -45,11 +41,11 @@ class GameView:
         for i in range(8):
             for j in range(8):
                 # Select color based on cell position to create L-shaped pattern
-                color = colors[max(min(i, j), min(7-i, 7-j))]
+                color = colors[self.model.board[i][j]]
                 pygame.draw.rect(self.window, color, (self.margin + i*100, self.margin + j*100, 100, 100))
 
                 # Get the elevation level for the current cell
-                elevation = elevation_levels[max(min(i, j), min(7-i, 7-j))]
+                elevation = self.model.board[i][j] + 1
 
                 # Draw border around each cell with variable thickness based on elevation
                 pygame.draw.rect(self.window, (0, 0, 0), (self.margin + i*100, self.margin + j*100, 100, 100), elevation)
@@ -60,59 +56,30 @@ class GameView:
         # Draw the pieces
         self.draw_pieces()
         
+        # Draw the legend
         self.draw_legend()
 
         # Update the display
         pygame.display.update()
 
-
-    # Draw all the pieces on the board
+    
     def draw_pieces(self):
-
-        for i in range(8):
-            for j in range(8):
-                piece = self.model.grid[j][i]
-
-                # Skip empty cells
-                if piece == 0:
-                    continue
-
-                # Skip the blinking piece if it should not be drawn
-                if (i, j) == self.blink_piece_pos and int((pygame.time.get_ticks() - self.blink_start_time) / 500) % 2 == 0:
-                    continue
-                
-                # Extract player and type from the piece value
-                player = piece // 10
-                type = piece % 10
-
-                self.draw_piece(player, type, i, j)
-                
-
-    # Draw the specified piece
-    def draw_piece(self, player, type, x, y):
-        pos =  (self.margin + x*100 + 50, self.margin + y*100 + 50)
-
-        if player == 1:
-            pieceColor = self.colorPlayer
-        else:
-            pieceColor = self.colorOpponent
-
-        borderColor = self.piecesColors[type-1]
-        size = self.piecesSizes[type-1]
-
-        pygame.draw.circle(self.window, borderColor, pos, size + 3)
-        pygame.draw.circle(self.window, pieceColor, pos, size)
-
+        current_time = pygame.time.get_ticks()
+        for piece in self.model.pieces:
+            if (piece.x, piece.y) == self.blink_piece_pos and self.blink and (current_time - self.blink_start_time) % 1000 < 500:
+                continue
+            piece.draw(self.window)
+    
 
     def draw_legend(self):
-        #define font and legend
+        # Define font and legend
         legend_font = pygame.font.Font(None, 20)
         legend_text = legend_font.render("Legend:", True, (0, 0, 0))
         
-        #renders the legend text onto the game window
+        # Renders the legend text onto the game window
         self.window.blit(legend_text, (self.window_width - 100, 50))
         
-        #for each color, draw a rectangle and a text label
+        # For each color, draw a rectangle and a text label
         for i, color in enumerate([(81, 203, 255), (93, 173, 233), (108, 149, 208), (128, 126, 184), (158, 131, 184), (189, 122, 173), (211, 105, 156), (255, 79, 134)]):
             pygame.draw.rect(self.window, color, (self.window_width - 40, 80 + i*40, 30, 30))
             text = legend_font.render(f"Step {i+1}", True, (0, 0, 0))  #F-strings to format the string the right way
