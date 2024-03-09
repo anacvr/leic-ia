@@ -44,9 +44,9 @@ class Piece:
         # Black piece - white T
         if self.x == 0 and self.y == 7:
             window.blit(self.imt_white, (pos[0] - self.imt_white.get_width() // 2, pos[1] - self.imt_white.get_height() // 2))
-        
 
-        
-        
-        
 
+    def move(self, x, y):
+        self.x = x
+        self.y = y
+        

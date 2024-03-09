@@ -41,16 +41,71 @@ class GameModel:
                 else:
                     self.board[i][j] = max(7-i, j)
 
-
-    def move_piece(self, x, y, player):
+    # Get the piece at the given coordinates
+    def get_piece(self, x, y):
         # Convert screen coordinates to grid coordinates
         grid_x, grid_y = x // 100, y // 100
 
-        # Erase the piece from its original position
-        # self.grid[grid_x][grid_y] = 0
-        
-        # TODO: Implement the logic to move the piece to the new position
-        pass 
+        for piece in self.pieces:
+            if piece.x == grid_x and piece.y == grid_y:
+                return piece
+            
+
+    def is_cell_empty(self, x, y):
+        for piece in self.pieces:
+            if piece.x == x and piece.y == y:
+                return False
+        return True
+    
+    def is_cell_adjacent(self, x1, y1, x2, y2):
+        if abs(x1 - x2) <= 1 and abs(y1 - y2) <= 1:
+            return True
+        return False
+    
+    def is_cell_on_same_platform(self, x1, y1, x2, y2):
+        if self.board[x1][y1] == self.board[x2][y2]:
+            return True
+        return False
+    
+    def is_cell_diagonal(self, x1, y1, x2, y2):
+        if abs(x1 - x2) == abs(y1 - y2):
+            return True
+        return False
+
+    # Check if the move is valid, and if so, move the piece
+    def check_move(self, piece, x, y):
+        # Convert screen coordinates to grid coordinates
+        grid_x, grid_y = x // 100, y // 100
+
+        # Case 1: The target cell is on the same platform and is empty
+        if self.is_cell_on_same_platform(piece.x, piece.y, grid_x, grid_y) and \
+        self.is_cell_empty(grid_x, grid_y):
+            piece.move(grid_x, grid_y)
+
+        # Case 2: The target cell is adjacent and is empty
+        elif self.is_cell_adjacent(piece.x, piece.y, grid_x, grid_y) and \
+        self.is_cell_empty(grid_x, grid_y):
+            piece.move(grid_x, grid_y)
+
+        # Case 3: The target cell is on the same platform and contains a piece of the opposite player and is diagonal
+        elif self.is_cell_on_same_platform(piece.x, piece.y, grid_x, grid_y) and \
+        not self.is_cell_empty(grid_x, grid_y) and \
+        self.is_cell_diagonal(piece.x, piece.y, grid_x, grid_y):
+            self.capture_piece(self.get_piece(grid_x, grid_y))
+            piece.move(grid_x, grid_y)
+
+        else:
+            pass
+
+        # TODO: Check if the target cell contains a piece of the same player
+            
+        # TODO: Check if the target cell contains a piece of the opposite player and is diagonal
+        # Then captures the piece and moves the piece to the target cell
+
+
+    def capture_piece(self, piece):
+        self.pieces.remove(piece)
+        del piece
 
     def ai_move(self):
         # Add AI logic here
