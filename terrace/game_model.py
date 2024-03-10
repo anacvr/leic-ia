@@ -135,7 +135,10 @@ class GameModel:
                 return False
             
              # If the target cell is at a lower platform level and the piece is at a higher platform level, the move is only allowed if there is an opponent's piece at the target cell
-            if self.is_cell_diagonal_low(piece.x, piece.y, grid_x, grid_y) and target_piece is not None and target_piece.player != piece.player:
+            if self.is_cell_diagonal_low(piece.x, piece.y, grid_x, grid_y) and \
+            target_piece is not None and \
+            target_piece.player != piece.player and \
+            piece.size >= target_piece.size:
                 piece.move(grid_x, grid_y)
                 self.capture_piece(target_piece)
                 
