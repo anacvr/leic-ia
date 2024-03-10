@@ -57,8 +57,9 @@ class GameModel:
                 return False
         return True
     
+    #only considers the moves straight up, down, left and right not diagonal
     def is_cell_adjacent(self, x1, y1, x2, y2):
-        if abs(x1 - x2) <= 1 and abs(y1 - y2) <= 1:
+        if (x1 == x2 and abs(y1 - y2) == 1) or (y1 == y2 and abs(x1 - x2) == 1):
             return True
         return False
     
@@ -71,42 +72,87 @@ class GameModel:
         if abs(x1 - x2) == abs(y1 - y2):
             return True
         return False
+    
+
+    def is_cell_diagonal_low(self, x1, y1, x2, y2):
+        if self.is_cell_diagonal(x1, y1, x2, y2) and self.board[x1][y1] > self.board[x2][y2]:
+            return True
+        return False
+    """
+    def is_path_clear(self, x1, y1, x2, y2):
+        # Vertical movement
+        if x1 == x2: 
+            for y in range(min(y1, y2) + 1, max(y1, y2)):
+                if self.get_piece(x1, y) is not None:
+                        return False
+        # Horizontal movement
+        elif y1 == y2:
+            for x in range(min(x1, x2) + 1, max(x1, x2)):
+                if self.get_piece(x, y1) is not None:
+                        return False
+        # Diagonal movement
+        elif abs(x1 - x2) == abs(y1 - y2):
+            x_direction = 1 if x1 < x2 else -1
+            y_direction = 1 if y1 < y2 else -1
+
+            current_x, current_y = x1, y1
+            while current_x != x2 or current_y != y2:
+                current_x += x_direction
+                current_y += y_direction
+                if self.get_piece(current_x, current_y):
+                        return False
+                
+        return True
+    """
 
     # Check if the move is valid, and if so, move the piece
     def check_move(self, piece, x, y):
         # Convert screen coordinates to grid coordinates
-        grid_x, grid_y = x // 100, y // 100
+        grid_x, grid_y = x // 100, y // 100 
+        target_piece = self.get_piece(x, y)
+        
+        if piece is None:
+            return False
+        
+        # Case 1: The target cell contains a piece of the same player
+        if target_piece is not None and target_piece.player == piece.player:
+            return False
 
-        # Case 1: The target cell is on the same platform and is empty
-        if self.is_cell_on_same_platform(piece.x, piece.y, grid_x, grid_y) and \
+        # Case 2: The target cell is on the same platform and is empty
+        elif self.is_cell_on_same_platform(piece.x, piece.y, grid_x, grid_y) and \
         self.is_cell_empty(grid_x, grid_y):
             piece.move(grid_x, grid_y)
 
-        # Case 2: The target cell is adjacent and is empty
+        # Case 3: The target cell is adjacent and is empty
         elif self.is_cell_adjacent(piece.x, piece.y, grid_x, grid_y) and \
         self.is_cell_empty(grid_x, grid_y):
             piece.move(grid_x, grid_y)
-
-        # Case 3: The target cell is on the same platform and contains a piece of the opposite player and is diagonal
-        elif self.is_cell_on_same_platform(piece.x, piece.y, grid_x, grid_y) and \
-        not self.is_cell_empty(grid_x, grid_y) and \
-        self.is_cell_diagonal(piece.x, piece.y, grid_x, grid_y):
-            self.capture_piece(self.get_piece(grid_x, grid_y))
-            piece.move(grid_x, grid_y)
-
-        else:
-            pass
-
-        # TODO: Check if the target cell contains a piece of the same player
+ 
+        # Case 4: The target cell is diagonally adjacent and at a different platform level
+        elif self.is_cell_diagonal(piece.x, piece.y, grid_x, grid_y):
+            # Disallow moves that cross the center of the board
+            if (piece.x - 3.5) * (grid_x - 3.5) < 0 and (piece.y - 3.5) * (grid_y - 3.5) < 0:
+                return False
             
-        # TODO: Check if the target cell contains a piece of the opposite player and is diagonal
-        # Then captures the piece and moves the piece to the target cell
-
+             # If the target cell is at a lower platform level and the piece is at a higher platform level, the move is only allowed if there is an opponent's piece at the target cell
+            if self.is_cell_diagonal_low(piece.x, piece.y, grid_x, grid_y) and \
+            target_piece is not None and \
+            target_piece.player != piece.player and \
+            piece.size >= target_piece.size:
+                piece.move(grid_x, grid_y)
+                self.capture_piece(target_piece)
+                
+            # If the target cell is at a higher platform level, the move is allowed
+            elif self.board[piece.x][piece.y] < self.board[grid_x][grid_y] and target_piece is None:
+                piece.move(grid_x, grid_y)
+  
 
     def capture_piece(self, piece):
-        # TODO: Implement piece capture
-        self.pieces.remove(piece)
-        del piece
+        if piece in self.pieces:
+            self.pieces.remove(piece)
+            del piece
+        else:
+            pass
 
     def ai_move(self):
         # Add AI logic here
