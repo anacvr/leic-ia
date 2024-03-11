@@ -133,11 +133,9 @@ class GameModel:
                 elif y1 > y2 and self.board[x1][y1] == self.board[x1][y1-1]:
                     y1 -= 1
 
-                print("x1, y1", x1, y1)
-
                 # Check if the cell contains an opponent's piece
                 if not self.is_cell_empty(x1, y1) and (piece.player != player for piece in self.pieces if piece.x == x1 and piece.y == y1) :
-                    print("Jumping over opponent!")
+                    print("Invalid Move: Jumping over opponent!")
                     return True
         
         return False
@@ -192,11 +190,14 @@ class GameModel:
             self.capture_piece(target_piece)
 
 
-        """ else:
+        else:
             print("Invalid move")
             return False
         
-        return True """
+        self.ai.evaluate(1)
+        self.ai.evaluate(2)
+
+        return True
   
 
     def capture_piece(self, piece):
