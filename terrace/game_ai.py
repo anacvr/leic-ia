@@ -2,6 +2,10 @@ class GameAI:
     def __init__(self, game_model):
         self.game_model = game_model
         self.pieces = game_model.pieces
+    # TODO: function to determine the distance between the T piece and the cell across the board
+    # TODO: function to determine the distance between the T piece and a piece from the opponent 
+    #       - check if the T piece is on a lower diagonal cell
+    #       - check if the capturing piece is on one of the six cells surronding the T piece
 
     def evaluate(self):
         """
