@@ -83,7 +83,7 @@ class GameView:
         legend_text = legend_font.render("Legend:", True, (0, 0, 0))
         
         # Renders the legend text onto the game window
-        # self.window.blit(legend_text, (self.window_width - 100, 50))
+        self.window.blit(legend_text, (self.window_width - 100, 50))
         
         # For each color, draw a rectangle and a text label
         for i, color in enumerate([(81, 203, 255), (93, 173, 233), (108, 149, 208), (128, 126, 184), (158, 131, 184), (189, 122, 173), (211, 105, 156), (255, 79, 134)]):

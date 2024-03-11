@@ -168,6 +168,7 @@ class GameModel:
 
         # Case 2: The target cell is above the current cell and is empty
         elif not self.is_cell_lower(piece.x, piece.y, x, y) and \
+        not self.is_cell_on_same_platform(piece.x, piece.y, x, y) and \
         (self.is_cell_adjacent(piece.x, piece.y, x, y) or self.is_cell_diagonally_adjacent(piece.x, piece.y, x, y)) and \
         self.is_cell_empty(x, y):
             piece.move(x, y)
