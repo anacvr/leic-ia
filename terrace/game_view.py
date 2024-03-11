@@ -8,6 +8,9 @@ class GameView:
         self.window_height = 860
         self.window_width = 960
 
+        self.board_height = 800
+        self.board_width = 800
+
         self.margin = 30
 
         self.window = pygame.display.set_mode((self.window_width, self.window_height))
@@ -19,6 +22,12 @@ class GameView:
         self.blink_start_time = None
 
         pygame.display.set_caption("Terrace (LEIC-IA Group 112)")
+    
+    def window_to_board_coords(self, x, y):
+        """
+        Convert window coordinates to board coordinates.
+        """
+        return (x - self.margin) // 100, (y - self.margin) // 100
 
     def draw(self):
         # Fill the window with white
@@ -33,9 +42,6 @@ class GameView:
                   (189, 122, 173),
                   (211, 105, 156),
                   (255, 79, 134)]
-        
-        # Define the elevation levels for the border thickness
-        elevation_levels = [1, 2, 3, 4, 5, 6, 7, 8]
 
         # Draw the grid
         for i in range(8):
@@ -51,7 +57,7 @@ class GameView:
                 pygame.draw.rect(self.window, (0, 0, 0), (self.margin + i*100, self.margin + j*100, 100, 100), elevation)
 
         # Draw a thicker border around the entire board
-        pygame.draw.rect(self.window, (0, 0, 0), (self.margin, self.margin, 800, 800), 5)
+        pygame.draw.rect(self.window, (0, 0, 0), (self.margin, self.margin, self.board_height, self.board_width), 5)
 
         # Draw the pieces
         self.draw_pieces()
@@ -77,7 +83,7 @@ class GameView:
         legend_text = legend_font.render("Legend:", True, (0, 0, 0))
         
         # Renders the legend text onto the game window
-        self.window.blit(legend_text, (self.window_width - 100, 50))
+        # self.window.blit(legend_text, (self.window_width - 100, 50))
         
         # For each color, draw a rectangle and a text label
         for i, color in enumerate([(81, 203, 255), (93, 173, 233), (108, 149, 208), (128, 126, 184), (158, 131, 184), (189, 122, 173), (211, 105, 156), (255, 79, 134)]):
@@ -86,6 +92,5 @@ class GameView:
             self.window.blit(text, (self.window_width - 100, 80 + i*40))
 
     def blink_piece(self, x, y):
-        grid_x, grid_y = x // 100, y // 100
-        self.blink_piece_pos = (grid_x, grid_y)
+        self.blink_piece_pos = (x, y)
         self.blink_start_time = pygame.time.get_ticks()

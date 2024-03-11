@@ -1,10 +1,12 @@
 from piece import Piece
+from game_ai import GameAI
 
 class GameModel:
     def __init__(self):
 
         self.pieces = []
         self.board = [[0 for _ in range(8)] for _ in range(8)]
+        self.ai = GameAI(self)
 
         # Create the pieces for both players
         for i in range(8):
@@ -107,8 +109,7 @@ class GameModel:
 
     # Check if the move is valid, and if so, move the piece
     def check_move(self, piece, x, y):
-        # Convert screen coordinates to grid coordinates
-        grid_x, grid_y = x // 100, y // 100 
+      
         target_piece = self.get_piece(x, y)
         
         if piece is None:
@@ -156,4 +157,9 @@ class GameModel:
 
     def ai_move(self):
         # Add AI logic here
+        
+        # Get the next move from the AI
+        move = self.ai.get_next_move()
+        self.check_move(move[0], move[1], move[2])
+
         pass
