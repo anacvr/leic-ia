@@ -193,9 +193,6 @@ class GameModel:
         else:
             print("Invalid move")
             return False
-        
-        self.ai.evaluate(1)
-        self.ai.evaluate(2)
 
         return True
   
@@ -212,38 +209,43 @@ class GameModel:
         Check if the game is over.
         This function should return True if the game is over, False otherwise.
         """
-        # TODO: Implement the logic to check if the game is over here
-        # TODO: Check if there are no more valid moves for the current player´
-        print("in game over")
+        # TODO: Check if there are no more valid moves for the current player
+
+        # Case 1: The game is over if a T piece is eaten
+        # Assume both T pieces are dead
         t1dead = True 
         t2dead = True
+
+        # Check if the T pieces are still in the game
         for piece in self.pieces:
-            # Case 1: The game is over if a T piece is eaten
             if piece.isTpiece and piece.player == 1:
-                print("first if")
                 t1dead = False
+
             elif piece.isTpiece and piece.player == 2:
-                print("second if")
-                t2dead =  False
-            # Case 2: The game is over if a T piece reaches the opposite end
-        for piece in self.pieces:
-            if piece.isTpiece and piece.player == 1:
-                print("third if")
-                if piece.x == 7 and piece.y == 0:
-                    return True
-            elif piece.isTpiece and piece.player == 2:
-                print("forth if")
-                if piece.x == 0 and piece.y == 7:
-                    return True
+                t2dead = False
+
         if t1dead == True or t2dead == True:
             return True
+        
+        # Case 2: The game is over if a T piece reaches the opposite end
+        for piece in self.pieces:
+            if piece.isTpiece and piece.player == 1:
+                if piece.x == 7 and piece.y == 0:
+                    return True
+                
+            elif piece.isTpiece and piece.player == 2:
+                if piece.x == 0 and piece.y == 7:
+                    return True
+
+        return False
                 
                 
     def ai_move(self):
-        # Add AI logic here
         
-        # Get the next move from the AI
-        # move = self.ai.get_next_move()
-        # self.check_move(move[0], move[1], move[2])
+        # TODO: Implement a way to create future game states and pass them to the evaluation function
+        # We don't want to modify the current game state but we don't have a way to represent states yet
+        
+        score = self.ai.evaluate(2)
+        print("Score:", score)
 
         pass

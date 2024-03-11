@@ -78,7 +78,7 @@ class GameAI:
         
         score -= distance
 
-        print("Heuristic 1 Score:", score)
+        # print("Heuristic 1 Score:", score)
 
         return score
     
@@ -94,7 +94,7 @@ class GameAI:
         n_opp_on_radius = self.check_T_radius(player)
         score -= n_opp_on_radius
 
-        print("Heuristic 2 Score:", score)
+        # print("Heuristic 2 Score:", score)
 
         return score
 

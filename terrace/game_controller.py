@@ -14,12 +14,15 @@ class GameController:
         self.board_end_x = self.view.margin + self.view.board_width
         self.board_end_y = self.view.margin + self.view.board_height
 
+    def quit_game(self):
+        pygame.quit()
+        sys.exit()
+
     def run(self):
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    self.quit_game()
 
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
@@ -35,19 +38,32 @@ class GameController:
                     else:
                         x, y = self.view.window_to_board_coords(x, y)
 
-                        if self.view.blink == False:
+                        # If no piece is selected, select the piece at the clicked position
+                        if self.selected_piece is None:
                             self.view.blink = True
                             self.view.blink_piece(x, y)
                             self.selected_piece = self.model.get_piece(x, y)
+
+                        # If a piece is selected, check move with clicked position
                         else:
                             self.view.blink = False
                             self.view.blink_piece_pos = None
                             self.model.check_move(self.selected_piece, x, y)
+                            self.selected_piece = None
+
+                            # Check if the game is over
                             state = GameModel.is_game_over(self)
-                            print(state)
+
                             if(state == True):
-                                print("entrei no if")
-                                pygame.quit()
-                                sys.exit()
-            self.model.ai_move()
+                                self.quit_game()
+
+                            # AI move
+                            self.model.ai_move()
+
+                            # Check if the game is over
+                            state = GameModel.is_game_over(self)
+
+                            if(state == True):
+                                self.quit_game()
+
             self.view.draw()
