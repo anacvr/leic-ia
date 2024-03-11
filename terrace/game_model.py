@@ -122,20 +122,23 @@ class GameModel:
         for i in range(7):
             if x1 == x2 and y1 == y2:
                 break
+            # TODO: This might be a problem with different quadrants at the same height
             else:
-                if x1 < x2:
+                if x1 < x2 and self.board[x1][y1] == self.board[x1+1][y1]:
                     x1 += 1
-                elif x1 > x2:
+                elif x1 > x2 and self.board[x1][y1] == self.board[x1-1][y1]:
                     x1 -= 1
-                if y1 < y2:
+                if y1 < y2 and self.board[x1][y1] == self.board[x1][y1+1]:
                     y1 += 1
-                elif y1 > y2:
+                elif y1 > y2 and self.board[x1][y1] == self.board[x1][y1-1]:
                     y1 -= 1
 
-                if self.is_cell_empty(x1, y1):
-                    continue
-                else:
-                    return (piece.player != player for piece in self.pieces if piece.x == x1 and piece.y == y1)
+                print("x1, y1", x1, y1)
+
+                # Check if the cell contains an opponent's piece
+                if not self.is_cell_empty(x1, y1) and (piece.player != player for piece in self.pieces if piece.x == x1 and piece.y == y1) :
+                    print("Jumping over opponent!")
+                    return True
         
         return False
 
@@ -159,7 +162,8 @@ class GameModel:
         # Case 1: The target cell is on the same platform and is empty
         elif self.is_cell_on_same_platform(piece.x, piece.y, x, y) and \
         self.is_cell_on_same_quadrant(piece.x, piece.y, x, y) and \
-        self.is_cell_empty(x, y): 
+        self.is_cell_empty(x, y) and \
+        not self.is_jumping_over_opponent(piece.x, piece.y, x, y, piece.player): 
             piece.move(x, y)
 
         # Case 2: The target cell is above the current cell and is empty
@@ -186,9 +190,6 @@ class GameModel:
             piece.move(x, y)
             self.capture_piece(target_piece)
 
-        ### DEBUGGING
-        print("Is piece jumping over opponent?", self.is_jumping_over_opponent(piece.x, piece.y, x, y, piece.player))
-        ###
 
         """ else:
             print("Invalid move")
