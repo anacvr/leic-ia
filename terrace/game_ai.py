@@ -27,29 +27,3 @@ class GameAI:
 
         return (self.pieces[1], 1, 1)
 
-
-    # THIS SHOULD BE IN GAME_MODEL.PY
-    def is_game_over(self):
-        """
-        Check if the game is over.
-        This function should return True if the game is over, False otherwise.
-        """
-        # TODO: Implement the logic to check if the game is over here
-        # You might want to check if one player has no pieces left, or if there are no
-        # valid moves left.
-
-        for piece in self.pieces:
-            # Case 1: The game is over if a T piece is eaten
-            if piece.isTpiece and piece.player == 1:
-                return False
-            elif piece.isTpiece and piece.player == 2:
-                return False
-            
-            # Case 2: The game is over if a T piece reaches the opposite end
-            elif piece.isTpiece and piece.player == 1:
-                if piece.x == 7 and piece.y == 0:
-                    return True
-            elif piece.isTpiece and piece.player == 2:
-                if piece.x == 0 and piece.y == 7:
-                    return True
-

@@ -28,7 +28,7 @@ class GameController:
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     x, y = pygame.mouse.get_pos()
 
-                    # Check if the click is within the board
+                    # Check if the click is outside the board area
                     if x < self.board_start or x > self.board_end_x or y < self.board_start or y > self.board_end_y:
                         continue
                     

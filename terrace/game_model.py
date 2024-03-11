@@ -43,13 +43,25 @@ class GameModel:
                 else:
                     self.board[i][j] = max(7-i, j)
 
+
+
     # Get the piece at the given board coordinates
     def get_piece(self, x, y):
 
         for piece in self.pieces:
             if piece.x == x and piece.y == y:
                 return piece
-            
+    
+    # Check what quadrant the piece is in
+    def get_quadrant(self, x, y):
+        if x < 4 and y < 4:
+            return 1
+        elif x >= 4 and y < 4:
+            return 2
+        elif x < 4 and y >= 4:
+            return 3
+        else:
+            return 4
 
     def is_cell_empty(self, x, y):
         for piece in self.pieces:
@@ -57,27 +69,34 @@ class GameModel:
                 return False
         return True
     
-    #only considers the moves straight up, down, left and right not diagonal
-    def is_cell_adjacent(self, x1, y1, x2, y2):
-        if (x1 == x2 and abs(y1 - y2) == 1) or (y1 == y2 and abs(x1 - x2) == 1):
-            return True
-        return False
-    
     def is_cell_on_same_platform(self, x1, y1, x2, y2):
         if self.board[x1][y1] == self.board[x2][y2]:
             return True
         return False
     
-    def is_cell_diagonal(self, x1, y1, x2, y2):
-        if abs(x1 - x2) == abs(y1 - y2):
+    def is_cell_lower(self, x1, y1, x2, y2):
+        """Check if the cell (x2, y2) is lower than the cell (x1, y1)"""
+
+        if self.board[x1][y1] > self.board[x2][y2]:
             return True
         return False
     
-
-    def is_cell_diagonal_low(self, x1, y1, x2, y2):
-        if self.is_cell_diagonal(x1, y1, x2, y2) and self.board[x1][y1] > self.board[x2][y2]:
+    def is_cell_on_same_quadrant(self, x1, y1, x2, y2):
+        if self.get_quadrant(x1, y1) == self.get_quadrant(x2, y2):
             return True
         return False
+
+    # Only considers the 4 adjacent cells (up, down, left, right)
+    def is_cell_adjacent(self, x1, y1, x2, y2):
+        if (x1 == x2 and abs(y1 - y2) == 1) or (y1 == y2 and abs(x1 - x2) == 1):
+            return True
+        return False
+    
+    def is_cell_diagonally_adjacent(self, x1, y1, x2, y2):
+        if abs(x1 - x2) == 1 and abs(y1 - y2) == 1:
+            return True
+        return False
+    
     """
     def is_path_clear(self, x1, y1, x2, y2):
         # Vertical movement
@@ -105,45 +124,52 @@ class GameModel:
         return True
     """
 
-    # Check if the move is valid, and if so, move the piece
+    # Check if the move is valid, and if so, moves the piece
     def check_move(self, piece, x, y):
-      
-        target_piece = self.get_piece(x, y)
-        
+
+        # Check if the clicked cell contains a piece
         if piece is None:
             return False
+    
+        target_piece = self.get_piece(x, y)
         
-        # Case 1: The target cell contains a piece of the same player
+
+        # CANNIBALISM
+        # The target cell contains a piece of the same player
         if target_piece is not None and target_piece.player == piece.player:
             return False
 
-        # Case 2: The target cell is on the same platform and is empty
+
+        # MOVEMENT
+        # Case 1: The target cell is on the same platform and is empty
         elif self.is_cell_on_same_platform(piece.x, piece.y, x, y) and \
+        self.is_cell_on_same_quadrant(piece.x, piece.y, x, y) and \
+        self.is_cell_empty(x, y): 
+            piece.move(x, y)
+
+        # Case 2: The target cell is above the current cell and is empty
+        elif not self.is_cell_lower(piece.x, piece.y, x, y) and \
+        (self.is_cell_adjacent(piece.x, piece.y, x, y) or self.is_cell_diagonally_adjacent(piece.x, piece.y, x, y)) and \
         self.is_cell_empty(x, y):
             piece.move(x, y)
 
-        # Case 3: The target cell is adjacent and is empty
-        elif self.is_cell_adjacent(piece.x, piece.y, x, y) and \
+        # Case 3: The target cell is below the current cell and is empty
+        elif self.is_cell_lower(piece.x, piece.y, x, y) and \
+        self.is_cell_adjacent(piece.x, piece.y, x, y) and \
         self.is_cell_empty(x, y):
             piece.move(x, y)
- 
-        # Case 4: The target cell is diagonally adjacent and at a different platform level
-        elif self.is_cell_diagonal(piece.x, piece.y, x, y):
-            # Disallow moves that cross the center of the board
-            if (piece.x - 3.5) * (x - 3.5) < 0 and (piece.y - 3.5) * (y - 3.5) < 0:
-                return False
-            
-             # If the target cell is at a lower platform level and the piece is at a higher platform level, the move is only allowed if there is an opponent's piece at the target cell
-            if self.is_cell_diagonal_low(piece.x, piece.y, x, y) and \
-            target_piece is not None and \
-            target_piece.player != piece.player and \
-            piece.size >= target_piece.size:
-                piece.move(x, y)
-                self.capture_piece(target_piece)
-                
-            # If the target cell is at a higher platform level, the move is allowed
-            elif self.board[piece.x][piece.y] < self.board[x][y] and target_piece is None:
-                piece.move(x, y)
+
+
+        # CAPTURE
+        # The target cell is diagonally adjacent and on a lower platform level
+        # And the target cell contains an opponent's piece with a smaller or equal size
+        elif self.is_cell_lower(piece.x, piece.y, x, y) and \
+        self.is_cell_diagonally_adjacent(piece.x, piece.y, x, y) and \
+        target_piece is not None and \
+        target_piece.player != piece.player and \
+        piece.size >= target_piece.size:
+            piece.move(x, y)
+            self.capture_piece(target_piece)
   
 
     def capture_piece(self, piece):
@@ -153,11 +179,34 @@ class GameModel:
         else:
             pass
 
+    def is_game_over(self):
+        """
+        Check if the game is over.
+        This function should return True if the game is over, False otherwise.
+        """
+        # TODO: Implement the logic to check if the game is over here
+        # TODO: Check if there are no more valid moves for the current player
+
+        for piece in self.pieces:
+            # Case 1: The game is over if a T piece is eaten
+            if piece.isTpiece and piece.player == 1:
+                return False
+            elif piece.isTpiece and piece.player == 2:
+                return False
+            
+            # Case 2: The game is over if a T piece reaches the opposite end
+            elif piece.isTpiece and piece.player == 1:
+                if piece.x == 7 and piece.y == 0:
+                    return True
+            elif piece.isTpiece and piece.player == 2:
+                if piece.x == 0 and piece.y == 7:
+                    return True
+
     def ai_move(self):
         # Add AI logic here
         
         # Get the next move from the AI
-        move = self.ai.get_next_move()
-        self.check_move(move[0], move[1], move[2])
+        # move = self.ai.get_next_move()
+        # self.check_move(move[0], move[1], move[2])
 
         pass
