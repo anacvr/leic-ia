@@ -8,13 +8,13 @@ class GameController:
         self.model = GameModel()
         self.view = GameView(self.model)
         self.selected_piece = None
+        self.pieces = self.model.pieces
 
         self.board_start = self.view.margin
         self.board_end_x = self.view.margin + self.view.board_width
         self.board_end_y = self.view.margin + self.view.board_height
 
     def run(self):
-
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -43,6 +43,11 @@ class GameController:
                             self.view.blink = False
                             self.view.blink_piece_pos = None
                             self.model.check_move(self.selected_piece, x, y)
-
+                            state = GameModel.is_game_over(self)
+                            print(state)
+                            if(state == True):
+                                print("entrei no if")
+                                pygame.quit()
+                                sys.exit()
             self.model.ai_move()
             self.view.draw()
