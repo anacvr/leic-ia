@@ -212,23 +212,32 @@ class GameModel:
         This function should return True if the game is over, False otherwise.
         """
         # TODO: Implement the logic to check if the game is over here
-        # TODO: Check if there are no more valid moves for the current player
-
+        # TODO: Check if there are no more valid moves for the current player´
+        print("in game over")
+        t1dead = True 
+        t2dead = True
         for piece in self.pieces:
             # Case 1: The game is over if a T piece is eaten
             if piece.isTpiece and piece.player == 1:
-                return False
+                print("first if")
+                t1dead = False
             elif piece.isTpiece and piece.player == 2:
-                return False
-            
+                print("second if")
+                t2dead =  False
             # Case 2: The game is over if a T piece reaches the opposite end
-            elif piece.isTpiece and piece.player == 1:
+        for piece in self.pieces:
+            if piece.isTpiece and piece.player == 1:
+                print("third if")
                 if piece.x == 7 and piece.y == 0:
                     return True
             elif piece.isTpiece and piece.player == 2:
+                print("forth if")
                 if piece.x == 0 and piece.y == 7:
                     return True
-
+        if t1dead == True or t2dead == True:
+            return True
+                
+                
     def ai_move(self):
         # Add AI logic here
         
