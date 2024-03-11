@@ -69,11 +69,13 @@ class GameModel:
                 return False
         return True
     
+    # PROBABLY SHOULD BE MOVED TO THE PIECE CLASS
     def is_cell_on_same_platform(self, x1, y1, x2, y2):
         if self.board[x1][y1] == self.board[x2][y2]:
             return True
         return False
     
+    # PROBABLY SHOULD BE MOVED TO THE PIECE CLASS
     def is_cell_lower(self, x1, y1, x2, y2):
         """Check if the cell (x2, y2) is lower than the cell (x1, y1)"""
 
@@ -86,43 +88,56 @@ class GameModel:
             return True
         return False
 
+    # PROBABLY SHOULD BE MOVED TO THE PIECE CLASS
     # Only considers the 4 adjacent cells (up, down, left, right)
     def is_cell_adjacent(self, x1, y1, x2, y2):
         if (x1 == x2 and abs(y1 - y2) == 1) or (y1 == y2 and abs(x1 - x2) == 1):
             return True
         return False
     
+    # PROBABLY SHOULD BE MOVED TO THE PIECE CLASS
     def is_cell_diagonally_adjacent(self, x1, y1, x2, y2):
         if abs(x1 - x2) == 1 and abs(y1 - y2) == 1:
             return True
         return False
     
-    """
-    def is_path_clear(self, x1, y1, x2, y2):
-        # Vertical movement
-        if x1 == x2: 
-            for y in range(min(y1, y2) + 1, max(y1, y2)):
-                if self.get_piece(x1, y) is not None:
-                        return False
-        # Horizontal movement
-        elif y1 == y2:
-            for x in range(min(x1, x2) + 1, max(x1, x2)):
-                if self.get_piece(x, y1) is not None:
-                        return False
-        # Diagonal movement
-        elif abs(x1 - x2) == abs(y1 - y2):
-            x_direction = 1 if x1 < x2 else -1
-            y_direction = 1 if y1 < y2 else -1
+    def is_opponent_piece_on_same_platform(self, x, y, player):
+        """Check if there is an opponent's piece on the same platform as the given cell (x, y)"""
+        for piece in self.pieces:
+            if self.board[piece.x][piece.y] == self.board[x][y] and \
+            self.is_cell_on_same_quadrant(x, y, piece.x, piece.y) and \
+            piece.player != player:
+                return True
+        return False
+    
+    def is_jumping_over_opponent(self, x1, y1, x2, y2, player):
+        """Check if a piece is jumping over an opponent's piece on the same platform.
+        x1, y1: Starting position
+        x2, y2: Ending position
+        player: Current player"""
 
-            current_x, current_y = x1, y1
-            while current_x != x2 or current_y != y2:
-                current_x += x_direction
-                current_y += y_direction
-                if self.get_piece(current_x, current_y):
-                        return False
-                
-        return True
-    """
+        if not self.is_opponent_piece_on_same_platform(x1, y1, player):
+            return False
+
+        for i in range(7):
+            if x1 == x2 and y1 == y2:
+                break
+            else:
+                if x1 < x2:
+                    x1 += 1
+                elif x1 > x2:
+                    x1 -= 1
+                if y1 < y2:
+                    y1 += 1
+                elif y1 > y2:
+                    y1 -= 1
+
+                if self.is_cell_empty(x1, y1):
+                    continue
+                else:
+                    return (piece.player != player for piece in self.pieces if piece.x == x1 and piece.y == y1)
+        
+        return False
 
     # Check if the move is valid, and if so, moves the piece
     def check_move(self, piece, x, y):
@@ -132,7 +147,7 @@ class GameModel:
             return False
     
         target_piece = self.get_piece(x, y)
-        
+
 
         # CANNIBALISM
         # The target cell contains a piece of the same player
@@ -170,6 +185,16 @@ class GameModel:
         piece.size >= target_piece.size:
             piece.move(x, y)
             self.capture_piece(target_piece)
+
+        ### DEBUGGING
+        print("Is piece jumping over opponent?", self.is_jumping_over_opponent(piece.x, piece.y, x, y, piece.player))
+        ###
+
+        """ else:
+            print("Invalid move")
+            return False
+        
+        return True """
   
 
     def capture_piece(self, piece):
