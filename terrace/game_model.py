@@ -1,49 +1,14 @@
 from piece import Piece
 from game_ai import GameAI
+from game_state import GameState
 
 class GameModel:
     def __init__(self):
-
-        self.pieces = []
-        self.board = [[0 for _ in range(8)] for _ in range(8)]
+        self.game_state = GameState(self)
+        self.pieces = self.game_state.pieces
+        self.board = self.game_state.board
+        
         self.ai = GameAI(self)
-
-        # Create the pieces for both players
-        for i in range(8):
-            # smaller to bigger
-            pieceType = int(i/2 % 4 + 1)
-
-            self.pieces.append(Piece(2, i, 1, pieceType))
-            self.pieces.append(Piece(1, i, 7, pieceType))
-            
-            # bigger to smaller
-            pieceType = int((7-i)/2 % 4 + 1)
-            
-            self.pieces.append(Piece(2, i, 0, pieceType))
-            self.pieces.append(Piece(1, i, 6, pieceType))
-
-        # Create the platforms
-        for i in range(8):
-            for j in range(8):
-                # Calculate the height of the platform based on its position
-
-                # top left - WORKING
-                if i < 4 and j < 4:
-                    self.board[i][j] = min(7-i, 7-j)
-                
-                # bottom right - WORKING
-                elif i >= 4 and j >= 4:
-                    self.board[i][j] = min(i, j)
-
-                # top right - NOT WORKING
-                elif i < 4 and j >= 4:
-                    self.board[i][j] = max(i, 7-j)
-
-                # bottom left - WORKING
-                else:
-                    self.board[i][j] = max(7-i, j)
-
-
 
     # Get the piece at the given board coordinates
     def get_piece(self, x, y):
@@ -244,8 +209,17 @@ class GameModel:
         
         # TODO: Implement a way to create future game states and pass them to the evaluation function
         # We don't want to modify the current game state but we don't have a way to represent states yet
-        
-        score = self.ai.evaluate(2)
-        print("Score:", score)
+
+        move = self.ai.get_next_move_minimax(self.game_state)
+
 
         pass
+
+    def is_valid_move(self, piece, x, y):
+        """
+        Check if the move is valid.
+        piece: The piece to move
+        x, y: The new position
+        """
+
+        # TODO: Implement this function
