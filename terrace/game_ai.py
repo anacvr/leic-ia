@@ -125,16 +125,34 @@ class GameAI:
             best_value = float('inf')
             for move in game_state.get_valid_moves(player):
                 game_state.make_move(move)
+
+                # Save the previous position of the piece
+                piece_prev_pos = move[1]
+
                 value = self.minimax(game_state, depth - 1, 2)
+
+                # Undo the move
+                piece, _ = move
+                move = (piece, piece_prev_pos)
                 game_state.undo_move(move)
+
                 best_value = max(best_value, value)
             return best_value
         else:
             best_value = float('-inf')
             for move in game_state.get_valid_moves(player):
                 game_state.make_move(move)
+
+                # Save the previous position of the piece
+                piece_prev_pos = move[1]
+
                 value = self.minimax(game_state, depth - 1, 1)
+
+                # Undo the move
+                piece, _ = move
+                move = (piece, piece_prev_pos)
                 game_state.undo_move(move)
+
                 best_value = min(best_value, value)
             return best_value
         
@@ -152,9 +170,15 @@ class GameAI:
         for move in game_state.get_valid_moves(player):
             # Make the move and evaluate the game state
             game_state.make_move(move)
-            value = self.minimax(game_state, 0, 2)
+
+            # Save the previous position of the piece
+            piece_prev_pos = move[1]
+            
+            value = self.minimax(game_state, 1, 2)
 
             # Undo the move
+            piece, _ = move
+            move = (piece, piece_prev_pos)
             game_state.undo_move(move)
 
             if value > best_value:

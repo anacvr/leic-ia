@@ -5,6 +5,8 @@ class GameState:
         self.model = game_model
         self.pieces = []
         self.board = [[0 for _ in range(8)] for _ in range(8)]
+        self.captured_pieces = []
+        self.moves_history = []
 
         # Create the pieces for both players
         for i in range(8):
@@ -54,11 +56,16 @@ class GameState:
         move: A tuple containing the piece to move and the new position
         """
         
-        piece, new_position = move
-        piece.x, piece.y = new_position
+        piece, (x, y) = move
+        #print("Making move", piece, x, y)
+        piece.move(x, y)
 
-        if self.model.is_capturing_move(piece, new_position[0], new_position[1]):
-            target_piece = self.model.get_piece(new_position[0], new_position[1])
+        self.moves_history.append(move)
+        #print("Moves History:", self.moves_history)
+
+        if self.model.is_capturing_move(piece, x, y):
+            target_piece = self.model.get_piece(x, y)
+            self.captured_pieces.append((target_piece, (x, y)))
             self.model.capture_piece(target_piece)
 
     def undo_move(self, move):
@@ -66,8 +73,29 @@ class GameState:
         Undo a move from the game state.
         move: A tuple containing the piece to move and the new position
         """
-        piece, old_position = move
-        piece.x, piece.y = old_position
+
+        piece, (x, y) = move
+        #print("Making move", piece, x, y)
+        piece.move(x, y)
+
+        """ if piece.x == position[0] and piece.y == position[1]:
+            piece.return_to_prev_position()
+        else:
+            print("Invalid move to undo:", move)
+            return
+
+        print("Before undoing move:", self.moves_history)
+
+        for i, move in enumerate(self.moves_history):
+            if move[0] == piece and move[1] == position:
+                del self.moves_history[i]
+                break
+        print("After undoing move:", self.moves_history)
+
+        """
+        if self.captured_pieces and self.captured_pieces[-1][1] == (x, y):
+            captured_piece, _ = self.captured_pieces.pop()
+            self.model.uncapture_piece(captured_piece)
 
     def get_valid_moves(self, player):
         """
@@ -81,5 +109,12 @@ class GameState:
                     for j in range(8):
                         if self.model.check_move(piece, i, j):
                             valid_moves.append((piece, (i, j)))
+
+        # Print the valid moves in a readable format
+        print("Valid Moves:")
+        for move in valid_moves:
+            print(move[0], move[1])
+            
+        
         return valid_moves
 

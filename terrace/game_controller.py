@@ -56,17 +56,25 @@ class GameController:
 
                                 # Check if the move is valid
                                 if(self.model.check_move(self.selected_piece, x, y)):
-                                    move = (self.selected_piece, (x, y))
-                                    self.game_state.make_move(move)
-     
-                                self.selected_piece = None
+                                    
+                                    self.selected_piece.move(x, y)
 
+                                    # Check if the move is capturing an opponent's piece
+                                    if self.model.is_capturing_move(self.selected_piece, x, y):
+                                        target_piece = self.model.get_piece(x, y)
+                                        self.model.capture_piece(target_piece)
+                                        del target_piece
+                                
                                 # Check if the game is over
                                 state = GameModel.is_game_over(self)
 
                                 if(state == True):
                                     self.quit_game()
                                     
+                                # Reset the selected piece
+                                self.selected_piece = None
+
+                                # Change the turn
                                 self.turn = 2
 
             elif(self.turn == 2):

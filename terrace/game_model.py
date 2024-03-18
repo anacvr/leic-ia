@@ -159,7 +159,7 @@ class GameModel:
 
         else:
             # print("Invalid move")
-            return False, False
+            return False
     
 
     def is_capturing_move(self, piece, x, y):
@@ -170,10 +170,6 @@ class GameModel:
         return: True if the move is capturing, False otherwise
         """
 
-        # CAPTURE
-        # The target cell is diagonally adjacent and on a lower platform level
-        # And the target cell contains an opponent's piece with a smaller or equal size
-
         target_piece = self.get_piece(x, y)
 
         if self.is_cell_lower(piece.x, piece.y, x, y) and \
@@ -183,15 +179,22 @@ class GameModel:
         piece.size >= target_piece.size:
             return True
 
-        return False
+        else: return False
 
     def capture_piece(self, piece):
         if piece in self.pieces:
+            print("Player ", piece.player, " captured a piece!")
             self.pieces.remove(piece)
-            del piece
-        else:
-            pass
 
+    
+    def uncapture_piece(self, piece):
+        """
+        Restore a captured piece.
+        piece: The piece to restore
+        """
+        # Add the piece back to the game
+        self.pieces.append(piece)
+    
     def is_game_over(self):
         """
         Check if the game is over.
