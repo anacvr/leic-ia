@@ -104,7 +104,6 @@ class GameAI:
         """
         Evaluate the current game state and return a score.
         """
-        print("Evaluating game state for player", player)
         
         eval = self.heuristic1(player)
         eval += self.heuristic2(player)
@@ -144,7 +143,7 @@ class GameAI:
         """
         Determine the AI's next move utilizing the minimax algorithm.
         """
-        """ 
+        
         best_move = None
         best_value = float('-inf')
         
@@ -153,7 +152,7 @@ class GameAI:
         for move in game_state.get_valid_moves(player):
             # Make the move and evaluate the game state
             game_state.make_move(move)
-            value = self.minimax(game_state, 1, 2)
+            value = self.minimax(game_state, 0, 2)
 
             # Undo the move
             game_state.undo_move(move)
@@ -161,10 +160,6 @@ class GameAI:
             if value > best_value:
                 best_value = value
                 best_move = move 
-         """
-        best_move = game_state.get_valid_moves(player)[0]
-         
-        print(best_move)
         
         
         return best_move

@@ -53,8 +53,10 @@ class GameController:
                             else:
                                 self.view.blink = False
                                 self.view.blink_piece_pos = None
+
+                                # Check if the move is valid
                                 if(self.model.check_move(self.selected_piece, x, y)):
-                                    move = (self.selected_piece, x, y)
+                                    move = (self.selected_piece, (x, y))
                                     self.game_state.make_move(move)
      
                                 self.selected_piece = None

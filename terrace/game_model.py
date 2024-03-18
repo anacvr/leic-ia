@@ -100,13 +100,21 @@ class GameModel:
 
                 # Check if the cell contains an opponent's piece
                 if not self.is_cell_empty(x1, y1) and (piece.player != player for piece in self.pieces if piece.x == x1 and piece.y == y1) :
-                    print("Invalid Move: Jumping over opponent!")
+                    # print("Invalid Move: Jumping over opponent!")
                     return True
         
         return False
 
-    # Check if the move is valid, and if so, moves the piece
+
     def check_move(self, piece, x, y):
+        """
+        Check if the move is valid.
+        piece: The piece to move
+        x, y: The new position
+        return: (is_valid, is_capturing)
+            is_valid: True if the move is valid, False otherwise
+            is_capturing: True if the move is capturing an opponent's piece, False otherwise
+        """
 
         # Check if the clicked cell contains a piece
         if piece is None:
@@ -145,18 +153,37 @@ class GameModel:
         # CAPTURE
         # The target cell is diagonally adjacent and on a lower platform level
         # And the target cell contains an opponent's piece with a smaller or equal size
-        elif self.is_cell_lower(piece.x, piece.y, x, y) and \
+        elif self.is_capturing_move(piece, x, y):
+            return True
+
+
+        else:
+            # print("Invalid move")
+            return False, False
+    
+
+    def is_capturing_move(self, piece, x, y):
+        """
+        Check if the move is capturing an opponent's piece.
+        piece: The piece to move
+        x, y: The new position
+        return: True if the move is capturing, False otherwise
+        """
+
+        # CAPTURE
+        # The target cell is diagonally adjacent and on a lower platform level
+        # And the target cell contains an opponent's piece with a smaller or equal size
+
+        target_piece = self.get_piece(x, y)
+
+        if self.is_cell_lower(piece.x, piece.y, x, y) and \
         self.is_cell_diagonally_adjacent(piece.x, piece.y, x, y) and \
         target_piece is not None and \
         target_piece.player != piece.player and \
         piece.size >= target_piece.size:
             return True
 
-
-        else:
-            print("Invalid move")
-            return False
-  
+        return False
 
     def capture_piece(self, piece):
         if piece in self.pieces:
@@ -186,18 +213,22 @@ class GameModel:
                 t2dead = False
 
         if t1dead == True or t2dead == True:
+            print("Game Over: T piece eaten!")
             return True
         
         # Case 2: The game is over if a T piece reaches the opposite end
         for piece in self.pieces:
             if piece.isTpiece and piece.player == 1:
                 if piece.x == 7 and piece.y == 0:
+                    print("Game Over: T piece reached the opposite end!")
                     return True
                 
             elif piece.isTpiece and piece.player == 2:
                 if piece.x == 0 and piece.y == 7:
+                    print("Game Over: T piece reached the opposite end!")
                     return True
 
+        
         return False
                 
                 
