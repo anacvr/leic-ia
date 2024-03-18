@@ -13,6 +13,7 @@ class GameController:
         self.board_start = self.view.margin
         self.board_end_x = self.view.margin + self.view.board_width
         self.board_end_y = self.view.margin + self.view.board_height
+        
 
     def quit_game(self):
         pygame.quit()
@@ -52,16 +53,23 @@ class GameController:
                             self.selected_piece = None
 
                             # Check if the game is over
-                            state = GameModel.is_game_over(self)
+                            playerWon = False
+                            state = GameModel.is_game_over(self, playerWon)
 
                             if(state == True):
-                                self.quit_game()
+                                if (playerWon == False):
+                                    print ("player 1 Wins")
+                                    self.quit_game()
+                                if (playerWon == True):
+                                    print ("player 2 Wins")
+                                    self.quit_game()
 
                             # AI move
                             self.model.ai_move()
 
                             # Check if the game is over
-                            state = GameModel.is_game_over(self)
+                            playerWon = False
+                            state = GameModel.is_game_over(self, playerWon)
 
                             if(state == True):
                                 self.quit_game()
