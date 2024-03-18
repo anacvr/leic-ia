@@ -52,8 +52,24 @@ class GameState:
         Apply a move to the game state.
         move: A tuple containing the piece to move and the new position
         """
-        piece, new_position = move
-        piece.x, piece.y = new_position
+        print("Making move", move)
+        if(len(move) == 2):
+            piece, (x, y) = move
+        else:
+            return
+        target_piece = self.model.get_piece(x, y)
+        
+        # CAPTURE
+        # The target cell is diagonally adjacent and on a lower platform level
+        # And the target cell contains an opponent's piece with a smaller or equal size
+        if self.model.is_cell_lower(piece.x, piece.y, x, y) and \
+        self.model.is_cell_diagonally_adjacent(piece.x, piece.y, x, y) and \
+        target_piece is not None and \
+        target_piece.player != piece.player and \
+        piece.size >= target_piece.size:
+            self.model.capture_piece(target_piece)
+        
+        piece.x, piece.y = x, y
 
     def undo_move(self, move):
         """
@@ -73,7 +89,7 @@ class GameState:
             if piece.player == player:
                 for i in range(8):
                     for j in range(8):
-                        if self.game_model.is_valid_move(piece, i, j):
+                        if self.model.check_move(piece, i, j):
                             valid_moves.append((piece, (i, j)))
         return valid_moves
 

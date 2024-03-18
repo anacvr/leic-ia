@@ -114,7 +114,6 @@ class GameModel:
     
         target_piece = self.get_piece(x, y)
 
-
         # CANNIBALISM
         # The target cell contains a piece of the same player
         if target_piece is not None and target_piece.player == piece.player:
@@ -127,20 +126,20 @@ class GameModel:
         self.is_cell_on_same_quadrant(piece.x, piece.y, x, y) and \
         self.is_cell_empty(x, y) and \
         not self.is_jumping_over_opponent(piece.x, piece.y, x, y, piece.player): 
-            piece.move(x, y)
+            return True
 
         # Case 2: The target cell is above the current cell and is empty
         elif not self.is_cell_lower(piece.x, piece.y, x, y) and \
         not self.is_cell_on_same_platform(piece.x, piece.y, x, y) and \
         (self.is_cell_adjacent(piece.x, piece.y, x, y) or self.is_cell_diagonally_adjacent(piece.x, piece.y, x, y)) and \
         self.is_cell_empty(x, y):
-            piece.move(x, y)
+            return True
 
         # Case 3: The target cell is below the current cell and is empty
         elif self.is_cell_lower(piece.x, piece.y, x, y) and \
         self.is_cell_adjacent(piece.x, piece.y, x, y) and \
         self.is_cell_empty(x, y):
-            piece.move(x, y)
+            return True
 
 
         # CAPTURE
@@ -151,15 +150,12 @@ class GameModel:
         target_piece is not None and \
         target_piece.player != piece.player and \
         piece.size >= target_piece.size:
-            piece.move(x, y)
-            self.capture_piece(target_piece)
+            return True
 
 
         else:
             print("Invalid move")
             return False
-
-        return True
   
 
     def capture_piece(self, piece):
@@ -205,21 +201,15 @@ class GameModel:
         return False
                 
                 
-    def ai_move(self):
+    def ai_move(self, player):
         
         # TODO: Implement a way to create future game states and pass them to the evaluation function
         # We don't want to modify the current game state but we don't have a way to represent states yet
+        
 
-        move = self.ai.get_next_move_minimax(self.game_state)
+        move = self.ai.get_next_move_minimax(self.game_state, player)
+        
+        self.game_state.make_move(move)
 
 
         pass
-
-    def is_valid_move(self, piece, x, y):
-        """
-        Check if the move is valid.
-        piece: The piece to move
-        x, y: The new position
-        """
-
-        # TODO: Implement this function

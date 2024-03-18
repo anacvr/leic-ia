@@ -56,3 +56,4 @@ class Piece:
         self.x = x
         self.y = y
         
+        
