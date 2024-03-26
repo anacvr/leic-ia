@@ -7,7 +7,7 @@ def main():
     screen = pygame.display.set_mode((960, 860))
 
     menu = Menu(screen)
-    game_controller = GameController()
+    game_controller = GameController(game_mode="human")
 
     while True:
         action = menu.main_menu()
