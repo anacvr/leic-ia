@@ -70,7 +70,9 @@ class GameController:
             self.turn = 2 if self.turn == 1 else 1
             
             # Check if the game is over
-            return self.check_game_over()
+            game_over = self.check_game_over()
+            self.selected_piece = None
+            return game_over
         
         # Reset the selected piece
         self.selected_piece = None
