@@ -8,6 +8,8 @@ def main():
     screen = pygame.display.set_mode((960, 860))
 
     menu = Menu(screen)
+    game_controller = GameController(game_mode="human")
+
     while True:
         start = game_controller.menuing()
         if start == "play":
