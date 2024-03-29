@@ -74,8 +74,8 @@ class GameController:
                                 playerWon = False
                             state = GameModel.is_game_over(self, playerWon)
 
-                                if(state == True):
-                                    if (playerWon == False):
+                            if(state == True):
+                                if (playerWon == False):
                                     pygame.mixer.music.play(loops=-1)
                                     action = self.view.winnerPopUp("Player 1 Wins")
                                     if action == "play":
@@ -111,7 +111,7 @@ class GameController:
                 self.model.ai_move(2)
 
                 # Check if the game is over
-                            playerWon = False
+                playerWon = False
                 state = GameModel.is_game_over(self, playerWon)
 
                 if(state == True):
