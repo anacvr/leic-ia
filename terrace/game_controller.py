@@ -83,29 +83,19 @@ class GameController:
         return True
     
     def check_game_over(self):
-        playerWon = False
-        state = GameModel.is_game_over(self, playerWon)
+        state = GameModel.is_game_over(self)
         if(state == True):
-            if (playerWon == False):
-                pygame.mixer.music.play(loops=-1)
-                action = self.view.winnerPopUp("Player 1 Wins")
-                if action == "play":
-                    self.reset_game()
-                    pygame.mixer.music.stop()
-                    self.run()
-                else:
-                    self.reset_game()
-                    pygame.mixer.music.stop()
-                    self.menuing()
-            elif (playerWon == True):
-                pygame.mixer.music.play(loops=-1)
-                action = self.view.winnerPopUp("Player 2 Wins")
-                if action == "play":
-                    self.reset_game()
-                    self.run()
-                else:
-                    self.reset_game()
-                    self.menuing()
+            pygame.mixer.music.play(loops=-1)
+            action = self.view.winnerPopUp("Congratulations!")
+            if action == "play":
+                self.reset_game()
+                pygame.mixer.music.stop()
+                self.run()
+            else:
+                self.reset_game()
+                pygame.mixer.music.stop()
+                self.menuing()
+            return False
         return True
 
     def run(self):

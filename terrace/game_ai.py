@@ -187,4 +187,3 @@ class GameAI:
         
         
         return best_move
-

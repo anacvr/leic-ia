@@ -195,7 +195,7 @@ class GameModel:
         # Add the piece back to the game
         self.pieces.append(piece)
     
-    def is_game_over(self, playerWon):
+    def is_game_over(self):
         """
         Check if the game is over.
         This function should return True if the game is over, False otherwise.
@@ -211,11 +211,9 @@ class GameModel:
         for piece in self.pieces:
             if piece.isTpiece and piece.player == 1:
                 t1dead = False
-                playerWon = True
 
             elif piece.isTpiece and piece.player == 2:
                 t2dead = False
-                playerWon = False
 
         if t1dead == True or t2dead == True:
             print("Game Over: T piece eaten!")
@@ -225,15 +223,15 @@ class GameModel:
         for piece in self.pieces:
             if piece.isTpiece and piece.player == 1:
                 if piece.x == 7 and piece.y == 0:
-                    playerWon = False
+                    print("Game Over: T piece reached the opposite end!")
                     return True
                 
             elif piece.isTpiece and piece.player == 2:
                 if piece.x == 0 and piece.y == 7:
-                    playerWon = True
+                    print("Game Over: T piece reached the opposite end!")
                     return True
 
-
+        
         return False
                 
                 
