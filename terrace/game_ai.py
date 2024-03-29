@@ -1,3 +1,4 @@
+
 class GameAI:
     def __init__(self, game_model):
         self.game_model = game_model
@@ -5,7 +6,7 @@ class GameAI:
 
     # TODO: function to determine the distance between the T piece and a piece from the opponent 
     #       - check if the T piece is on a lower diagonal cell
-    #       - check if the capturing piece is on one of the six cells surronding the T piece
+    #       - ~~check if the capturing piece is on one of the six cells surronding the T piece~~
 
 
     def calc_T_distance_to_goal(self, player):
@@ -81,7 +82,7 @@ class GameAI:
         # print("Heuristic 1 Score:", score)
 
         return score
-    
+
 
     def heuristic2(self, player):
         """
@@ -98,26 +99,92 @@ class GameAI:
 
         return score
 
+
     def evaluate(self, player):
         """
         Evaluate the current game state and return a score.
         """
-        print("Evaluating game state for player", player)
         
         eval = self.heuristic1(player)
         eval += self.heuristic2(player)
 
         return eval
-
-    def get_next_move(self):
+    
+    
+    def minimax(self, game_state, depth, player):
         """
-        Determine the AI's next move based on the current game state.
-        This function should use the evaluate() function to evaluate the game state
-        and return the AI's next move.
+        Perform a minimax search.
+        depth: The depth of the search tree
+        player: The current player (1 or 2)
         """
-        # TODO: Implement the logic to determine the next move here
-        # You might want to consider all possible moves and choose the one that results
-        # in the highest score according to the evaluate() function.
+        
+        if depth == 0:
+            return self.evaluate(player)
+        
+        if player == 2:
+            best_value = float('inf')
+            for move in game_state.get_valid_moves(player):
+                game_state.make_move(move)
 
-        return (self.pieces[1], 1, 1)
+                # Save the previous position of the piece
+                piece_prev_pos = move[1]
+
+                value = self.minimax(game_state, depth - 1, 2)
+
+                # Undo the move
+                piece, _ = move
+                move = (piece, piece_prev_pos)
+                game_state.undo_move(move)
+
+                best_value = max(best_value, value)
+            return best_value
+        else:
+            best_value = float('-inf')
+            for move in game_state.get_valid_moves(player):
+                game_state.make_move(move)
+
+                # Save the previous position of the piece
+                piece_prev_pos = move[1]
+
+                value = self.minimax(game_state, depth - 1, 1)
+
+                # Undo the move
+                piece, _ = move
+                move = (piece, piece_prev_pos)
+                game_state.undo_move(move)
+
+                best_value = min(best_value, value)
+            return best_value
+        
+
+    def get_next_move_minimax(self, game_state, player):
+        """
+        Determine the AI's next move utilizing the minimax algorithm.
+        """
+        
+        best_move = None
+        best_value = float('-inf')
+        
+        # MINIMAX SEARCH
+        # Iterate through all valid moves
+        for move in game_state.get_valid_moves(player):
+            # Make the move and evaluate the game state
+            game_state.make_move(move)
+
+            # Save the previous position of the piece
+            piece_prev_pos = move[1]
+            
+            value = self.minimax(game_state, 1, 2)
+
+            # Undo the move
+            piece, _ = move
+            move = (piece, piece_prev_pos)
+            game_state.undo_move(move)
+
+            if value > best_value:
+                best_value = value
+                best_move = move 
+        
+        
+        return best_move
 

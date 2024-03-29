@@ -1,49 +1,14 @@
 from piece import Piece
 from game_ai import GameAI
+from game_state import GameState
 
 class GameModel:
     def __init__(self):
-
-        self.pieces = []
-        self.board = [[0 for _ in range(8)] for _ in range(8)]
+        self.game_state = GameState(self)
+        self.pieces = self.game_state.pieces
+        self.board = self.game_state.board
+        
         self.ai = GameAI(self)
-
-        # Create the pieces for both players
-        for i in range(8):
-            # smaller to bigger
-            pieceType = int(i/2 % 4 + 1)
-
-            self.pieces.append(Piece(2, i, 1, pieceType))
-            self.pieces.append(Piece(1, i, 7, pieceType))
-            
-            # bigger to smaller
-            pieceType = int((7-i)/2 % 4 + 1)
-            
-            self.pieces.append(Piece(2, i, 0, pieceType))
-            self.pieces.append(Piece(1, i, 6, pieceType))
-
-        # Create the platforms
-        for i in range(8):
-            for j in range(8):
-                # Calculate the height of the platform based on its position
-
-                # top left - WORKING
-                if i < 4 and j < 4:
-                    self.board[i][j] = min(7-i, 7-j)
-                
-                # bottom right - WORKING
-                elif i >= 4 and j >= 4:
-                    self.board[i][j] = min(i, j)
-
-                # top right - NOT WORKING
-                elif i < 4 and j >= 4:
-                    self.board[i][j] = max(i, 7-j)
-
-                # bottom left - WORKING
-                else:
-                    self.board[i][j] = max(7-i, j)
-
-
 
     # Get the piece at the given board coordinates
     def get_piece(self, x, y):
@@ -135,20 +100,27 @@ class GameModel:
 
                 # Check if the cell contains an opponent's piece
                 if not self.is_cell_empty(x1, y1) and (piece.player != player for piece in self.pieces if piece.x == x1 and piece.y == y1) :
-                    print("Invalid Move: Jumping over opponent!")
+                    # print("Invalid Move: Jumping over opponent!")
                     return True
         
         return False
 
-    # Check if the move is valid, and if so, moves the piece
+
     def check_move(self, piece, x, y):
+        """
+        Check if the move is valid.
+        piece: The piece to move
+        x, y: The new position
+        return: (is_valid, is_capturing)
+            is_valid: True if the move is valid, False otherwise
+            is_capturing: True if the move is capturing an opponent's piece, False otherwise
+        """
 
         # Check if the clicked cell contains a piece
         if piece is None:
             return False
     
         target_piece = self.get_piece(x, y)
-
 
         # CANNIBALISM
         # The target cell contains a piece of the same player
@@ -162,48 +134,67 @@ class GameModel:
         self.is_cell_on_same_quadrant(piece.x, piece.y, x, y) and \
         self.is_cell_empty(x, y) and \
         not self.is_jumping_over_opponent(piece.x, piece.y, x, y, piece.player): 
-            piece.move(x, y)
+            return True
 
         # Case 2: The target cell is above the current cell and is empty
         elif not self.is_cell_lower(piece.x, piece.y, x, y) and \
         not self.is_cell_on_same_platform(piece.x, piece.y, x, y) and \
         (self.is_cell_adjacent(piece.x, piece.y, x, y) or self.is_cell_diagonally_adjacent(piece.x, piece.y, x, y)) and \
         self.is_cell_empty(x, y):
-            piece.move(x, y)
+            return True
 
         # Case 3: The target cell is below the current cell and is empty
         elif self.is_cell_lower(piece.x, piece.y, x, y) and \
         self.is_cell_adjacent(piece.x, piece.y, x, y) and \
         self.is_cell_empty(x, y):
-            piece.move(x, y)
+            return True
 
 
         # CAPTURE
         # The target cell is diagonally adjacent and on a lower platform level
         # And the target cell contains an opponent's piece with a smaller or equal size
-        elif self.is_cell_lower(piece.x, piece.y, x, y) and \
+        elif self.is_capturing_move(piece, x, y):
+            return True
+
+
+        else:
+            # print("Invalid move")
+            return False
+    
+
+    def is_capturing_move(self, piece, x, y):
+        """
+        Check if the move is capturing an opponent's piece.
+        piece: The piece to move
+        x, y: The new position
+        return: True if the move is capturing, False otherwise
+        """
+
+        target_piece = self.get_piece(x, y)
+
+        if self.is_cell_lower(piece.x, piece.y, x, y) and \
         self.is_cell_diagonally_adjacent(piece.x, piece.y, x, y) and \
         target_piece is not None and \
         target_piece.player != piece.player and \
         piece.size >= target_piece.size:
-            piece.move(x, y)
-            self.capture_piece(target_piece)
+            return True
 
-
-        else:
-            print("Invalid move")
-            return False
-
-        return True
-  
+        else: return False
 
     def capture_piece(self, piece):
         if piece in self.pieces:
+            print("Player ", piece.player, " captured a piece!")
             self.pieces.remove(piece)
-            del piece
-        else:
-            pass
 
+    
+    def uncapture_piece(self, piece):
+        """
+        Restore a captured piece.
+        piece: The piece to restore
+        """
+        # Add the piece back to the game
+        self.pieces.append(piece)
+    
     def is_game_over(self, playerWon):
         """
         Check if the game is over.
@@ -227,6 +218,7 @@ class GameModel:
                 playerWon = False
 
         if t1dead == True or t2dead == True:
+            print("Game Over: T piece eaten!")
             return True
         
         # Case 2: The game is over if a T piece reaches the opposite end
@@ -245,12 +237,15 @@ class GameModel:
         return False
                 
                 
-    def ai_move(self):
+    def ai_move(self, player):
         
         # TODO: Implement a way to create future game states and pass them to the evaluation function
         # We don't want to modify the current game state but we don't have a way to represent states yet
         
-        score = self.ai.evaluate(2)
-        print("Score:", score)
+
+        move = self.ai.get_next_move_minimax(self.game_state, player)
+        
+        self.game_state.make_move(move)
+
 
         pass

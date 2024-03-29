@@ -6,9 +6,14 @@ class Piece:
         self.type = type
         self.x = x
         self.y = y
-        self.margin = 30
+
+        self.prev_x = None
+        self.prev_y = None
+
         self.isTpiece = False
-        
+
+        self.margin = 30
+
         # Check if the piece is a T piece
         if self.type == 1 and (self.x == 0 or self.x == 7) and (self.y == 0 or self.y == 7):
             self.isTpiece = True
@@ -34,7 +39,9 @@ class Piece:
         
         self.imt_white = pygame.image.load('resources/t-white.png')
         self.imt_white = pygame.transform.scale(self.imt_white, (50, 50))
-        
+
+    def __str__(self):
+        return f"Piece(player={self.player}, type={self.type}, x={self.x}, y={self.y})"  
 
     def draw(self, window):
         
@@ -53,6 +60,17 @@ class Piece:
 
 
     def move(self, x, y):
+        self.prev_x = self.x
+        self.prev_y = self.y
         self.x = x
         self.y = y
+        
+    def return_to_prev_position(self):
+        if self.prev_x is None or self.prev_y is None:
+            return
+        
+        self.x = self.prev_x
+        self.y = self.prev_y
+        self.prev_x = None
+        self.prev_y = None
         
