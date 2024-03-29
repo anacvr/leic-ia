@@ -22,7 +22,6 @@ class GameController:
         
         self.turn = 1
         self.game_mode = game_mode
-        
 
     def quit_game(self):
         pygame.quit()
@@ -84,10 +83,29 @@ class GameController:
         return True
     
     def check_game_over(self):
-        state = GameModel.is_game_over(self)
+        playerWon = False
+        state = GameModel.is_game_over(self, playerWon)
         if(state == True):
-            self.quit_game()
-            return False
+            if (playerWon == False):
+                pygame.mixer.music.play(loops=-1)
+                action = self.view.winnerPopUp("Player 1 Wins")
+                if action == "play":
+                    self.reset_game()
+                    pygame.mixer.music.stop()
+                    self.run()
+                else:
+                    self.reset_game()
+                    pygame.mixer.music.stop()
+                    self.menuing()
+            elif (playerWon == True):
+                pygame.mixer.music.play(loops=-1)
+                action = self.view.winnerPopUp("Player 2 Wins")
+                if action == "play":
+                    self.reset_game()
+                    self.run()
+                else:
+                    self.reset_game()
+                    self.menuing()
         return True
 
     def run(self):
@@ -111,6 +129,95 @@ class GameController:
                 if not self.check_game_over():
                     return
                 self.turn = 2 if self.turn == 1 else 1
+            # Check if the click is outside the board area
+            '''if x < self.board_start or x > self.board_end_x or y < self.board_start or y > self.board_end_y:
+                    continue
+                
+                else:
+                    x, y = self.view.window_to_board_coords(x, y)
+
+                    # If no piece is selected, select the piece at the clicked position
+                    if self.selected_piece is None:
+                        self.view.blink = True
+                        self.view.blink_piece(x, y)
+                        self.selected_piece = self.model.get_piece(x, y)
+
+                    # If a piece is selected, check move with clicked position
+                    else:
+                        self.view.blink = False
+                        self.view.blink_piece_pos = None
+
+                        # Check if the move is valid
+                        if(self.model.check_move(self.selected_piece, x, y)):
+                            
+                            self.selected_piece.move(x, y)
+
+                            # Check if the move is capturing an opponent's piece
+                            if self.model.is_capturing_move(self.selected_piece, x, y):
+                                target_piece = self.model.get_piece(x, y)
+                                self.model.capture_piece(target_piece)
+                                del target_piece
+                        
+                    # Check if the game is over
+                    playerWon = False
+                    state = GameModel.is_game_over(self, playerWon)
+                    if(state == True):
+                        if (playerWon == False):
+                            pygame.mixer.music.play(loops=-1)
+                            action = self.view.winnerPopUp("Player 1 Wins")
+                            if action == "play":
+                                self.reset_game()
+                                pygame.mixer.music.stop()
+                                self.run()
+                            else:
+                                self.reset_game()
+                                pygame.mixer.music.stop()
+                                self.menuing()
+                        if (playerWon == True):
+                            pygame.mixer.music.play(loops=-1)
+                            action = self.view.winnerPopUp("Player 2 Wins")
+                            if action == "play":
+                                self.reset_game()
+                                self.run()
+                            else:
+                                self.reset_game()
+                                self.menuing()
+                    # Reset the selected piece
+                    self.selected_piece = None
+
+                    # Change the turn
+                    self.turn = 2
+
+            elif(self.turn == 2):
+                # AI move
+                self.model.ai_move(2)
+
+                # Check if the game is over
+                playerWon = False
+                state = GameModel.is_game_over(self, playerWon)
+                if(state == True):
+                    if (playerWon == False):
+                        pygame.mixer.music.play(loops=-1)
+                        action = self.view.winnerPopUp("Player 1 Wins")
+                        if action == "play":
+                            self.reset_game()
+                            pygame.mixer.music.stop()
+                            self.run()
+                        else:
+                            self.reset_game()
+                            pygame.mixer.music.stop()
+                            self.menuing()
+                        if (playerWon == True):
+                            pygame.mixer.music.play(loops=-1)
+                            action = self.view.winnerPopUp("Player 2 Wins")
+                            if action == "play":
+                                self.reset_game()
+                                self.run()
+                            else:
+                                self.reset_game()
+                                self.menuing()
+                self.selected_piece = None
+                self.turn = 1'''
 
             self.view.draw()
     
@@ -123,7 +230,7 @@ class GameController:
  
     
     def menuing(self):
-        action = self.menu.main_menu()
+        action = self.main_menu()
         print (action)
         if action == "play":
             self.run()
@@ -145,5 +252,66 @@ class GameController:
                     if mainmenu_button.checkForInput(menu_mouse_pos):
                         self.menuing()
 
+
+            pygame.display.update()
+
+    
+    def main_menu(self):
+        while True:
+            play_button, instr_button, quit_button = self.menu.draw_main_menu()
+            menu_mouse_pos = pygame.mouse.get_pos()
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if play_button.checkForInput(menu_mouse_pos):
+                        game_mode = self.play_menu()
+                        if game_mode == "human":
+                            self.run()
+                        elif game_mode == "ai":
+                            self.run()
+                        elif game_mode == "ai2":
+                            self.run()
+
+                    if instr_button.checkForInput(menu_mouse_pos):
+                        return"instr"
+
+                    if quit_button.checkForInput(menu_mouse_pos):
+                        pygame.quit()
+                        sys.exit()
+                
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        pygame.quit()
+                        sys.exit()
+
+            pygame.display.update()
+            
+    def play_menu(self):
+        while True:
+            human_button, ai_button, ai_button2 = self.menu.draw_play_menu()
+            menu_mouse_pos = pygame.mouse.get_pos()
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if human_button.checkForInput(menu_mouse_pos):
+                        return "human"
+
+                    if ai_button.checkForInput(menu_mouse_pos):
+                        return "ai"
+
+                    if ai_button2.checkForInput(menu_mouse_pos):
+                        return "ai2"
+                    
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        self.menu.main_menu()
 
             pygame.display.update()

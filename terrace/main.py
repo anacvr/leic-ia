@@ -4,11 +4,8 @@ from game_controller import GameController
 
 def main():
     pygame.init()
-    game_controller = GameController()
-    screen = pygame.display.set_mode((960, 860))
-
-    menu = Menu(screen)
     game_controller = GameController(game_mode="human")
+    screen = pygame.display.set_mode((960, 860))
 
     while True:
         start = game_controller.menuing()
