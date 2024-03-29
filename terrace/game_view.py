@@ -1,8 +1,11 @@
 import pygame
+from button import Button
 
 class GameView:
     def __init__(self, model):
         self.model = model
+        self.bg = pygame.image.load("resources/terrace_bk.png")
+        self.menu_font = pygame.font.Font("resources/font.ttf", 100)
         pygame.init()
 
         self.window_height = 860
@@ -94,3 +97,80 @@ class GameView:
     def blink_piece(self, x, y):
         self.blink_piece_pos = (x, y)
         self.blink_start_time = pygame.time.get_ticks()
+
+    def draw_victory(self, winner):
+        
+        menu_text = self.menu_font.render( winner, True, "#1E2345")
+        menu_rect = menu_text.get_rect(center=(480, 200))
+        self.window.blit(menu_text, menu_rect)
+
+        play_button = Button(image=pygame.image.load("resources/rect_menu.png"), pos=(480, 350),
+                             text_input="PLAY AGAIN", font=pygame.font.Font("resources/font.ttf", 75),
+                             base_color="#85BEE4", hovering_color="White")
+        mainmenu_button = Button(image=pygame.image.load("resources/rect_menu.png"), pos=(480, 650),
+                             text_input="MAIN MENU", font=pygame.font.Font("resources/font.ttf", 75),
+                             base_color="#85BEE4", hovering_color="White")
+
+        for button in [play_button, mainmenu_button]:
+            button.changeColor(pygame.mouse.get_pos())
+            button.update(self.window)
+
+        return play_button, mainmenu_button
+    
+    def winnerPopUp(self, winner):
+        while True:
+            play_button, mainmenu_button = self.draw_victory(winner)
+            menu_mouse_pos = pygame.mouse.get_pos()
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    self.sys.exit()
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if play_button.checkForInput(menu_mouse_pos):
+                        return "play"
+
+                    if mainmenu_button.checkForInput(menu_mouse_pos):
+                        return "menu"
+
+
+            pygame.display.update()
+
+
+    def draw_Inst(self):
+        self.window.blit(self.bg, (0, 0))
+        menu_text = self.menu_font.render("TERRACE RULES", True, "#1E2345")
+        menu_rect = menu_text.get_rect(center=(480, 200))
+        self.window.blit(menu_text, menu_rect)
+        
+            # Rules
+        rule_font = pygame.font.Font("resources/font.ttf", 30)
+        rule_texts = [
+            "1. Objective: Remove all your pieces from the board first.",
+            "2. Setup: Each player has 15 pieces of one color.",
+            "3. Gameplay: Move pieces to adjacent or higher level spaces." ,
+            "You can move anywhere on the same level but only to ",
+            "adjacent places when moving up or down a level.",
+            "4. Capturing: Capture opponent's pieces by moving onto them.",
+            "You need to be in a higher lever and have a piece ",
+            "of greater size.",
+            "5. Winning: Capture the Opponents T pice or have your ",
+            "T piece reach the opponents T piece spawn point.",
+        ]
+        y_offset = 300
+        x_marginL = 40
+        for text in rule_texts:
+            rule_text_render = rule_font.render(text, True, "#FFFFFF")
+            rule_text_rect = rule_text_render.get_rect(midleft=(x_marginL, y_offset))
+            self.window.blit(rule_text_render, rule_text_rect)
+            y_offset += 30 
+        mainmenu_button = Button(image=pygame.image.load("resources/rect_menu.png"), pos=(480, 650),
+                             text_input="MAIN MENU", font=pygame.font.Font("resources/font.ttf", 75),
+                             base_color="#85BEE4", hovering_color="White")
+
+        for button in [mainmenu_button]:
+            button.changeColor(pygame.mouse.get_pos())
+            button.update(self.window)
+
+        return mainmenu_button

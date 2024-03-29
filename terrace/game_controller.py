@@ -2,13 +2,17 @@ import pygame
 import sys
 from game_model import GameModel
 from game_view import GameView
+from menu import Menu
 
 class GameController:
     def __init__(self):
         self.model = GameModel()
         self.view = GameView(self.model)
+        self.menu = Menu(self.view.window)
         self.selected_piece = None
         self.pieces = self.model.pieces
+        pygame.mixer.init()
+        pygame.mixer.music.load("resources/victory.mp3")
 
         self.board_start = self.view.margin
         self.board_end_x = self.view.margin + self.view.board_width
@@ -58,11 +62,29 @@ class GameController:
 
                             if(state == True):
                                 if (playerWon == False):
-                                    print ("player 1 Wins")
-                                    self.quit_game()
+                                    pygame.mixer.music.play(loops=-1)
+                                    action = self.view.winnerPopUp("Player 1 Wins")
+                                    if action == "play":
+                                        self.reset_game()
+                                        pygame.mixer.music.stop()
+                                        self.run()
+                                    else:
+                                        self.reset_game()
+                                        pygame.mixer.music.stop()
+                                        self.menuing()
+                                        pass
+
                                 if (playerWon == True):
-                                    print ("player 2 Wins")
-                                    self.quit_game()
+                                    pygame.mixer.music.play(loops=-1)
+                                    action = self.view.winnerPopUp("Player 2 Wins")
+                                    if action == "play":
+                                        self.reset_game()
+                                        self.run()
+                                    else:
+                                        self.reset_game()
+                                        self.menuing()
+                                        
+                                        pass
 
                             # AI move
                             self.model.ai_move()
@@ -75,3 +97,37 @@ class GameController:
                                 self.quit_game()
 
             self.view.draw()
+    
+    def reset_game(self):
+        self.model = GameModel()
+        self.view = GameView(self.model)
+        self.selected_piece = None
+        self.pieces = self.model.pieces
+
+ 
+    
+    def menuing(self):
+        action = self.menu.main_menu()
+        print (action)
+        if action == "play":
+            self.run()
+        elif action == "instr":
+            self.Instructions()
+
+        
+    def Instructions(self):
+        while True:
+            mainmenu_button = self.view.draw_Inst()
+            menu_mouse_pos = pygame.mouse.get_pos()
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    self.sys.exit()
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if mainmenu_button.checkForInput(menu_mouse_pos):
+                        self.menuing()
+
+
+            pygame.display.update()

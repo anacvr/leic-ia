@@ -8,7 +8,7 @@ class Piece:
         self.y = y
         self.margin = 30
         self.isTpiece = False
-
+        
         # Check if the piece is a T piece
         if self.type == 1 and (self.x == 0 or self.x == 7) and (self.y == 0 or self.y == 7):
             self.isTpiece = True

@@ -1,21 +1,19 @@
 import pygame
-from game_controller import GameController
 from menu import Menu
+from game_controller import GameController
 
 def main():
     pygame.init()
+    game_controller = GameController()
     screen = pygame.display.set_mode((960, 860))
 
     menu = Menu(screen)
-    game_controller = GameController()
-
     while True:
-        action = menu.main_menu()
-
-        if action == "play":
+        start = game_controller.menuing()
+        if start == "play":
             game_controller.run()
-        elif action == "instr":
-            pass
+
+
 
 if __name__ == "__main__":
     main()
