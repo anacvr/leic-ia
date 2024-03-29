@@ -148,15 +148,20 @@ class GameView:
         rule_font = pygame.font.Font("resources/font.ttf", 30)
         rule_texts = [
             "1. Objective: Remove all your pieces from the board first.",
+            " ",
             "2. Setup: Each player has 15 pieces of one color.",
+            " ",
             "3. Gameplay: Move pieces to adjacent or higher level spaces." ,
             "You can move anywhere on the same level but only to ",
             "adjacent places when moving up or down a level.",
+            " ",
             "4. Capturing: Capture opponent's pieces by moving onto them.",
             "You need to be in a higher lever and have a piece ",
             "of greater size.",
+            " ",
             "5. Winning: Capture the Opponents T pice or have your ",
             "T piece reach the opponents T piece spawn point.",
+            " ",
         ]
         y_offset = 300
         x_marginL = 40
@@ -164,8 +169,8 @@ class GameView:
             rule_text_render = rule_font.render(text, True, "#FFFFFF")
             rule_text_rect = rule_text_render.get_rect(midleft=(x_marginL, y_offset))
             self.window.blit(rule_text_render, rule_text_rect)
-            y_offset += 30 
-        mainmenu_button = Button(image=pygame.image.load("resources/rect_menu.png"), pos=(480, 650),
+            y_offset += 30
+        mainmenu_button = Button(image=pygame.image.load("resources/rect_menu.png"), pos=(480, 780),
                              text_input="MAIN MENU", font=pygame.font.Font("resources/font.ttf", 75),
                              base_color="#85BEE4", hovering_color="White")
 
