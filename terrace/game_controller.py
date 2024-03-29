@@ -70,10 +70,9 @@ class GameController:
                                         self.model.capture_piece(target_piece)
                                         del target_piece
                                 
-                                # Check if the game is over
-                                playerWon = False
+                            # Check if the game is over
+                            playerWon = False
                             state = GameModel.is_game_over(self, playerWon)
-
                             if(state == True):
                                 if (playerWon == False):
                                     pygame.mixer.music.play(loops=-1)
@@ -86,8 +85,6 @@ class GameController:
                                         self.reset_game()
                                         pygame.mixer.music.stop()
                                         self.menuing()
-                                        pass
-
                                 if (playerWon == True):
                                     pygame.mixer.music.play(loops=-1)
                                     action = self.view.winnerPopUp("Player 2 Wins")
@@ -97,14 +94,11 @@ class GameController:
                                     else:
                                         self.reset_game()
                                         self.menuing()
-                                        
-                                        pass
-                                    
-                                # Reset the selected piece
-                                self.selected_piece = None
+                            # Reset the selected piece
+                            self.selected_piece = None
 
-                                # Change the turn
-                                self.turn = 2
+                            # Change the turn
+                            self.turn = 2
 
             elif(self.turn == 2):
                 # AI move
@@ -113,10 +107,28 @@ class GameController:
                 # Check if the game is over
                 playerWon = False
                 state = GameModel.is_game_over(self, playerWon)
-
                 if(state == True):
-                    self.quit_game()
-            
+                    if (playerWon == False):
+                        pygame.mixer.music.play(loops=-1)
+                        action = self.view.winnerPopUp("Player 1 Wins")
+                        if action == "play":
+                            self.reset_game()
+                            pygame.mixer.music.stop()
+                            self.run()
+                        else:
+                            self.reset_game()
+                            pygame.mixer.music.stop()
+                            self.menuing()
+                        if (playerWon == True):
+                            pygame.mixer.music.play(loops=-1)
+                            action = self.view.winnerPopUp("Player 2 Wins")
+                            if action == "play":
+                                self.reset_game()
+                                self.run()
+                            else:
+                                self.reset_game()
+                                self.menuing()
+                self.selected_piece = None
                 self.turn = 1
 
             
