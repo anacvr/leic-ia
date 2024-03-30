@@ -3,16 +3,15 @@ import sys
 from game_model import GameModel
 from game_view import GameView
 from game_state import GameState
-from menu import Menu
 
 class GameController:
-    def __init__(self, game_mode):
+    def __init__(self, game_mode, state_machine):
         self.model = GameModel()
         self.view = GameView(self.model)
         self.game_state = self.model.game_state
-        self.menu = Menu(self.view.window)
         self.selected_piece = None
         self.pieces = self.model.pieces
+        self.state_machine = state_machine
         pygame.mixer.init()
         pygame.mixer.music.load("resources/victory.mp3")
 
@@ -32,11 +31,12 @@ class GameController:
             self.quit_game()
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
+                self.state_machine.change_state("menu")
                 return False
         elif event.type == pygame.MOUSEBUTTONDOWN:
             x, y = pygame.mouse.get_pos()
             return self.handle_click(x, y, turn)
-        return True
+        return "game"
     
     def handle_click(self, x, y, turn):
         # Check if the click is outside the board area
@@ -94,7 +94,7 @@ class GameController:
             else:
                 self.reset_game()
                 pygame.mixer.music.stop()
-                self.menuing()
+                self.state_machine.change_state("menu")
             return False
         return True
 
@@ -126,92 +126,3 @@ class GameController:
         self.view = GameView(self.model)
         self.selected_piece = None
         self.pieces = self.model.pieces
-
- 
-    
-    def menuing(self):
-        action = self.main_menu()
-        print (action)
-        if action == "play":
-            self.run()
-        elif action == "instr":
-            self.Instructions()
-
-        
-    def Instructions(self):
-        while True:
-            mainmenu_button = self.view.draw_Inst()
-            menu_mouse_pos = pygame.mouse.get_pos()
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    self.sys.exit()
-
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    if mainmenu_button.checkForInput(menu_mouse_pos):
-                        self.menuing()
-
-
-            pygame.display.update()
-
-    
-    def main_menu(self):
-        while True:
-            play_button, instr_button, quit_button = self.menu.draw_main_menu()
-            menu_mouse_pos = pygame.mouse.get_pos()
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    if play_button.checkForInput(menu_mouse_pos):
-                        game_mode = self.play_menu()
-                        if game_mode == "human":
-                            self.run()
-                        elif game_mode == "ai":
-                            self.run()
-                        elif game_mode == "ai2":
-                            self.run()
-
-                    if instr_button.checkForInput(menu_mouse_pos):
-                        return"instr"
-
-                    if quit_button.checkForInput(menu_mouse_pos):
-                        pygame.quit()
-                        sys.exit()
-                
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE:
-                        pygame.quit()
-                        sys.exit()
-
-            pygame.display.update()
-            
-    def play_menu(self):
-        while True:
-            human_button, ai_button, ai_button2 = self.menu.draw_play_menu()
-            menu_mouse_pos = pygame.mouse.get_pos()
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    if human_button.checkForInput(menu_mouse_pos):
-                        return "human"
-
-                    if ai_button.checkForInput(menu_mouse_pos):
-                        return "ai"
-
-                    if ai_button2.checkForInput(menu_mouse_pos):
-                        return "ai2"
-                    
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE:
-                        self.menu.main_menu()
-
-            pygame.display.update()
