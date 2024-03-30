@@ -1,3 +1,5 @@
+import random
+
 
 class GameAI:
     def __init__(self, game_model):
@@ -62,7 +64,6 @@ class GameAI:
 
         return count
 
-
     def heuristic1(self, player):
         """
         Heuristic 1:
@@ -104,86 +105,54 @@ class GameAI:
         """
         Evaluate the current game state and return a score.
         """
-        
         eval = self.heuristic1(player)
         eval += self.heuristic2(player)
-
         return eval
     
-    
-    def minimax(self, game_state, depth, player):
-        """
-        Perform a minimax search.
-        depth: The depth of the search tree
-        player: The current player (1 or 2)
-        """
-        
+    def minimax(self, game_state, depth, player, alpha, beta):
         if depth == 0:
-            return self.evaluate(player)
-        
-        if player == 2:
-            best_value = float('inf')
+            return self.evaluate(player) + random.uniform(0, 0.01), None
+
+        if player == 1:
+            max_eval = float('-inf')
+            best_move = None
+
             for move in game_state.get_valid_moves(player):
                 game_state.make_move(move)
+                eval = self.minimax(game_state, depth - 1, 2, alpha, beta)[0]
+                game_state.undo_move()
 
-                # Save the previous position of the piece
-                piece_prev_pos = move[1]
+                if eval > max_eval:
+                    max_eval = eval
+                    best_move = move
 
-                value = self.minimax(game_state, depth - 1, 2)
+                alpha = max(alpha, eval)
+                if beta <= alpha:
+                    break
 
-                # Undo the move
-                piece, _ = move
-                move = (piece, piece_prev_pos)
-                game_state.undo_move(move)
+            return max_eval, best_move
 
-                best_value = max(best_value, value)
-            return best_value
         else:
-            best_value = float('-inf')
+            min_eval = float('inf')
+            best_move = None
+
             for move in game_state.get_valid_moves(player):
                 game_state.make_move(move)
+                eval = self.minimax(game_state, depth - 1, 1, alpha, beta)[0]
+                game_state.undo_move()
 
-                # Save the previous position of the piece
-                piece_prev_pos = move[1]
+                if eval < min_eval:
+                    min_eval = eval
+                    best_move = move
 
-                value = self.minimax(game_state, depth - 1, 1)
+                beta = min(beta, eval)
+                if beta <= alpha:
+                    break
 
-                # Undo the move
-                piece, _ = move
-                move = (piece, piece_prev_pos)
-                game_state.undo_move(move)
+            return min_eval, best_move
 
-                best_value = min(best_value, value)
-            return best_value
-        
-
-    def get_next_move_minimax(self, game_state, player):
-        """
-        Determine the AI's next move utilizing the minimax algorithm.
-        """
-        
-        best_move = None
-        best_value = float('-inf')
-        
-        # MINIMAX SEARCH
-        # Iterate through all valid moves
-        for move in game_state.get_valid_moves(player):
-            # Make the move and evaluate the game state
-            game_state.make_move(move)
-
-            # Save the previous position of the piece
-            piece_prev_pos = move[1]
-            
-            value = self.minimax(game_state, 1, 2)
-
-            # Undo the move
-            piece, _ = move
-            move = (piece, piece_prev_pos)
-            game_state.undo_move(move)
-
-            if value > best_value:
-                best_value = value
-                best_move = move 
-        
-        
+    def get_best_move(self, game_state, depth, player):
+        _, best_move = self.minimax(game_state, depth, player, float('-inf'), float('inf'))
+        if best_move is None:
+            return None
         return best_move

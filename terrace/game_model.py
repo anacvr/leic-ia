@@ -236,14 +236,12 @@ class GameModel:
                 
                 
     def ai_move(self, player):
-        
-        # TODO: Implement a way to create future game states and pass them to the evaluation function
-        # We don't want to modify the current game state but we don't have a way to represent states yet
-        
+        depth = 3
 
-        move = self.ai.get_next_move_minimax(self.game_state, player)
-        
-        self.game_state.make_move(move)
+        best_move = self.ai.get_best_move(self.game_state, depth, player)
 
-
-        pass
+        if best_move is not None:
+            piece, (x, y) = best_move
+            piece.move(x, y)
+        else:
+            print("AI has no valid moves!")
