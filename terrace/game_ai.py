@@ -109,17 +109,21 @@ class GameAI:
         eval += self.heuristic2(player)
         return eval
     
-    def minimax(self, game_state, depth, player, alpha, beta):
+
+    def minimax(self, game_state, depth, player, alpha, beta, valid_moves=None):
         if depth == 0:
             return self.evaluate(player) + random.uniform(0, 0.01), None
+
+        if valid_moves is None:
+            valid_moves = game_state.get_valid_moves(player)
 
         if player == 1:
             max_eval = float('-inf')
             best_move = None
 
-            for move in game_state.get_valid_moves(player):
+            for move in valid_moves:
                 game_state.make_move(move)
-                eval = self.minimax(game_state, depth - 1, 2, alpha, beta)[0]
+                eval = self.minimax(game_state, depth - 1, 2, alpha, beta, valid_moves)[0]
                 game_state.undo_move()
 
                 if eval > max_eval:
@@ -136,9 +140,9 @@ class GameAI:
             min_eval = float('inf')
             best_move = None
 
-            for move in game_state.get_valid_moves(player):
+            for move in valid_moves:
                 game_state.make_move(move)
-                eval = self.minimax(game_state, depth - 1, 1, alpha, beta)[0]
+                eval = self.minimax(game_state, depth - 1, 1, alpha, beta, valid_moves)[0]
                 game_state.undo_move()
 
                 if eval < min_eval:
@@ -150,6 +154,7 @@ class GameAI:
                     break
 
             return min_eval, best_move
+
 
     def get_best_move(self, game_state, depth, player):
         _, best_move = self.minimax(game_state, depth, player, float('-inf'), float('inf'))
