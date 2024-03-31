@@ -167,7 +167,8 @@ class GameAI:
             if piece.player != player:
                 if self.game_model.is_cell_lower(piece.x, piece.y, T_piece.x, T_piece.y) and \
                 self.game_model.is_cell_diagonally_adjacent(piece.x, piece.y, T_piece.x, T_piece.y):
-                    score += -10000
+                    score = -10000
+                    break
         
         if score < 0:
             print("T-piece of player " + player + " is being threatened!")
