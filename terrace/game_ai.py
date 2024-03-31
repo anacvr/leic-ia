@@ -171,7 +171,7 @@ class GameAI:
                     break
         
         if score < 0:
-            print("T-piece of player " + player + " is being threatened!")
+            print("T-piece of player " + str(player) + " is being threatened!")
 
         return score
 
