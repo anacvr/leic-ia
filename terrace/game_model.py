@@ -183,7 +183,7 @@ class GameModel:
 
     def capture_piece(self, piece):
         if piece in self.pieces:
-            print("A piece from Player ", piece.player, " was captured!")
+            #print("A piece from Player ", piece.player, " was captured!")
             self.pieces.remove(piece)
 
     
@@ -216,19 +216,19 @@ class GameModel:
                 t2dead = False
 
         if t1dead == True or t2dead == True:
-            print("Game Over: T piece eaten!")
+            #print("Game Over: T piece eaten!")
             return True
         
         # Case 2: The game is over if a T piece reaches the opposite end
         for piece in self.pieces:
             if piece.isTpiece and piece.player == 1:
                 if piece.x == 7 and piece.y == 0:
-                    print("Game Over: T piece reached the opposite end!")
+                    #print("Game Over: T piece reached the opposite end!")
                     return True
                 
             elif piece.isTpiece and piece.player == 2:
                 if piece.x == 0 and piece.y == 7:
-                    print("Game Over: T piece reached the opposite end!")
+                    #print("Game Over: T piece reached the opposite end!")
                     return True
 
         
@@ -236,7 +236,7 @@ class GameModel:
                 
                 
     def ai_move(self, player):
-        depth = 3
+        depth = 2
 
         best_move = self.ai.get_best_move(self.game_state, depth, player)
 

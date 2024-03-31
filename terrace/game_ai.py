@@ -88,7 +88,7 @@ class GameAI:
         distance = self.calc_T_distance_to_goal(player)
 
         if distance == -1:
-            print("Error Calculating T distance to goal")
+            #print("Error Calculating T distance to goal")
             return 0
         
         score -= distance
@@ -171,9 +171,10 @@ class GameAI:
                     break
         
         if score < 0:
-            print("T-piece of player " + str(player) + " is being threatened!")
-
+            #print("T-piece of player " + str(player) + " is being threatened!")
+            pass
         return score
+    
 
 
 
@@ -181,7 +182,7 @@ class GameAI:
         """
         Evaluate the current game state and return a score.
         """
-        eval = self.heuristic1(player) + self.heuristic2(player) + self.heuristic3(player) + self.heuristic4(player) + self.heuristic5(player)
+        eval = self.heuristic1(player) + self.heuristic2(player) + self.heuristic4(player) + self.heuristic5(player)
 
         #print("Evaluation of the move: " + str(eval))
         return eval
