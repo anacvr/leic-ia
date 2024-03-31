@@ -109,11 +109,13 @@ class GameController:
                             return
                 else:
                     self.model.ai_move(2)
+                    self.view.draw(self.turn)
                     if not self.check_game_over():
                         return
                     self.turn = 1
             elif self.game_mode == "ai2":
                 self.model.ai_move(self.turn)
+                self.view.draw(self.turn)
                 if not self.check_game_over():
                     return
                 self.turn = 2 if self.turn == 1 else 1
