@@ -236,7 +236,7 @@ class GameModel:
                 
                 
     def ai_move(self, player):
-        depth = 4
+        depth = 3
 
         best_move = self.ai.get_best_move(self.game_state, depth, player)
 

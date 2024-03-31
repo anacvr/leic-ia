@@ -129,7 +129,7 @@ class GameAI:
         # If T piece is not found, score increases
         score = 1
 
-        return score * 1000
+        return score * 10000
     
     def heuristic4(self, player):
         """
@@ -183,6 +183,7 @@ class GameAI:
         """
         eval = self.heuristic1(player) + self.heuristic2(player) + self.heuristic3(player) + self.heuristic4(player) + self.heuristic5(player)
 
+        #print("Evaluation of the move: " + str(eval))
         return eval
     
 
@@ -193,7 +194,7 @@ class GameAI:
         if valid_moves is None:
             valid_moves = game_state.get_valid_moves(player)
 
-        if player == 1:
+        if player == 2:
             max_eval = float('-inf')
             best_move = None
 
