@@ -187,20 +187,20 @@ class GameAI:
         return eval
     
 
-    def minimax(self, game_state, depth, player, alpha, beta, valid_moves=None):
+    def minimax(self, game_state, depth, max_player, player, alpha, beta, valid_moves=None):
         if depth == 0:
-            return self.evaluate(player) + random.uniform(0, 0.01), None
+            return self.evaluate(max_player) + random.uniform(0, 0.01), None
 
         if valid_moves is None:
             valid_moves = game_state.get_valid_moves(player)
 
-        if player == 2:
+        if player == max_player:
             max_eval = float('-inf')
             best_move = None
 
             for move in valid_moves:
                 game_state.make_move(move)
-                eval = self.minimax(game_state, depth - 1, 2, alpha, beta, valid_moves)[0]
+                eval = self.minimax(game_state, depth - 1, max_player, 1, alpha, beta, valid_moves)[0]
                 game_state.undo_move()
 
                 if eval > max_eval:
@@ -219,7 +219,7 @@ class GameAI:
 
             for move in valid_moves:
                 game_state.make_move(move)
-                eval = self.minimax(game_state, depth - 1, 1, alpha, beta, valid_moves)[0]
+                eval = self.minimax(game_state, depth - 1, max_player, 2, alpha, beta, valid_moves)[0]
                 game_state.undo_move()
 
                 if eval < min_eval:
@@ -234,7 +234,7 @@ class GameAI:
 
 
     def get_best_move(self, game_state, depth, player):
-        _, best_move = self.minimax(game_state, depth, player, float('-inf'), float('inf'))
+        _, best_move = self.minimax(game_state, depth, player, player, float('-inf'), float('inf'))
         if best_move is None:
             return None
         return best_move

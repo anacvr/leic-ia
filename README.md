@@ -6,22 +6,33 @@
 
 #### Python **PyGame** library
 
-To develop the game, we opted to use the pygame module. This needs to be installed prior to running the game, in case you don't already have it.
+To develop the game, we opted to use the pygame module.
+This needs to be installed prior to running the game, in case you don't already have it.
 
 ```bash
 pip install pygame
+```
+
+#### Audio Device
+
+This game requires an output audio device because there is music included when the player wins.
+If you are running the game on Windows, you don't need to do anything (and can skip this step).
+If you are running this on ***wsl***, you need to install `pulseaudio`, so the program can access your audio device.
+
+```bash
+sudo apt-get install pulseaudio
 ```
 
 ### Running the Game
 
 From the `terrace` folder, execute:
 
-* Linux
+* on Linux:
 ```bash
 python3 main.py
 ```
 
-* Windows
+* on Windows:
 ```bash
 python main.py
 ```
