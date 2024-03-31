@@ -26,6 +26,9 @@ class GameStateMachine:
 
 def main():
     pygame.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load("resources/victory.mp3")
+
     screen = pygame.display.set_mode((960, 860))
     
     state_machine = GameStateMachine(screen)

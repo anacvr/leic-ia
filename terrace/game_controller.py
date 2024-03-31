@@ -12,8 +12,7 @@ class GameController:
         self.selected_piece = None
         self.pieces = self.model.pieces
         self.state_machine = state_machine
-        pygame.mixer.init()
-        pygame.mixer.music.load("resources/victory.mp3")
+        
 
         self.board_start = self.view.margin
         self.board_end_x = self.view.margin + self.view.board_width

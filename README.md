@@ -4,7 +4,9 @@
 
 ### Dependencies
 
-* Python **PyGame** library
+#### Python **PyGame** library
+
+To develop the game, we opted to use the pygame module. This needs to be installed prior to running the game, in case you don't already have it.
 
 ```bash
 pip install pygame
@@ -14,8 +16,14 @@ pip install pygame
 
 From the `terrace` folder, execute:
 
+* Linux
 ```bash
 python3 main.py
+```
+
+* Windows
+```bash
+python main.py
 ```
 
 ### Checkpoint (11/Março)
@@ -43,11 +51,11 @@ The presentation should contain:
 
 - [x] Criar user input para selecionar e mover peças
 
-- [ ] Criar um menu para poder decidir qual o modo de jogo (player vs player, ai vs ai, ai vs player)
+- [x] Criar um menu para poder decidir qual o modo de jogo (player vs player, ai vs ai, ai vs player)
 
 - [ ] Definir o problema como um search problem para colocar nos slides a entregar no checkpoint
 
-- [ ] Dividir a implementação de AI para o seu próprio ficheiro
+- [x] Dividir a implementação de AI para o seu próprio ficheiro
 
 - [ ] Definir estrutura de dados a usar para o jogo ??
 

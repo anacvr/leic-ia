@@ -183,7 +183,7 @@ class GameModel:
 
     def capture_piece(self, piece):
         if piece in self.pieces:
-            print("Player ", piece.player, " captured a piece!")
+            print("A piece from Player ", piece.player, " was captured!")
             self.pieces.remove(piece)
 
     

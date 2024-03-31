@@ -93,9 +93,9 @@ class GameState:
                             valid_moves.append((piece, (i, j)))
 
         # Print the valid moves in a readable format
-        print("Valid Moves:")
+        """ print("Valid Moves:")
         for move in valid_moves:
-            print(move[0], move[1])
+            print(move[0], move[1]) """
             
         
         return valid_moves
