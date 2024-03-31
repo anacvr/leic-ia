@@ -32,7 +32,7 @@ class GameView:
         """
         return (x - self.margin) // 100, (y - self.margin) // 100
 
-    def draw(self):
+    def draw(self, turn):
         # Fill the window with white
         self.window.fill((255, 255, 255))
 
@@ -68,6 +68,9 @@ class GameView:
         # Draw the legend
         self.draw_legend()
 
+        # Draw Player's Turn text
+        self.draw_turn(turn)
+
         # Update the display
         pygame.display.update()
 
@@ -93,6 +96,29 @@ class GameView:
             pygame.draw.rect(self.window, color, (self.window_width - 40, 80 + i*40, 30, 30))
             text = legend_font.render(f"Step {i+1}", True, (0, 0, 0))  #F-strings to format the string the right way
             self.window.blit(text, (self.window_width - 100, 80 + i*40))
+
+    def draw_turn(self, turn):
+        if turn is None:
+            pass
+
+        # Define font
+        turn_font = pygame.font.Font(None, 26)
+
+        # Define player
+        if(turn == 1):
+            player = "Black"
+        else:
+            player = "White"
+
+        # Define text
+        turn_string = player + "'s"
+        turn_text = turn_font.render(turn_string, True, (0, 0, 0))
+        turn_text2 = turn_font.render("turn", True, (0, 0, 0))
+
+        # Render text
+        self.window.blit(turn_text, (self.window_width - 100, 600))
+        self.window.blit(turn_text2, (self.window_width - 100, 620))
+
 
     def blink_piece(self, x, y):
         self.blink_piece_pos = (x, y)

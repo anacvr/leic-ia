@@ -2,7 +2,6 @@ import pygame
 import sys
 from game_model import GameModel
 from game_view import GameView
-from game_state import GameState
 
 class GameController:
     def __init__(self, game_mode, state_machine):
@@ -118,7 +117,7 @@ class GameController:
                 if not self.check_game_over():
                     return
                 self.turn = 2 if self.turn == 1 else 1
-            self.view.draw()
+            self.view.draw(self.turn)
     
     def reset_game(self):
         self.model = GameModel()
