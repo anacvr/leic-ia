@@ -242,6 +242,12 @@ class GameModel:
 
         if best_move is not None:
             piece, (x, y) = best_move
+            # Check if the move is a capturing move
+            if self.is_capturing_move(piece, x, y):
+                # If it is, capture the piece at the target location
+                target_piece = self.get_piece(x, y)
+                self.capture_piece(target_piece)
+            # Then move the piece
             piece.move(x, y)
         else:
             print("AI has no valid moves!")

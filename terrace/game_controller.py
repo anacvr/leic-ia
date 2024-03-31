@@ -72,6 +72,7 @@ class GameController:
             self.turn = 2 if self.turn == 1 else 1
             
             # Check if the game is over
+            self.view.draw(self.turn)
             game_over = self.check_game_over()
             self.selected_piece = None
             return game_over
