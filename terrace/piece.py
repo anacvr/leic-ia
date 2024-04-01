@@ -6,7 +6,18 @@ class Piece:
         self.type = type
         self.x = x
         self.y = y
+
+        self.prev_x = None
+        self.prev_y = None
+
+        self.isTpiece = False
+
         self.margin = 30
+
+        # Check if the piece is a T piece
+        if self.type == 1 and (self.x == 0 or self.x == 7) and (self.y == 0 or self.y == 7):
+            self.isTpiece = True
+            self.type = 1
 
         # Piece border colors and sizes for each type
         self.piecesColors = [(255, 0, 0), (0, 0, 255), (0, 255, 0), (255, 255, 0)]
@@ -28,7 +39,9 @@ class Piece:
         
         self.imt_white = pygame.image.load('resources/t-white.png')
         self.imt_white = pygame.transform.scale(self.imt_white, (50, 50))
-        
+
+    def __str__(self):
+        return f"Piece(player={self.player}, type={self.type}, x={self.x}, y={self.y})"  
 
     def draw(self, window):
         
@@ -38,15 +51,26 @@ class Piece:
         pygame.draw.circle(window, self.color, pos, self.size)
         
         # White piece - black T
-        if self.x == 7 and self.y == 0:
+        if self.isTpiece and self.player == 2:
             window.blit(self.imt_black, (pos[0] - self.imt_black.get_width() // 2, pos[1] - self.imt_black.get_height() // 2))
 
         # Black piece - white T
-        if self.x == 0 and self.y == 7:
+        if self.isTpiece and self.player == 1:
             window.blit(self.imt_white, (pos[0] - self.imt_white.get_width() // 2, pos[1] - self.imt_white.get_height() // 2))
 
 
     def move(self, x, y):
+        self.prev_x = self.x
+        self.prev_y = self.y
         self.x = x
         self.y = y
+        
+    def return_to_prev_position(self):
+        if self.prev_x is None or self.prev_y is None:
+            return
+        
+        self.x = self.prev_x
+        self.y = self.prev_y
+        self.prev_x = None
+        self.prev_y = None
         
