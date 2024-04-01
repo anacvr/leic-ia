@@ -27,13 +27,16 @@ class GameController:
     def handle_event(self, event, turn):
         if event.type == pygame.QUIT:
             self.quit_game()
+
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 self.state_machine.change_state("menu")
                 return False
+            
         elif event.type == pygame.MOUSEBUTTONDOWN:
             x, y = pygame.mouse.get_pos()
             return self.handle_click(x, y, turn)
+        
         return "game"
     
     def handle_click(self, x, y, turn):
@@ -82,10 +85,11 @@ class GameController:
         return True
     
     def check_game_over(self):
-        state = GameModel.is_game_over(self)
-        if(state == True):
+        winner = self.model.is_game_over()
+        if winner is not None:
             pygame.mixer.music.play(loops=-1)
-            action = self.view.winnerPopUp("Congratulations!")
+            action = self.view.winnerPopUp(winner)
+
             if action == "play":
                 self.reset_game()
                 pygame.mixer.music.stop()
@@ -103,6 +107,7 @@ class GameController:
                 for event in pygame.event.get():
                     if not self.handle_event(event, self.turn):
                         return
+                    
             elif self.game_mode == "ai":
                 if self.turn == 1:
                     for event in pygame.event.get():
@@ -114,12 +119,14 @@ class GameController:
                     if not self.check_game_over():
                         return
                     self.turn = 1
+
             elif self.game_mode == "ai2":
                 self.model.ai_move(self.turn)
                 self.view.draw(self.turn)
                 if not self.check_game_over():
                     return
                 self.turn = 2 if self.turn == 1 else 1
+                
             self.view.draw(self.turn)
     
     def reset_game(self):

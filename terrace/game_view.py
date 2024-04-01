@@ -5,7 +5,7 @@ class GameView:
     def __init__(self, model):
         self.model = model
         self.bg = pygame.image.load("resources/terrace_bk.png")
-        self.menu_font = pygame.font.Font("resources/font.ttf", 100)
+        self.menu_font = pygame.font.Font("resources/font.ttf", 80)
         pygame.init()
 
         self.window_height = 860
@@ -124,13 +124,9 @@ class GameView:
         self.blink_piece_pos = (x, y)
         self.blink_start_time = pygame.time.get_ticks()
 
-    def draw_victory(self, winner):
+    def draw_victory_menu(self):
         
-        menu_text = self.menu_font.render( winner, True, "#1E2345")
-        menu_rect = menu_text.get_rect(center=(480, 200))
-        self.window.blit(menu_text, menu_rect)
-
-        play_button = Button(image=pygame.image.load("resources/rect_menu.png"), pos=(480, 350),
+        play_button = Button(image=pygame.image.load("resources/rect_menu.png"), pos=(480, 500),
                              text_input="PLAY AGAIN", font=pygame.font.Font("resources/font.ttf", 75),
                              base_color="#85BEE4", hovering_color="White")
         mainmenu_button = Button(image=pygame.image.load("resources/rect_menu.png"), pos=(480, 650),
@@ -144,22 +140,42 @@ class GameView:
         return play_button, mainmenu_button
     
     def winnerPopUp(self, winner):
+
+        # Define the winner color and message
+        winner_color = "Black" if winner == 1 else "White"
+        congrats_msg = f" Congratulations! "
+        winner_msg = f" {winner_color} wins! "
+
+        # Render the text
+        congrats_msg = self.menu_font.render(congrats_msg, True, "#1E2345", "#85BEE4")
+        winner_msg = self.menu_font.render(winner_msg, True, "#1E2345", "#85BEE4")
+
+        # Get the background for the text
+        congrats_rect = congrats_msg.get_rect(center=(480, 200))
+        winner_rect = winner_msg.get_rect(center=(480, 300))
+        
         while True:
-            play_button, mainmenu_button = self.draw_victory(winner)
+            self.window.blit(congrats_msg, congrats_rect)
+            self.window.blit(winner_msg, winner_rect)
+
+            play_button, mainmenu_button = self.draw_victory_menu()
             menu_mouse_pos = pygame.mouse.get_pos()
 
             for event in pygame.event.get():
+                # TODO: This doesn't work - self.sys doesn't exist in this file
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     self.sys.exit()
 
+                if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                    return "menu"
+                
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if play_button.checkForInput(menu_mouse_pos):
                         return "play"
 
                     if mainmenu_button.checkForInput(menu_mouse_pos):
                         return "menu"
-
 
             pygame.display.update()
 

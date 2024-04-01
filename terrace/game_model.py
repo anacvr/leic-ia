@@ -1,4 +1,3 @@
-from piece import Piece
 from game_ai import GameAI
 from game_state import GameState
 
@@ -198,9 +197,8 @@ class GameModel:
     def is_game_over(self):
         """
         Check if the game is over.
-        This function should return True if the game is over, False otherwise.
+        This function should return the winning player's number if the game is over, None otherwise.
         """
-        # TODO: Check if there are no more valid moves for the current player
 
         # Case 1: The game is over if a T piece is eaten
         # Assume both T pieces are dead
@@ -215,24 +213,27 @@ class GameModel:
             elif piece.isTpiece and piece.player == 2:
                 t2dead = False
 
-        if t1dead == True or t2dead == True:
-            #print("Game Over: T piece eaten!")
-            return True
-        
+        if t1dead == True:
+            # Player 2 wins because Player 1's T piece is eaten
+            return 2
+        elif t2dead == True:
+            # Player 1 wins because Player 2's T piece is eaten
+            return 1
+
         # Case 2: The game is over if a T piece reaches the opposite end
         for piece in self.pieces:
             if piece.isTpiece and piece.player == 1:
                 if piece.x == 7 and piece.y == 0:
-                    #print("Game Over: T piece reached the opposite end!")
-                    return True
-                
+                    # Player 1 wins because their T piece reached the opposite end
+                    return 1
+
             elif piece.isTpiece and piece.player == 2:
                 if piece.x == 0 and piece.y == 7:
-                    #print("Game Over: T piece reached the opposite end!")
-                    return True
+                    # Player 2 wins because their T piece reached the opposite end
+                    return 2
 
-        
-        return False
+        # The game is not over
+        return None
                 
                 
     def ai_move(self, player):

@@ -75,6 +75,20 @@ class GameAI:
                 count += 1
 
         return count
+    
+    def heuristic_player_win(self, player):
+        """
+        The score is + infinity if the player wins the game.
+        """
+
+        if self.game_model.is_game_over():
+            if player == 1:
+                return float('inf')
+            else:
+                return float('-inf')
+        
+        return 0
+
 
 
     def heuristic1(self, player):
@@ -86,14 +100,8 @@ class GameAI:
         score = 14 # maximum distance between the T piece and the goal
         
         distance = self.calc_T_distance_to_goal(player)
-
-        if distance == -1:
-            #print("Error Calculating T distance to goal")
-            return 0
         
         score -= distance
-
-        # print("Heuristic 1 Score:", score)
 
         return score * 10
 
@@ -109,8 +117,6 @@ class GameAI:
         n_opp_on_radius = self.check_T_radius(player)
         score -= n_opp_on_radius
 
-        # print("Heuristic 2 Score:", score)
-
         return score * 2
 
     def heuristic3(self, player):
@@ -119,17 +125,14 @@ class GameAI:
             The score of the player increases immensely when it captures the opponent's T piece.
         """
 
-        score = 0
+        score = 1000
 
         # Find T piece of the player
         for piece in self.pieces:
             if piece.isTpiece and piece.player != player:
-                return score
+                return -10000
 
-        # If T piece is not found, score increases
-        score = 1
-
-        return score * 10000
+        return score
     
     def heuristic4(self, player):
         """
@@ -152,7 +155,6 @@ class GameAI:
         """
         Heuristic 5:
             The score decreases immensely if the player's T piece can be eaten in the next move.
-            TODO: NOT WORKING!!! THIS HEURISTIC NEVER PRINTS THE WARNING IF THE PIECE IS BEING THREATENED WHYYYYYYY
         """
         score = 0
 
@@ -170,19 +172,41 @@ class GameAI:
                     score = -10000
                     break
         
-        if score < 0:
-            #print("T-piece of player " + str(player) + " is being threatened!")
-            pass
         return score
-    
 
+    def heuristic6(self, player):
+        """
+        Heuristic 6:
+            The score increases immensely if the AI can eat the opponent's T piece in the next move.
+        """
+        score = 10000  # High score to prioritize eating the opponent's T piece
 
+        # Find the opponent's T piece
+        opponent_T_piece = None
+        for piece in self.pieces:
+            if piece.isTpiece and piece.player != player:
+                opponent_T_piece = piece
+                break
+
+        # If the opponent's T piece is not found, return 0
+        if opponent_T_piece is None:
+            return 0
+
+        # Iterate over all pieces of the AI
+        for piece in self.pieces:
+            if piece.player == player:
+                # Check if the AI's piece can eat the opponent's T piece in the next move
+                if self.game_model.is_cell_lower(piece.x, piece.y, opponent_T_piece.x, opponent_T_piece.y) and \
+                self.game_model.is_cell_diagonally_adjacent(piece.x, piece.y, opponent_T_piece.x, opponent_T_piece.y):
+                    return score  # Return the high score if the AI can eat the opponent's T piece
+
+        return 0  # Return 0 if the AI cannot eat the opponent's T piece in the next move
 
     def evaluate(self, player):
         """
         Evaluate the current game state and return a score.
         """
-        eval = self.heuristic1(player) + self.heuristic2(player) + self.heuristic4(player) + self.heuristic5(player)
+        eval = self.heuristic1(player) + self.heuristic2(player) + self.heuristic4(player) + self.heuristic5(player) + self.heuristic6(player)
 
         #print("Evaluation of the move: " + str(eval))
         return eval
