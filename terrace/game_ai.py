@@ -97,18 +97,25 @@ class GameAI:
         score = 8 - self.check_T_radius(game_state, player)
         return score * 2
 
-    def heuristic3(self, game_state, player):
+    def heuristic3(self, game_state, player, valid_moves):
         """
         Heuristic 3:
             The score of the player increases immensely when it captures the opponent's T piece.
         """
 
-        score = 1000
+        score = 0
 
         # Find T piece of the player
         for piece in game_state.pieces:
             if piece.isTpiece and piece.player != player:
-                return -10000
+                goal_x = piece.x
+                goal_y = piece.y
+
+        for move in valid_moves:
+            piece, (x,y) = move
+            if (x, y) == (goal_x, goal_y):
+                score = 100000
+                
 
         return score
     
@@ -181,7 +188,7 @@ class GameAI:
         # Return 0 if the AI cannot eat the opponent's T piece in the next move
         return 0
 
-    def evaluate(self, game_state, player):
+    def evaluate(self, game_state, player, valid_moves):
         """
         Evaluate the current game state and return a score.
         """
@@ -192,14 +199,14 @@ class GameAI:
             score = (
                 self.heuristic1(game_state, player) +  # Distance to goal
                 self.heuristic2(game_state, player) +  # Number of opponent pieces around T piece
-                self.heuristic3(game_state, player) +  # Capture opponent's T piece
+                self.heuristic3(game_state, player, valid_moves) +  # Capture opponent's T piece
                 self.heuristic4(game_state, player)    # Number and size of opponent pieces
             )
             
         if self.depth == 4:
             score = (
                 self.heuristic1(game_state, player) +  # Distance to goal
-                self.heuristic3(game_state, player) +  # Capture opponent's T piece
+                self.heuristic3(game_state, player, valid_moves) +  # Capture opponent's T piece
                 self.heuristic4(game_state, player) +  # Number and size of opponent pieces
                 self.heuristic5(game_state, player) +  # Threat to player's T piece
                 self.heuristic6(game_state, player)    # Opportunity to capture opponent's T piece
@@ -215,7 +222,8 @@ class GameAI:
 
     def minimax(self, game_state, depth, max_player, player, alpha, beta, valid_moves=None):
         if depth == 0:
-            return self.evaluate(game_state, max_player) + random.uniform(0, 0.01), None
+
+            return self.evaluate(game_state, max_player, valid_moves) + random.uniform(0, 0.01), None
         
         # Check if this is a terminal state
         winner = self.game_model.is_game_over(game_state)
@@ -243,6 +251,7 @@ class GameAI:
                 if beta <= alpha:
                     break
 
+            peça, (x,y) = best_move                
             return max_eval, best_move
 
         else:
