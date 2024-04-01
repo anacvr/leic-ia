@@ -11,7 +11,7 @@ class Menu:
     def __init__(self, screen, state_machine):
         self.screen = screen
         self.state_machine = state_machine
-        self.model = GameModel()
+        self.model = GameModel(2)
         self.view = GameView(self.model)
         
         #Bakground image and font for menu
@@ -31,8 +31,9 @@ class Menu:
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if play_button.checkForInput(menu_mouse_pos):
-                        game_mode = self.play_menu()
-                        game_controller = GameController(game_mode, self.state_machine)
+                        game_mode, level = self.play_menu()
+                        depth = {"easy": 2, "medium": 3, "hard": 4}.get(level, 2)
+                        game_controller = GameController(game_mode, self.state_machine, depth)
                         if game_mode == "human":
                             game_controller.run()
                         elif game_mode == "ai":
@@ -54,6 +55,33 @@ class Menu:
 
             pygame.display.update()
             
+            
+    def level_menu(self):
+        while True:
+            easy_button, medium_button, hard_button = self.view.draw_level_menu()
+            menu_mouse_pos = pygame.mouse.get_pos()
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if easy_button.checkForInput(menu_mouse_pos):
+                        return "easy"
+
+                    if medium_button.checkForInput(menu_mouse_pos):
+                        return "medium"
+
+                    if hard_button.checkForInput(menu_mouse_pos):
+                        return "hard"
+                    
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        self.main_menu()
+
+            pygame.display.update()
+            
     
     def play_menu(self):
         while True:
@@ -67,13 +95,15 @@ class Menu:
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if human_button.checkForInput(menu_mouse_pos):
-                        return "human"
+                        return "human", None
 
                     if ai_button.checkForInput(menu_mouse_pos):
-                        return "ai"
+                        level = self.level_menu()
+                        return "ai", level
 
                     if ai_button2.checkForInput(menu_mouse_pos):
-                        return "ai2"
+                        level = self.level_menu()
+                        return "ai2", level
                     
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:

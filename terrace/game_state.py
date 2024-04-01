@@ -49,7 +49,6 @@ class GameState:
         new_state.board = [row[:] for row in self.board]
         return new_state
     
-
     def make_move(self, move):
         """
         Apply a move to the game state.
@@ -57,42 +56,25 @@ class GameState:
         """
         
         piece, (x, y) = move
-        #print("Making move", piece, x, y)
+        # Store the original position of the piece
+        original_position = (piece.x, piece.y)
         piece.move(x, y)
 
-        self.moves_history.append(move)
-        #print("Moves History:", self.moves_history)
+        self.moves_history.append((move, original_position))
 
         if self.model.is_capturing_move(piece, x, y):
             target_piece = self.model.get_piece(x, y)
             self.captured_pieces.append((target_piece, (x, y)))
             self.model.capture_piece(target_piece)
 
-    def undo_move(self, move):
+    def undo_move(self):
         """
         Undo a move from the game state.
-        move: A tuple containing the piece to move and the new position
         """
 
-        piece, (x, y) = move
-        #print("Making move", piece, x, y)
-        piece.move(x, y)
+        (piece, (x, y)), (original_x, original_y) = self.moves_history.pop()
+        piece.move(original_x, original_y)
 
-        """ if piece.x == position[0] and piece.y == position[1]:
-            piece.return_to_prev_position()
-        else:
-            print("Invalid move to undo:", move)
-            return
-
-        print("Before undoing move:", self.moves_history)
-
-        for i, move in enumerate(self.moves_history):
-            if move[0] == piece and move[1] == position:
-                del self.moves_history[i]
-                break
-        print("After undoing move:", self.moves_history)
-
-        """
         if self.captured_pieces and self.captured_pieces[-1][1] == (x, y):
             captured_piece, _ = self.captured_pieces.pop()
             self.model.uncapture_piece(captured_piece)
@@ -111,9 +93,9 @@ class GameState:
                             valid_moves.append((piece, (i, j)))
 
         # Print the valid moves in a readable format
-        print("Valid Moves:")
+        """ print("Valid Moves:")
         for move in valid_moves:
-            print(move[0], move[1])
+            print(move[0], move[1]) """
             
         
         return valid_moves

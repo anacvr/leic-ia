@@ -1,14 +1,14 @@
-from piece import Piece
 from game_ai import GameAI
 from game_state import GameState
+import time
 
 class GameModel:
-    def __init__(self):
+    def __init__(self, depth):
         self.game_state = GameState(self)
         self.pieces = self.game_state.pieces
         self.board = self.game_state.board
-        
-        self.ai = GameAI(self)
+        self.depth = depth
+        self.ai = GameAI(self, depth)
 
     # Get the piece at the given board coordinates
     def get_piece(self, x, y):
@@ -183,7 +183,7 @@ class GameModel:
 
     def capture_piece(self, piece):
         if piece in self.pieces:
-            print("Player ", piece.player, " captured a piece!")
+            #print("A piece from Player ", piece.player, " was captured!")
             self.pieces.remove(piece)
 
     
@@ -195,12 +195,11 @@ class GameModel:
         # Add the piece back to the game
         self.pieces.append(piece)
     
-    def is_game_over(self):
+    def is_game_over(self, game_state):
         """
         Check if the game is over.
-        This function should return True if the game is over, False otherwise.
+        This function should return the winning player's number if the game is over, None otherwise.
         """
-        # TODO: Check if there are no more valid moves for the current player
 
         # Case 1: The game is over if a T piece is eaten
         # Assume both T pieces are dead
@@ -208,42 +207,65 @@ class GameModel:
         t2dead = True
 
         # Check if the T pieces are still in the game
-        for piece in self.pieces:
+        for piece in game_state.pieces:
             if piece.isTpiece and piece.player == 1:
                 t1dead = False
 
             elif piece.isTpiece and piece.player == 2:
                 t2dead = False
 
-        if t1dead == True or t2dead == True:
-            print("Game Over: T piece eaten!")
-            return True
-        
+        if t1dead == True:
+            # Player 2 wins because Player 1's T piece is eaten
+            return 2
+        elif t2dead == True:
+            # Player 1 wins because Player 2's T piece is eaten
+            return 1
+
         # Case 2: The game is over if a T piece reaches the opposite end
-        for piece in self.pieces:
+        for piece in game_state.pieces:
             if piece.isTpiece and piece.player == 1:
                 if piece.x == 7 and piece.y == 0:
-                    print("Game Over: T piece reached the opposite end!")
-                    return True
-                
+                    # Player 1 wins because their T piece reached the opposite end
+                    return 1
+
             elif piece.isTpiece and piece.player == 2:
                 if piece.x == 0 and piece.y == 7:
-                    print("Game Over: T piece reached the opposite end!")
-                    return True
+                    # Player 2 wins because their T piece reached the opposite end
+                    return 2
 
-        
-        return False
+        # The game is not over
+        return None
                 
                 
     def ai_move(self, player):
-        
-        # TODO: Implement a way to create future game states and pass them to the evaluation function
-        # We don't want to modify the current game state but we don't have a way to represent states yet
-        
+        # Begin the timer
+        start_time = time.time()
 
-        move = self.ai.get_next_move_minimax(self.game_state, player)
-        
-        self.game_state.make_move(move)
+        best_move = self.ai.get_best_move(self.game_state, self.depth, player)
+
+        # End the timer
+        end_time = time.time()
+        elapsed_time_ms = (end_time - start_time) * 1000
+        print(f"Time taken (ms) AI{player}: {elapsed_time_ms:.3f}")
+
+        if best_move is not None:
+            piece, (x, y) = best_move
+            # Check if the move is a capturing move
+            if self.is_capturing_move(piece, x, y):
+                # If it is, capture the piece at the target location
+                target_piece = self.get_piece(x, y)
+                self.capture_piece(target_piece)
+            # Then move the piece
+            piece.move(x, y)
+
+            # Increment the turn count
+            self.increment_turn_count(player)
+        else:
+            print("AI has no valid moves!")
 
 
-        pass
+    def increment_turn_count(self, player):
+        if player == 1:
+            self.ai.turn_count_1 += 1
+        else:
+            self.ai.turn_count_2 += 1

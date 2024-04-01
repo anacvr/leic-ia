@@ -4,18 +4,37 @@
 
 ### Dependencies
 
-* Python **PyGame** library
+#### Python **PyGame** library
+
+To develop the game, we opted to use the pygame module.
+This needs to be installed prior to running the game, in case you don't already have it.
 
 ```bash
 pip install pygame
+```
+
+#### Audio Device
+
+This game requires an output audio device because there is music included when the player wins.
+If you are running the game on Windows, you don't need to do anything (and can skip this step).
+If you are running this on ***wsl***, you need to install `pulseaudio`, so the program can access your audio device.
+
+```bash
+sudo apt-get install pulseaudio
 ```
 
 ### Running the Game
 
 From the `terrace` folder, execute:
 
+* on Linux:
 ```bash
 python3 main.py
+```
+
+* on Windows:
+```bash
+python main.py
 ```
 
 ### Checkpoint (11/Março)
@@ -43,11 +62,11 @@ The presentation should contain:
 
 - [x] Criar user input para selecionar e mover peças
 
-- [ ] Criar um menu para poder decidir qual o modo de jogo (player vs player, ai vs ai, ai vs player)
+- [x] Criar um menu para poder decidir qual o modo de jogo (player vs player, ai vs ai, ai vs player)
 
 - [ ] Definir o problema como um search problem para colocar nos slides a entregar no checkpoint
 
-- [ ] Dividir a implementação de AI para o seu próprio ficheiro
+- [x] Dividir a implementação de AI para o seu próprio ficheiro
 
 - [ ] Definir estrutura de dados a usar para o jogo ??
 
