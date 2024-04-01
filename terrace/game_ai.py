@@ -6,6 +6,8 @@ class GameAI:
         self.game_model = game_model
         self.pieces = game_model.pieces
         self.depth = depth
+        self.turn_count_1 = 0
+        self.turn_count_2 = 0
 
     # TODO: function to determine the distance between the T piece and a piece from the opponent 
     #       - check if the T piece is on a lower diagonal cell

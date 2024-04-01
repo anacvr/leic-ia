@@ -84,9 +84,17 @@ class GameController:
         self.selected_piece = None
         return True
     
+    def print_results_to_console(self, winner):
+        print("\nFINAL STATISTICS:\n")
+        print("Winner: ", winner)
+        print("Player 1 moves: ", self.model.ai.turn_count_1)
+        print("Player 2 moves: ", self.model.ai.turn_count_2)
+    
     def check_game_over(self):
         winner = self.model.is_game_over(self.game_state)
         if winner is not None:
+            self.print_results_to_console(winner)
+            
             pygame.mixer.music.play(loops=-1)
             action = self.view.winnerPopUp(winner)
 

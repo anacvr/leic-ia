@@ -1,5 +1,6 @@
 from game_ai import GameAI
 from game_state import GameState
+import time
 
 class GameModel:
     def __init__(self, depth):
@@ -237,7 +238,15 @@ class GameModel:
                 
                 
     def ai_move(self, player):
+        # Begin the timer
+        start_time = time.time()
+
         best_move = self.ai.get_best_move(self.game_state, self.depth, player)
+
+        # End the timer
+        end_time = time.time()
+        elapsed_time_ms = (end_time - start_time) * 1000
+        print(f"Time taken (ms) AI{player}: {elapsed_time_ms:.3f}")
 
         if best_move is not None:
             piece, (x, y) = best_move
@@ -248,5 +257,15 @@ class GameModel:
                 self.capture_piece(target_piece)
             # Then move the piece
             piece.move(x, y)
+
+            # Increment the turn count
+            self.increment_turn_count(player)
         else:
             print("AI has no valid moves!")
+
+
+    def increment_turn_count(self, player):
+        if player == 1:
+            self.ai.turn_count_1 += 1
+        else:
+            self.ai.turn_count_2 += 1
