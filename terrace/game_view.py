@@ -271,3 +271,28 @@ class GameView:
             button.update(self.window)
 
         return human_button, ai_button, ai_button2
+    
+    # Create options for different levels
+    def draw_level_menu(self):
+        self.window.blit(self.bg, (0, 0))
+        
+        menu_text = self.menu_font.render("CHOOSE DIFICULTY", True, "#1E2345")
+        menu_rect = menu_text.get_rect(center=(480, 200))
+        self.window.blit(menu_text, menu_rect)
+
+        #Buttons for easy, medium, and hard
+        easy_button = Button(image=pygame.image.load("resources/rect_menu.png"), pos=(470, 350),
+                             text_input="EASY", font=pygame.font.Font("resources/font.ttf", 75),
+                             base_color="#85BEE4", hovering_color="White")
+        medium_button = Button(image=pygame.image.load("resources/rect_menu.png"), pos=(470, 500),
+                             text_input="MEDIUM", font=pygame.font.Font("resources/font.ttf", 75),
+                             base_color="#85BEE4", hovering_color="White")
+        hard_button = Button(image=pygame.image.load("resources/rect_menu.png"), pos=(470, 650),
+                             text_input="HARD", font=pygame.font.Font("resources/font.ttf", 75),
+                             base_color="#85BEE4", hovering_color="White")
+
+        for button in [easy_button, medium_button, hard_button]:
+            button.changeColor(pygame.mouse.get_pos())
+            button.update(self.window)
+
+        return easy_button, medium_button, hard_button

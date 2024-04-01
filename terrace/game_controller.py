@@ -4,14 +4,14 @@ from game_model import GameModel
 from game_view import GameView
 
 class GameController:
-    def __init__(self, game_mode, state_machine):
-        self.model = GameModel()
+    def __init__(self, game_mode, state_machine, depth):
+        self.model = GameModel(depth)
         self.view = GameView(self.model)
         self.game_state = self.model.game_state
         self.selected_piece = None
         self.pieces = self.model.pieces
         self.state_machine = state_machine
-        
+
 
         self.board_start = self.view.margin
         self.board_end_x = self.view.margin + self.view.board_width
@@ -130,7 +130,7 @@ class GameController:
             self.view.draw(self.turn)
     
     def reset_game(self):
-        self.model = GameModel()
+        self.model = GameModel(self.model.depth)
         self.view = GameView(self.model)
         self.selected_piece = None
         self.game_state = self.model.game_state

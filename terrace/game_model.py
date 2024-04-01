@@ -2,12 +2,12 @@ from game_ai import GameAI
 from game_state import GameState
 
 class GameModel:
-    def __init__(self):
+    def __init__(self, depth):
         self.game_state = GameState(self)
         self.pieces = self.game_state.pieces
         self.board = self.game_state.board
-        
-        self.ai = GameAI(self)
+        self.depth = depth
+        self.ai = GameAI(self, depth)
 
     # Get the piece at the given board coordinates
     def get_piece(self, x, y):
@@ -237,9 +237,7 @@ class GameModel:
                 
                 
     def ai_move(self, player):
-        depth = 5
-
-        best_move = self.ai.get_best_move(self.game_state, depth, player)
+        best_move = self.ai.get_best_move(self.game_state, self.depth, player)
 
         if best_move is not None:
             piece, (x, y) = best_move

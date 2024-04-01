@@ -2,9 +2,10 @@ import random
 
 
 class GameAI:
-    def __init__(self, game_model):
+    def __init__(self, game_model, depth):
         self.game_model = game_model
         self.pieces = game_model.pieces
+        self.depth = depth
 
     # TODO: function to determine the distance between the T piece and a piece from the opponent 
     #       - check if the T piece is on a lower diagonal cell
@@ -184,13 +185,25 @@ class GameAI:
         """
         Evaluate the current game state and return a score.
         """
-        score = (
-            self.heuristic1(game_state, player) +  # Distance to goal
-            self.heuristic3(game_state, player) +  # Capture opponent's T piece
-            self.heuristic4(game_state, player) +  # Number and size of opponent pieces
-            self.heuristic5(game_state, player) +  # Threat to player's T piece
-            self.heuristic6(game_state, player)    # Opportunity to capture opponent's T piece
-        )
+        if self.depth == 2:
+            score = self.heuristic1(game_state, player) + self.heuristic2(game_state, player)
+            
+        if self.depth == 3:
+            score = (
+                self.heuristic1(game_state, player) +  # Distance to goal
+                self.heuristic2(game_state, player) +  # Number of opponent pieces around T piece
+                self.heuristic3(game_state, player) +  # Capture opponent's T piece
+                self.heuristic4(game_state, player)    # Number and size of opponent pieces
+            )
+            
+        if self.depth == 4:
+            score = (
+                self.heuristic1(game_state, player) +  # Distance to goal
+                self.heuristic3(game_state, player) +  # Capture opponent's T piece
+                self.heuristic4(game_state, player) +  # Number and size of opponent pieces
+                self.heuristic5(game_state, player) +  # Threat to player's T piece
+                self.heuristic6(game_state, player)    # Opportunity to capture opponent's T piece
+            )
 
         return score
     

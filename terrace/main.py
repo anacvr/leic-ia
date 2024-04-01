@@ -7,7 +7,7 @@ class GameStateMachine:
         self.screen = screen
         self.current_state = "menu"
         self.menu = Menu(screen, self)
-        self.game_controller = GameController("human", self)
+        self.game_controller = GameController("human", self, 2)
 
     def handle_event(self, event):
         if self.current_state == "menu":
