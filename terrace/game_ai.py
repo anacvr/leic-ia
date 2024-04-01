@@ -254,6 +254,4 @@ class GameAI:
 
     def get_best_move(self, game_state, depth, player):
         _, best_move = self.minimax(game_state, depth, player, player, float('-inf'), float('inf'))
-        if best_move is None:
-            return None
         return best_move
