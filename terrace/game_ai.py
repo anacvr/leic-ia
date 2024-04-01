@@ -96,18 +96,28 @@ class GameAI:
         score = 8 - self.check_T_radius(game_state, player)
         return score * 2
 
-    def heuristic3(self, game_state, player):
+    def heuristic3(self, game_state, player, valid_moves):
         """
         Heuristic 3:
             The score of the player increases immensely when it captures the opponent's T piece.
         """
 
-        score = 1000
+        score = 0
 
         # Find T piece of the player
         for piece in game_state.pieces:
             if piece.isTpiece and piece.player != player:
-                return -10000
+                goal_x = piece.x
+                goal_y = piece.y
+        print("objective")
+        print((goal_x, goal_y))
+        print("-------------------")
+        for move in valid_moves:
+            piece, (x,y) = move
+            print((x,y))
+            if (x, y) == (goal_x, goal_y):
+                score = float('inf')
+                
 
         return score
     
@@ -180,34 +190,36 @@ class GameAI:
         # Return 0 if the AI cannot eat the opponent's T piece in the next move
         return 0
 
-    def evaluate(self, game_state, player):
+    def evaluate(self, game_state, player, valid_moves):
         """
         Evaluate the current game state and return a score.
         """
         score = (
             self.heuristic1(game_state, player) +  # Distance to goal
-            self.heuristic3(game_state, player) +  # Capture opponent's T piece
+            self.heuristic3(game_state, player, valid_moves) +  # Capture opponent's T piece
             self.heuristic4(game_state, player) +  # Number and size of opponent pieces
             self.heuristic5(game_state, player) +  # Threat to player's T piece
             self.heuristic6(game_state, player)    # Opportunity to capture opponent's T piece
         )
-
+        #print("move score")
+        #print(score)
         return score
     
-    def eval_terminal_state(self, player, winner):
+    """def eval_terminal_state(self, player, winner):
         if player == winner:
             return float('inf')
         else:
-            return float('-inf')
+            return float('-inf')"""
 
     def minimax(self, game_state, depth, max_player, player, alpha, beta, valid_moves=None):
         if depth == 0:
-            return self.evaluate(game_state, max_player) + random.uniform(0, 0.01), None
+
+            return self.evaluate(game_state, max_player, valid_moves) + random.uniform(0, 0.01), None
         
-        # Check if this is a terminal state
+        """# Check if this is a terminal state
         winner = self.game_model.is_game_over(game_state)
         if winner is not None:
-            return self.eval_terminal_state(max_player, winner), None
+            return self.eval_terminal_state(max_player, winner), None"""
             
 
         if valid_moves is None:
@@ -229,7 +241,9 @@ class GameAI:
                 alpha = max(alpha, eval)
                 if beta <= alpha:
                     break
-
+            print("best move")
+            peça, (x,y) = best_move
+            print (x,y)                
             return max_eval, best_move
 
         else:
