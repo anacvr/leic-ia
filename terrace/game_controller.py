@@ -133,4 +133,5 @@ class GameController:
         self.model = GameModel()
         self.view = GameView(self.model)
         self.selected_piece = None
+        self.game_state = self.model.game_state
         self.pieces = self.model.pieces
