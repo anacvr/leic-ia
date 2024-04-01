@@ -24,7 +24,7 @@ class GameController:
         pygame.quit()
         sys.exit()
         
-    def handle_event(self, event, turn):
+    def handle_event(self, event):
         if event.type == pygame.QUIT:
             self.quit_game()
 
@@ -35,11 +35,11 @@ class GameController:
             
         elif event.type == pygame.MOUSEBUTTONDOWN:
             x, y = pygame.mouse.get_pos()
-            return self.handle_click(x, y, turn)
+            return self.handle_click(x, y)
         
         return "game"
     
-    def handle_click(self, x, y, turn):
+    def handle_click(self, x, y):
         # Check if the click is outside the board area
         if x < self.board_start or x > self.board_end_x or y < self.board_start or y > self.board_end_y:
             return True
@@ -53,11 +53,11 @@ class GameController:
             self.view.blink_piece(x, y)
             self.selected_piece = piece
         else:
-            return self.handle_move(self.selected_piece, x, y, turn)
+            return self.handle_move(self.selected_piece, x, y)
         
         return True
     
-    def handle_move(self, piece, x, y, turn):
+    def handle_move(self, piece, x, y):
         self.view.blink = False
         self.view.blink_piece_pos = None
         
@@ -105,13 +105,13 @@ class GameController:
         while True:
             if self.game_mode == "human":
                 for event in pygame.event.get():
-                    if not self.handle_event(event, self.turn):
+                    if not self.handle_event(event):
                         return
                     
             elif self.game_mode == "ai":
                 if self.turn == 1:
                     for event in pygame.event.get():
-                        if not self.handle_event(event, self.turn):
+                        if not self.handle_event(event):
                             return
                 else:
                     self.model.ai_move(2)
