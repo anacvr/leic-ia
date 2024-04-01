@@ -85,7 +85,7 @@ class GameController:
         return True
     
     def check_game_over(self):
-        winner = self.model.is_game_over()
+        winner = self.model.is_game_over(self.game_state)
         if winner is not None:
             pygame.mixer.music.play(loops=-1)
             action = self.view.winnerPopUp(winner)
@@ -126,7 +126,7 @@ class GameController:
                 if not self.check_game_over():
                     return
                 self.turn = 2 if self.turn == 1 else 1
-                
+
             self.view.draw(self.turn)
     
     def reset_game(self):

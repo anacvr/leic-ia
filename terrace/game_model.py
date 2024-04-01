@@ -194,7 +194,7 @@ class GameModel:
         # Add the piece back to the game
         self.pieces.append(piece)
     
-    def is_game_over(self):
+    def is_game_over(self, game_state):
         """
         Check if the game is over.
         This function should return the winning player's number if the game is over, None otherwise.
@@ -206,7 +206,7 @@ class GameModel:
         t2dead = True
 
         # Check if the T pieces are still in the game
-        for piece in self.pieces:
+        for piece in game_state.pieces:
             if piece.isTpiece and piece.player == 1:
                 t1dead = False
 
@@ -221,7 +221,7 @@ class GameModel:
             return 1
 
         # Case 2: The game is over if a T piece reaches the opposite end
-        for piece in self.pieces:
+        for piece in game_state.pieces:
             if piece.isTpiece and piece.player == 1:
                 if piece.x == 7 and piece.y == 0:
                     # Player 1 wins because their T piece reached the opposite end

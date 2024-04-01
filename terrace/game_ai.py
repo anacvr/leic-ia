@@ -179,7 +179,7 @@ class GameAI:
         Heuristic 6:
             The score increases immensely if the AI can eat the opponent's T piece in the next move.
         """
-        score = 10000  # High score to prioritize eating the opponent's T piece
+        score = 10000
 
         # Find the opponent's T piece
         opponent_T_piece = None
@@ -198,9 +198,10 @@ class GameAI:
                 # Check if the AI's piece can eat the opponent's T piece in the next move
                 if self.game_model.is_cell_lower(piece.x, piece.y, opponent_T_piece.x, opponent_T_piece.y) and \
                 self.game_model.is_cell_diagonally_adjacent(piece.x, piece.y, opponent_T_piece.x, opponent_T_piece.y):
-                    return score  # Return the high score if the AI can eat the opponent's T piece
+                    return score
 
-        return 0  # Return 0 if the AI cannot eat the opponent's T piece in the next move
+        # Return 0 if the AI cannot eat the opponent's T piece in the next move
+        return 0
 
     def evaluate(self, player):
         """
@@ -211,10 +212,21 @@ class GameAI:
         #print("Evaluation of the move: " + str(eval))
         return eval
     
+    def eval_terminal_state(self, player, winner):
+        if player == winner:
+            return float('inf')
+        else:
+            return float('-inf')
 
     def minimax(self, game_state, depth, max_player, player, alpha, beta, valid_moves=None):
         if depth == 0:
             return self.evaluate(max_player) + random.uniform(0, 0.01), None
+        
+        # Check if this is a terminal state
+        winner = self.game_model.is_game_over(game_state)
+        if winner is not None:
+            return self.eval_terminal_state(max_player, winner), None
+            
 
         if valid_moves is None:
             valid_moves = game_state.get_valid_moves(player)
