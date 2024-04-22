@@ -1,0 +1,1055 @@
+A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,Age_Mons,Qchat-10-Score,Sex,Ethnicity,Jaundice,Family_mem_with_ASD,Who completed the test,Class/ASD Traits
+0,0,0,0,0,0,1,1,0,1,28,3,f,middle eastern,yes,no,family member,no
+1,1,0,0,0,1,1,0,0,0,36,4,m,white european,yes,no,family member,yes
+1,0,0,0,0,0,1,1,0,1,36,4,m,middle eastern,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,24,10,m,hispanic,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,1,20,9,f,white european,no,yes,family member,yes
+1,1,0,0,1,1,1,1,1,1,21,8,m,black,no,no,family member,yes
+1,0,0,1,1,1,0,0,1,0,33,5,m,asian,yes,no,family member,yes
+0,1,0,0,1,0,1,1,1,1,33,6,m,asian,yes,no,family member,yes
+0,0,0,0,0,0,1,0,0,1,36,2,m,asian,no,no,family member,no
+1,1,1,0,1,1,0,1,1,1,22,8,m,south asian,no,no,health care professional,yes
+1,0,0,1,0,1,1,0,1,1,36,6,m,hispanic,yes,yes,family member,yes
+1,1,1,1,0,1,1,1,0,1,17,8,m,middle eastern,yes,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,25,0,f,middle eastern,yes,no,family member,no
+1,1,1,1,0,0,1,0,1,1,15,7,f,middle eastern,yes,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,18,0,m,middle eastern,no,no,family member,no
+1,1,1,0,1,0,1,1,0,1,12,7,m,black,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,m,middle eastern,no,yes,family member,no
+1,1,1,0,1,1,1,1,0,1,12,8,f,middle eastern,yes,no,family member,yes
+1,0,0,0,1,0,0,0,0,1,29,3,f,middle eastern,no,no,family member,no
+1,1,1,0,1,0,1,1,0,1,12,7,f,black,no,no,family member,yes
+1,0,0,1,1,1,1,1,1,0,36,7,m,middle eastern,no,no,family member,yes
+1,0,1,1,1,1,1,0,1,0,36,7,m,middle eastern,no,no,family member,yes
+1,0,1,1,0,1,0,1,1,1,36,7,m,native indian,yes,yes,health care professional,yes
+1,1,1,0,1,1,0,1,1,0,36,7,m,middle eastern,yes,yes,family member,yes
+1,1,1,1,1,1,1,1,1,0,22,9,m,white european,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,24,0,f,middle eastern,no,no,family member,no
+1,1,0,1,1,1,1,1,0,1,36,8,m,middle eastern,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,35,10,m,others,yes,no,family member,yes
+0,0,1,1,1,0,1,1,1,1,36,7,m,middle eastern,no,yes,family member,yes
+0,0,0,0,0,0,0,0,0,0,32,0,m,middle eastern,yes,no,family member,no
+0,0,0,0,0,0,0,0,0,0,18,0,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,0,12,0,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,15,1,f,middle eastern,no,no,health care professional,no
+0,0,0,0,0,0,0,0,0,0,12,0,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,12,1,f,middle eastern,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,15,10,f,middle eastern,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,15,1,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,0,15,0,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,0,15,0,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,15,1,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,12,1,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,0,15,0,f,black,no,no,family member,no
+0,0,0,0,0,0,0,0,0,0,15,0,f,black,no,no,family member,no
+0,0,0,0,0,0,0,0,0,0,15,0,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,15,1,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,1,0,0,1,19,2,m,asian,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,18,1,m,middle eastern,yes,no,family member,no
+0,0,0,0,0,0,0,0,0,1,12,1,f,white european,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,14,1,f,white european,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,14,1,f,middle eastern,no,no,self,no
+0,0,0,0,0,0,0,0,0,1,12,1,m,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,12,1,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,15,1,f,middle eastern,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,12,10,f,middle eastern,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,12,1,f,black,no,no,family member,no
+0,0,1,1,0,1,1,0,1,1,36,6,f,white european,no,no,family member,yes
+1,0,0,0,0,1,1,0,1,1,32,5,f,south asian,no,no,family member,yes
+0,0,0,1,1,1,1,1,1,0,25,6,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,1,0,1,15,2,f,white european,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,13,1,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,13,1,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,12,1,f,middle eastern,no,no,family member,no
+1,1,0,0,1,1,1,1,1,1,36,8,m,white european,yes,no,family member,yes
+0,0,1,1,1,1,1,0,0,0,30,5,m,white european,no,no,family member,yes
+0,0,1,1,0,0,0,0,1,0,36,3,m,middle eastern,yes,yes,family member,no
+1,1,1,1,1,1,1,0,1,1,12,9,f,white european,no,yes,family member,yes
+0,0,0,0,1,0,1,1,0,1,36,4,f,middle eastern,yes,no,family member,yes
+0,0,0,0,0,0,0,1,0,0,29,1,m,white european,no,yes,family member,no
+1,0,1,0,0,0,0,0,0,0,23,2,m,south asian,no,yes,family member,no
+1,0,1,1,1,1,1,0,1,1,18,8,f,asian,yes,yes,family member,yes
+1,1,0,0,1,1,1,1,0,0,34,6,m,others,no,no,family member,yes
+0,0,1,1,1,1,1,0,1,1,34,7,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,21,10,f,white european,no,no,family member,yes
+0,0,0,0,0,0,0,1,0,0,30,1,m,middle eastern,no,no,family member,no
+1,1,0,0,1,0,1,0,0,0,26,4,m,asian,no,no,family member,yes
+1,0,0,1,1,1,1,1,1,0,19,7,m,middle eastern,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,m,asian,no,no,family member,no
+0,0,0,0,0,0,0,0,0,0,36,0,m,asian,no,no,family member,no
+0,0,0,0,0,0,0,0,0,0,36,0,m,asian,no,no,family member,no
+1,0,0,0,0,0,0,1,0,1,30,3,m,middle eastern,no,no,health care professional,no
+0,1,0,0,0,0,0,0,0,1,30,2,m,middle eastern,no,no,family member,no
+1,0,1,1,0,1,1,1,1,0,29,7,m,asian,no,no,family member,yes
+1,1,0,1,1,1,1,1,0,1,36,8,f,white european,yes,no,family member,yes
+1,0,1,1,0,1,1,1,1,0,30,7,m,asian,no,no,family member,yes
+1,1,0,1,0,1,1,0,0,1,30,6,m,middle eastern,no,no,family member,yes
+0,0,0,1,1,1,0,0,1,1,23,5,m,white european,yes,yes,family member,yes
+0,0,0,0,0,0,0,0,0,0,22,0,m,middle eastern,yes,yes,family member,no
+0,0,0,1,0,0,1,0,0,1,20,3,m,middle eastern,no,no,family member,no
+1,0,0,0,1,0,1,0,1,0,34,4,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,34,9,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,34,1,m,asian,no,no,family member,no
+1,0,0,0,0,0,1,0,0,1,34,3,m,asian,no,no,family member,no
+1,1,0,0,1,1,1,1,1,0,32,7,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,1,0,0,36,1,f,others,yes,yes,family member,no
+0,0,0,1,0,0,1,1,1,1,33,5,m,asian,no,no,family member,yes
+0,1,0,0,0,0,0,0,0,1,12,2,f,middle eastern,no,no,family member,no
+1,0,1,1,1,1,1,0,1,1,24,8,f,asian,no,no,family member,yes
+1,0,0,0,1,0,1,1,1,1,34,6,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,34,1,m,asian,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,31,1,f,others,no,no,family member,no
+0,0,1,1,0,0,0,0,0,0,24,2,m,middle eastern,no,no,family member,no
+0,0,0,0,0,1,1,1,0,1,31,4,f,middle eastern,no,yes,family member,yes
+1,0,0,1,0,1,1,0,0,1,31,5,f,middle eastern,yes,no,family member,yes
+1,1,0,0,0,0,0,1,1,0,36,4,m,middle eastern,no,no,family member,yes
+1,1,0,0,0,1,0,0,0,1,31,4,f,middle eastern,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,25,9,m,middle eastern,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,23,1,f,middle eastern,yes,no,family member,no
+1,1,0,0,1,1,0,1,0,1,24,6,m,middle eastern,no,no,family member,yes
+1,1,0,0,1,1,1,1,0,1,36,7,f,middle eastern,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,36,1,f,middle eastern,no,no,family member,no
+0,0,0,0,1,0,1,0,0,0,12,2,m,middle eastern,no,no,family member,no
+0,1,0,0,0,0,1,1,0,1,36,4,m,south asian,no,no,family member,yes
+0,0,0,0,0,0,1,1,0,0,32,2,m,asian,no,no,family member,no
+0,0,0,0,0,0,1,1,0,0,32,2,m,asian,no,no,family member,no
+1,1,0,0,1,1,1,0,1,1,30,7,m,white european,yes,yes,family member,yes
+0,0,1,1,1,1,1,1,1,1,32,8,m,asian,no,no,family member,yes
+0,0,1,1,0,0,1,0,0,1,32,4,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,29,10,m,white european,no,no,family member,yes
+1,1,0,0,0,1,0,0,0,0,28,3,m,middle eastern,no,no,family member,no
+1,1,0,1,1,1,0,0,0,1,18,6,m,hispanic,yes,yes,family member,yes
+0,1,0,1,1,0,1,0,0,1,27,5,m,asian,no,no,family member,yes
+0,1,0,0,0,1,1,1,0,1,27,5,f,white european,no,yes,family member,yes
+0,0,0,0,0,0,0,1,0,0,26,1,f,white european,yes,no,family member,no
+0,0,0,0,0,1,0,0,0,0,25,1,f,asian,no,no,family member,no
+1,1,0,1,1,1,1,0,1,1,19,8,m,white european,no,no,family member,yes
+1,0,0,0,1,0,1,1,1,1,36,6,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,25,1,f,white european,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,36,1,m,middle eastern,no,no,family member,no
+0,0,1,1,1,1,1,0,0,1,17,6,f,white european,yes,no,family member,yes
+1,1,0,1,1,1,1,0,0,1,36,7,m,middle eastern,no,no,family member,yes
+1,1,1,0,1,1,1,0,0,1,36,7,f,asian,no,no,family member,yes
+1,0,1,1,1,0,0,1,1,1,20,7,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,33,0,f,south asian,yes,no,family member,no
+1,0,0,0,1,0,0,0,0,0,33,2,f,south asian,yes,no,family member,no
+1,1,0,0,1,0,0,1,0,0,33,4,f,south asian,yes,yes,family member,yes
+0,0,0,0,1,0,0,0,0,0,34,1,f,south asian,yes,no,family member,no
+1,1,1,1,1,1,1,1,1,1,24,10,m,middle eastern,yes,no,family member,yes
+0,0,1,1,1,0,0,0,1,0,36,4,m,asian,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,35,9,m,south asian,no,no,family member,yes
+1,1,0,0,0,0,0,1,1,0,26,4,f,asian,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,23,9,m,south asian,no,no,family member,yes
+1,1,0,1,1,0,1,0,1,1,24,7,m,middle eastern,no,no,family member,yes
+1,1,0,0,0,1,0,1,0,1,36,5,f,white european,no,no,family member,yes
+0,1,0,0,0,0,1,0,0,1,36,3,f,asian,no,no,family member,no
+0,0,0,0,1,1,1,0,0,0,26,3,f,middle eastern,yes,no,family member,no
+1,1,1,1,1,1,1,1,1,0,23,9,m,asian,no,no,family member,yes
+1,1,0,1,1,1,0,1,1,0,23,7,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,12,1,m,asian,no,no,family member,no
+0,0,0,0,0,0,1,0,0,0,30,1,f,latino,no,yes,family member,no
+1,0,0,0,0,0,0,1,0,0,19,2,m,white european,no,no,family member,no
+0,0,0,0,0,0,0,1,0,1,36,2,f,asian,no,no,health care professional,no
+0,1,0,1,0,0,1,0,0,1,33,4,m,asian,no,no,family member,yes
+0,0,0,1,0,0,1,0,0,1,33,3,m,asian,no,no,family member,no
+1,1,1,1,1,1,1,1,1,0,26,9,m,white european,no,no,family member,yes
+1,1,0,1,0,0,1,0,0,1,33,5,m,asian,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,1,36,9,m,middle eastern,no,no,family member,yes
+1,1,1,1,1,1,1,0,1,1,24,9,f,white european,no,yes,family member,yes
+0,0,1,1,1,1,0,1,1,0,28,6,m,middle eastern,no,no,family member,yes
+0,1,1,1,0,1,0,1,0,1,36,6,m,asian,no,no,family member,yes
+0,1,1,1,0,1,1,1,1,1,30,8,m,asian,no,no,family member,yes
+0,1,0,1,1,1,1,1,1,1,23,8,m,white european,no,no,family member,yes
+1,0,1,1,1,1,0,0,1,0,12,6,m,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,0,1,1,29,9,m,white european,yes,no,family member,yes
+0,0,0,0,1,1,1,0,0,0,22,3,m,white european,no,yes,family member,no
+0,0,0,0,0,0,1,0,0,0,12,1,m,asian,no,no,health care professional,no
+0,0,0,0,0,0,0,0,0,1,36,1,f,others,no,yes,family member,no
+0,1,0,0,0,0,1,0,0,1,36,3,f,asian,no,no,family member,no
+0,0,0,0,0,0,1,0,0,0,30,1,f,white european,yes,yes,family member,no
+0,0,0,0,0,0,0,0,0,0,30,0,f,latino,no,yes,family member,no
+0,0,0,0,0,0,0,0,0,0,36,0,m,mixed,no,no,family member,no
+0,0,0,1,1,1,0,0,0,0,19,3,f,mixed,no,no,family member,no
+0,1,1,1,1,0,1,0,1,1,23,7,m,middle eastern,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,12,1,m,middle eastern,no,yes,family member,no
+0,1,0,0,0,0,0,0,0,1,36,2,f,white european,yes,yes,family member,no
+0,1,0,0,0,0,0,0,0,1,36,2,f,white european,yes,yes,family member,no
+1,0,0,0,1,1,0,1,0,1,33,5,m,asian,no,yes,family member,yes
+0,0,1,0,1,0,0,0,0,1,33,3,m,asian,no,yes,family member,no
+0,0,1,0,0,1,0,0,0,0,33,2,m,asian,no,yes,family member,no
+1,0,1,0,0,1,0,0,0,0,33,3,m,asian,no,yes,family member,no
+1,0,1,0,0,1,0,0,0,0,33,3,m,asian,no,yes,family member,no
+0,1,0,1,0,1,1,1,0,0,12,5,f,white european,no,no,family member,yes
+0,0,0,1,0,0,0,0,0,0,30,1,m,south asian,yes,no,family member,no
+1,0,0,0,0,1,0,0,1,0,33,3,m,asian,no,yes,family member,no
+1,0,1,1,0,0,0,0,0,0,30,3,m,south asian,yes,no,family member,no
+1,0,1,1,1,1,1,1,1,1,35,9,m,asian,no,no,family member,yes
+0,0,0,0,1,0,1,0,1,1,12,4,f,white european,yes,no,family member,yes
+1,0,1,1,1,1,1,1,1,1,30,9,m,asian,yes,no,family member,yes
+1,1,0,0,0,0,0,0,0,1,32,3,m,white european,no,yes,family member,no
+0,1,0,0,0,0,0,0,0,1,31,2,m,white european,yes,no,family member,no
+1,1,0,0,0,0,0,0,0,1,31,3,m,white european,yes,no,family member,no
+1,0,0,0,1,1,1,0,0,1,24,5,m,white european,no,yes,family member,yes
+0,0,0,0,0,0,1,1,0,1,27,3,f,south asian,no,no,family member,no
+1,1,0,0,0,0,1,0,0,1,27,4,f,south asian,no,no,family member,yes
+0,0,0,1,0,0,0,0,0,0,36,1,m,middle eastern,no,no,health care professional,no
+1,0,0,1,0,1,0,0,0,0,36,3,m,middle eastern,no,no,health care professional,no
+1,1,1,1,0,1,1,0,1,1,36,8,f,asian,yes,no,family member,yes
+1,1,0,1,0,1,1,0,1,0,36,6,f,asian,yes,no,family member,yes
+1,1,0,0,0,1,1,1,1,1,20,7,m,middle eastern,no,no,family member,yes
+1,0,1,1,1,1,1,0,1,1,20,8,m,asian,no,no,family member,yes
+0,1,1,0,1,0,1,0,0,1,35,5,m,middle eastern,no,yes,family member,yes
+1,1,1,1,1,1,1,1,0,1,36,9,f,asian,no,no,family member,yes
+1,1,1,1,0,1,1,1,1,1,30,9,f,black,no,no,family member,yes
+1,0,1,1,1,1,1,0,0,1,30,7,f,black,no,no,family member,yes
+1,0,0,0,0,0,1,1,0,1,34,4,m,white european,yes,yes,family member,yes
+1,1,1,1,0,1,1,1,0,0,36,7,m,latino,yes,no,family member,yes
+1,1,0,0,0,0,1,0,0,1,15,4,m,middle eastern,yes,no,family member,yes
+1,1,1,1,1,1,1,0,1,1,36,9,m,white european,no,yes,family member,yes
+0,0,0,1,1,1,1,1,0,0,36,5,m,white european,no,no,family member,yes
+0,1,0,1,0,1,0,0,0,0,15,3,m,middle eastern,yes,no,family member,no
+0,0,0,0,1,0,0,0,0,1,36,2,m,south asian,no,no,family member,no
+0,1,1,1,0,0,0,0,0,0,30,3,m,asian,no,no,family member,no
+1,1,0,0,1,1,1,1,1,0,36,7,m,asian,no,no,family member,yes
+0,1,0,0,1,1,1,1,1,1,36,7,f,middle eastern,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,16,10,f,white european,yes,no,family member,yes
+0,0,0,0,0,0,1,1,1,1,25,4,m,hispanic,no,no,family member,yes
+0,0,0,1,0,0,0,1,0,1,35,3,m,middle eastern,no,no,family member,no
+0,0,0,0,0,1,0,0,1,1,13,3,f,middle eastern,no,no,family member,no
+1,1,1,1,1,1,1,0,1,1,25,9,f,white european,no,yes,family member,yes
+0,1,0,1,1,1,1,1,0,1,22,7,m,black,no,no,family member,yes
+0,1,1,1,1,1,1,1,0,1,23,8,m,black,no,no,family member,yes
+1,1,1,1,0,0,1,0,1,0,36,6,f,white european,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,28,1,m,middle eastern,no,no,family member,no
+1,1,0,0,0,0,0,1,0,1,36,4,m,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,21,9,m,middle eastern,yes,no,family member,yes
+1,1,1,1,1,1,1,1,0,1,22,9,m,black,no,no,family member,yes
+0,0,0,0,1,0,1,1,0,1,30,4,f,asian,no,yes,family member,yes
+1,1,0,1,0,0,1,1,1,1,13,7,m,black,yes,yes,family member,yes
+1,0,0,1,1,0,1,1,1,1,20,7,f,middle eastern,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,1,22,9,f,asian,no,no,family member,yes
+1,0,0,0,1,1,1,0,1,0,33,5,m,asian,no,no,health care professional,yes
+1,0,0,0,0,1,1,0,1,1,33,5,m,asian,no,no,family member,yes
+1,0,1,1,1,1,1,1,1,1,36,9,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,20,10,m,middle eastern,no,yes,family member,yes
+0,1,0,1,1,0,0,0,1,0,36,4,m,asian,yes,no,family member,yes
+0,0,0,1,1,1,1,1,0,1,36,6,m,asian,yes,no,family member,yes
+0,0,0,0,0,0,1,0,0,1,12,2,f,white european,no,no,family member,no
+1,1,1,1,0,0,1,1,0,1,36,7,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,31,0,m,white european,yes,no,family member,no
+1,0,0,0,1,1,1,1,0,0,31,5,m,white european,yes,no,family member,yes
+0,0,0,0,0,1,1,1,0,0,31,3,m,white european,yes,no,family member,no
+1,1,1,1,1,1,1,1,1,1,15,10,f,middle eastern,no,no,family member,yes
+0,1,1,1,1,1,0,1,1,0,19,7,f,middle eastern,no,no,family member,yes
+1,0,1,1,1,1,0,1,1,0,19,7,f,middle eastern,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,19,1,f,middle eastern,no,no,family member,no
+1,1,1,0,1,1,0,0,1,0,24,6,m,white european,yes,no,family member,yes
+0,1,1,1,1,0,1,1,1,1,28,8,m,south asian,yes,no,family member,yes
+1,0,0,1,1,1,0,0,1,1,36,6,m,asian,no,no,family member,yes
+1,1,1,0,0,1,1,1,1,1,28,8,m,middle eastern,no,yes,family member,yes
+1,1,1,1,1,1,1,1,1,1,18,10,m,white european,yes,no,family member,yes
+0,0,0,0,1,1,0,0,0,0,26,2,m,asian,no,no,family member,no
+1,1,0,1,1,1,1,1,1,1,36,9,m,black,no,yes,health care professional,yes
+0,0,0,0,1,0,1,1,1,0,23,4,f,asian,no,no,family member,yes
+0,0,0,1,1,1,1,1,1,1,36,7,m,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,0,0,36,8,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,0,1,31,9,m,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,0,1,31,9,m,white european,no,no,family member,yes
+1,0,1,1,1,0,1,1,1,1,35,8,m,white european,no,yes,family member,yes
+0,1,0,0,0,0,0,1,0,0,36,2,m,middle eastern,no,no,family member,no
+1,1,0,0,1,1,1,0,1,1,23,7,m,white european,yes,no,family member,yes
+1,0,0,0,0,1,1,0,0,0,27,3,m,white european,yes,yes,family member,no
+1,1,1,0,0,1,1,0,1,1,33,7,f,mixed,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,36,9,m,white european,yes,yes,family member,yes
+1,0,1,1,0,1,0,0,1,0,30,5,f,middle eastern,no,no,family member,yes
+1,0,1,1,0,1,0,0,0,0,30,4,m,middle eastern,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,24,0,m,middle eastern,no,no,family member,no
+0,0,1,1,1,1,1,1,1,0,16,7,f,asian,no,no,family member,yes
+0,0,0,0,1,1,1,0,0,0,36,3,m,asian,yes,no,family member,no
+0,1,0,0,1,1,1,1,0,1,36,6,m,asian,no,no,family member,yes
+0,0,0,1,1,1,1,1,0,0,36,5,m,latino,no,no,family member,yes
+1,0,1,1,0,1,1,1,1,1,30,8,m,white european,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,m,mixed,no,no,family member,no
+1,1,0,1,0,0,1,0,0,1,29,5,m,black,no,no,family member,yes
+1,0,1,0,0,1,0,0,0,0,36,3,m,asian,no,yes,family member,no
+1,0,1,0,0,1,0,0,0,0,36,3,m,asian,no,yes,family member,no
+1,1,0,1,1,1,1,0,1,1,32,8,m,asian,yes,no,family member,yes
+1,1,0,0,0,1,1,0,1,0,32,5,m,asian,no,no,family member,yes
+0,1,0,1,1,1,1,1,1,0,36,7,m,middle eastern,no,no,family member,yes
+0,1,0,1,1,1,0,1,1,1,36,7,m,middle eastern,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,25,1,m,white european,yes,no,family member,no
+1,1,1,1,1,1,1,1,1,0,12,9,m,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,28,10,m,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,27,9,m,white european,no,no,family member,yes
+1,1,0,1,1,1,1,0,0,1,15,7,f,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,0,1,1,36,9,f,white european,yes,no,family member,yes
+1,1,0,0,1,1,1,1,1,1,28,8,m,white european,no,no,family member,yes
+1,1,0,0,0,0,0,0,0,1,24,3,f,hispanic,no,no,family member,no
+0,0,0,0,1,1,1,0,0,1,31,4,m,hispanic,yes,no,family member,yes
+0,0,1,1,1,1,1,0,1,1,23,7,m,south asian,no,yes,family member,yes
+1,1,0,0,0,0,1,0,1,0,36,4,m,white european,yes,no,family member,yes
+1,1,0,0,0,1,1,0,0,1,26,5,m,white european,yes,no,family member,yes
+0,0,0,0,0,0,1,0,0,0,36,1,f,asian,no,no,family member,no
+1,0,0,1,1,0,1,0,1,1,20,6,m,middle eastern,no,no,family member,yes
+0,0,0,1,0,1,1,0,1,0,20,4,m,middle eastern,no,no,family member,yes
+1,1,0,0,0,1,1,1,1,0,31,6,f,asian,yes,no,family member,yes
+0,1,0,0,1,1,1,0,0,1,12,5,f,hispanic,yes,yes,family member,yes
+0,0,0,0,0,0,0,0,0,0,32,0,m,white european,yes,no,family member,no
+1,0,0,0,1,0,0,0,0,1,33,3,m,white european,no,no,family member,no
+1,1,1,1,0,1,1,1,1,0,36,8,m,middle eastern,yes,yes,family member,yes
+1,1,1,1,1,1,1,0,1,1,17,9,m,hispanic,yes,yes,family member,yes
+1,1,1,1,0,1,1,1,0,1,24,8,f,hispanic,no,yes,family member,yes
+1,1,0,1,1,0,1,1,1,1,18,8,f,white european,no,no,family member,yes
+1,0,1,1,1,1,1,1,1,1,26,9,m,others,no,yes,family member,yes
+1,1,0,1,1,0,1,1,1,0,23,7,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,0,1,0,21,8,m,asian,no,no,family member,yes
+1,0,1,1,0,1,1,1,1,0,36,7,m,white european,no,no,family member,yes
+0,0,0,0,0,0,0,1,0,0,36,1,m,asian,no,no,family member,no
+0,0,0,0,1,1,1,0,1,1,33,5,m,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,33,10,m,asian,yes,no,family member,yes
+1,1,0,0,1,1,1,0,0,0,36,5,m,white european,no,no,family member,yes
+1,1,1,0,1,0,0,0,1,0,36,5,m,south asian,yes,yes,health care professional,yes
+0,0,0,0,1,1,1,1,1,1,36,6,m,white european,no,no,family member,yes
+1,0,0,0,1,1,1,0,1,0,32,5,f,asian,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,26,10,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,f,asian,no,no,family member,no
+0,0,1,0,1,1,1,1,1,0,26,6,m,asian,no,no,family member,yes
+0,0,1,0,1,0,1,1,1,1,26,6,m,asian,no,no,family member,yes
+0,0,1,1,1,1,1,0,1,1,14,7,m,white european,yes,no,family member,yes
+0,1,0,1,0,1,1,1,1,1,16,7,m,middle eastern,yes,yes,family member,yes
+1,1,0,1,0,0,0,1,0,1,28,5,m,white european,yes,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,24,0,m,asian,no,no,family member,no
+0,0,0,0,0,0,0,0,0,0,21,0,m,asian,no,yes,family member,no
+0,1,0,0,1,1,1,0,1,0,30,5,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,12,10,f,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,32,10,m,white european,yes,no,family member,yes
+1,1,0,0,1,0,1,0,0,0,31,4,m,white european,yes,no,family member,yes
+1,1,0,0,0,1,1,0,1,0,23,5,m,white european,yes,no,family member,yes
+1,0,0,1,0,1,0,0,0,0,29,3,f,middle eastern,no,no,family member,no
+0,1,1,1,1,1,0,1,1,0,12,7,m,black,yes,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,13,1,f,hispanic,no,no,family member,no
+1,0,1,1,1,0,1,0,0,0,23,5,m,asian,no,no,family member,yes
+0,0,1,1,1,1,1,1,1,0,36,7,m,asian,no,no,family member,yes
+1,1,1,1,1,0,0,0,0,1,36,6,f,white european,yes,no,family member,yes
+0,1,1,1,1,0,1,0,1,0,26,6,m,asian,no,no,family member,yes
+1,0,0,0,0,1,1,1,0,1,36,5,f,white european,yes,no,family member,yes
+0,1,1,1,0,0,0,1,0,0,36,4,m,asian,no,no,family member,yes
+0,1,0,1,0,0,0,0,0,0,36,2,m,asian,no,no,family member,no
+0,0,0,1,0,0,0,1,0,0,36,2,m,asian,no,no,family member,no
+0,0,0,1,0,0,0,0,0,0,36,1,m,asian,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,33,10,m,white european,no,yes,family member,yes
+1,0,1,1,1,1,1,1,1,1,36,9,m,latino,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,28,10,m,white european,yes,no,family member,yes
+1,1,0,0,1,1,0,1,1,1,36,7,f,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,28,10,m,white european,no,no,family member,yes
+1,1,1,1,1,0,1,1,1,1,12,9,m,asian,no,no,family member,yes
+0,1,0,0,1,1,1,1,1,0,36,6,m,asian,no,no,family member,yes
+0,0,0,0,1,1,1,1,1,1,36,6,m,asian,no,no,family member,yes
+1,1,0,0,1,0,1,1,0,0,36,5,m,black,yes,no,family member,yes
+1,1,0,0,1,0,1,1,1,0,36,6,m,south asian,no,no,family member,yes
+0,1,0,0,0,1,1,0,1,0,36,4,m,asian,yes,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,13,1,f,middle eastern,yes,no,family member,no
+0,0,0,0,0,0,0,0,0,1,13,1,f,middle eastern,yes,no,family member,no
+0,0,0,0,0,0,0,0,0,1,13,1,f,middle eastern,yes,no,family member,no
+0,0,0,0,0,0,0,0,0,0,36,0,m,asian,no,no,family member,no
+1,0,1,1,1,1,0,1,0,0,34,6,m,asian,no,no,family member,yes
+0,0,1,1,0,0,0,0,0,0,36,2,m,asian,no,no,family member,no
+1,1,1,1,1,1,1,1,0,0,24,8,m,black,yes,yes,health care professional,yes
+1,1,0,0,1,1,1,0,1,1,14,7,m,asian,no,no,family member,yes
+1,1,0,1,1,1,1,0,1,0,14,7,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,36,10,m,white european,no,no,health care professional,yes
+0,0,0,0,0,0,0,0,0,0,19,0,f,asian,no,yes,family member,no
+0,0,0,1,1,1,1,0,0,0,34,4,m,black,yes,no,family member,yes
+1,1,1,0,1,1,1,1,1,0,36,8,m,asian,no,no,family member,yes
+1,0,1,1,1,0,0,0,1,0,32,5,f,hispanic,no,yes,family member,yes
+1,1,0,0,1,1,1,1,0,1,36,7,m,asian,no,no,health care professional,yes
+1,1,1,1,1,1,1,1,0,1,36,9,m,latino,yes,no,family member,yes
+0,0,1,1,0,0,0,0,0,0,36,2,m,asian,no,no,family member,no
+1,1,1,1,1,1,0,1,1,1,36,9,m,asian,no,no,family member,yes
+1,1,1,1,1,1,0,1,1,1,36,9,m,asian,no,no,family member,yes
+1,1,0,0,0,1,1,1,1,1,36,7,f,asian,yes,no,family member,yes
+1,1,0,1,0,1,1,0,0,1,27,6,f,south asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,36,10,m,south asian,no,no,family member,yes
+1,1,1,1,0,1,1,0,1,0,17,7,f,white european,no,no,family member,yes
+0,0,1,1,1,0,1,0,1,0,35,5,m,middle eastern,yes,no,family member,yes
+0,0,1,1,1,1,0,0,1,0,30,5,m,asian,no,no,family member,yes
+0,0,0,0,0,1,0,0,0,1,33,2,m,asian,no,no,family member,no
+0,0,0,1,1,0,1,0,0,1,30,4,m,asian,no,no,health care professional,yes
+1,1,1,1,0,1,1,1,0,1,36,8,f,middle eastern,no,no,family member,yes
+1,0,0,1,1,1,1,0,1,0,30,6,m,asian,no,no,family member,yes
+0,0,0,1,0,0,1,0,1,1,30,4,m,asian,no,no,family member,yes
+1,0,0,0,0,0,1,0,0,1,30,3,f,south asian,no,no,family member,no
+1,0,0,0,0,1,1,0,0,1,30,4,m,hispanic,no,no,family member,yes
+1,1,1,1,0,1,1,1,1,0,24,8,m,black,yes,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,m,white european,no,no,family member,no
+0,0,0,0,0,1,0,0,0,0,36,1,m,white european,no,no,family member,no
+0,0,0,0,0,1,1,0,0,1,28,3,f,middle eastern,no,no,family member,no
+0,0,0,1,0,1,1,0,0,1,28,4,f,middle eastern,no,no,family member,yes
+1,1,0,0,1,1,0,1,1,1,26,7,m,white european,yes,yes,family member,yes
+0,0,1,1,0,0,0,1,0,1,36,4,m,asian,no,no,family member,yes
+0,0,0,0,1,0,1,0,0,1,36,3,m,asian,yes,no,family member,no
+1,0,0,0,0,1,0,1,0,0,25,3,m,white european,no,no,family member,no
+1,1,1,1,1,0,1,1,1,1,32,9,m,asian,no,no,family member,yes
+1,1,0,0,0,0,1,1,0,1,36,5,m,asian,no,no,family member,yes
+1,1,0,1,1,1,1,0,0,1,36,7,m,asian,no,no,family member,yes
+0,0,0,0,0,1,1,1,0,1,36,4,m,latino,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,1,36,9,m,white european,no,yes,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,f,white european,no,yes,family member,no
+0,1,1,0,0,1,0,0,1,1,20,5,m,black,no,yes,family member,yes
+1,0,0,0,1,1,0,1,0,1,26,5,m,white european,no,no,family member,yes
+0,0,0,0,1,1,1,0,0,1,32,4,m,white european,yes,no,family member,yes
+1,0,0,1,1,1,1,0,1,1,24,7,f,south asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,0,1,35,9,m,white european,no,yes,family member,yes
+0,1,0,0,0,0,0,0,0,1,13,2,m,middle eastern,no,no,family member,no
+1,1,0,1,1,1,1,0,1,0,24,7,f,south asian,no,no,family member,yes
+1,1,1,1,1,1,0,1,1,1,24,9,f,south asian,no,no,family member,yes
+0,0,1,1,1,1,1,1,1,0,36,7,m,asian,no,no,family member,yes
+0,0,1,1,1,1,1,1,1,0,36,7,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,30,0,m,white european,no,no,family member,no
+1,0,1,0,1,1,0,1,1,0,36,6,m,asian,no,no,family member,yes
+0,0,0,1,0,0,1,1,0,1,33,4,m,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,0,1,0,36,8,m,south asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,27,9,m,white european,no,no,family member,yes
+0,0,0,0,1,1,1,1,0,0,29,4,m,others,no,no,family member,yes
+1,1,1,0,0,1,1,0,0,1,36,6,m,white european,no,no,family member,yes
+0,1,0,0,0,0,0,0,0,1,33,2,m,asian,no,no,family member,no
+1,1,0,0,0,0,0,1,0,1,33,4,m,asian,no,no,health care professional,yes
+0,0,0,0,0,0,0,0,0,1,27,1,m,white european,no,no,family member,no
+0,1,1,1,1,1,1,0,1,1,12,8,m,asian,no,yes,family member,yes
+1,0,0,0,1,1,1,1,0,0,30,5,f,asian,no,no,family member,yes
+0,0,0,0,0,0,1,1,1,0,34,3,f,asian,no,no,family member,no
+1,1,0,0,1,1,1,1,1,1,36,8,m,others,yes,no,family member,yes
+1,0,0,1,1,1,0,0,1,1,36,6,m,asian,no,no,family member,yes
+0,0,0,1,0,1,1,1,1,0,30,5,m,asian,no,no,family member,yes
+0,0,1,0,1,0,0,1,0,0,36,3,m,asian,no,no,family member,no
+0,0,0,1,1,0,0,1,0,0,36,3,m,asian,no,no,family member,no
+1,1,0,1,0,0,1,1,1,1,15,7,m,white european,no,no,family member,yes
+1,1,1,1,0,1,1,0,1,0,18,7,f,white european,no,no,family member,yes
+1,0,0,0,0,1,1,1,0,1,36,5,m,asian,no,no,family member,yes
+1,0,0,0,0,0,1,0,1,1,12,4,m,asian,no,no,family member,yes
+0,0,1,1,0,0,1,0,1,0,26,4,m,south asian,yes,no,family member,yes
+0,0,0,0,0,0,1,0,0,1,12,2,m,south asian,yes,no,family member,no
+1,1,0,1,1,1,1,1,1,1,36,9,m,white european,no,no,family member,yes
+0,1,0,0,0,0,1,0,0,0,35,2,f,asian,yes,no,family member,no
+1,1,1,1,0,1,1,1,1,1,36,9,m,middle eastern,no,no,family member,yes
+1,1,1,1,0,1,0,1,1,1,36,8,m,white european,no,no,family member,yes
+1,0,0,0,0,0,1,1,1,1,36,5,f,asian,no,no,family member,yes
+1,0,0,0,0,0,1,0,0,1,36,3,m,asian,no,no,family member,no
+1,1,0,0,0,1,0,0,1,0,30,4,m,south asian,yes,no,family member,yes
+0,0,1,1,0,0,1,1,0,1,25,5,m,asian,no,no,family member,yes
+1,1,0,1,0,1,1,0,0,1,14,6,f,white european,no,no,family member,yes
+1,1,0,1,0,1,1,0,1,1,14,7,f,white european,no,no,family member,yes
+1,1,0,1,0,1,1,0,1,1,26,7,f,white european,no,no,family member,yes
+1,1,0,0,1,1,1,1,1,1,36,8,f,others,yes,no,family member,yes
+1,0,0,0,1,0,1,1,1,1,35,6,f,asian,no,yes,family member,yes
+1,1,0,1,1,0,1,0,0,0,28,5,m,middle eastern,no,yes,family member,yes
+1,1,0,1,1,1,1,0,0,0,28,6,m,middle eastern,no,yes,family member,yes
+1,0,0,0,1,0,1,0,0,0,36,3,m,white european,no,no,family member,no
+0,0,0,0,0,0,0,0,0,0,36,0,m,middle eastern,no,yes,family member,no
+1,1,1,1,1,1,1,1,1,1,12,10,m,pacifica,no,no,family member,yes
+1,1,0,0,1,1,1,0,0,1,36,6,m,white european,yes,no,family member,yes
+1,0,1,1,1,1,0,1,1,0,19,7,m,asian,no,no,family member,yes
+0,0,1,1,1,1,1,1,1,1,24,8,f,white european,no,no,family member,yes
+1,0,0,0,1,1,1,0,0,0,30,4,f,asian,yes,no,family member,yes
+1,1,0,0,1,1,1,0,1,1,32,7,m,asian,yes,yes,family member,yes
+1,0,0,1,1,1,1,1,1,1,35,8,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,35,0,m,asian,no,no,family member,no
+1,0,1,1,1,1,0,1,1,1,29,8,m,middle eastern,no,no,family member,yes
+1,0,1,0,0,1,0,1,0,0,36,4,m,asian,no,yes,family member,yes
+1,0,0,0,0,1,0,0,0,0,36,2,m,asian,no,yes,family member,no
+1,0,0,0,0,1,0,0,0,0,36,2,m,asian,no,yes,family member,no
+0,0,0,1,0,0,1,0,1,1,15,4,f,middle eastern,yes,no,family member,yes
+0,0,0,0,0,0,0,0,1,0,15,1,f,middle eastern,yes,no,family member,no
+0,1,0,0,0,0,1,0,0,0,36,2,m,middle eastern,no,yes,family member,no
+1,1,1,1,1,1,1,0,1,0,19,8,m,asian,no,no,family member,yes
+0,0,1,0,0,1,1,1,1,1,24,6,m,hispanic,no,yes,family member,yes
+1,1,0,1,1,1,1,0,0,1,36,7,m,hispanic,no,yes,family member,yes
+0,0,1,1,1,0,1,1,1,1,13,7,m,white european,yes,yes,family member,yes
+0,0,0,0,0,0,1,0,0,1,25,2,m,asian,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,13,10,m,white european,yes,yes,family member,yes
+1,1,0,1,1,0,1,0,0,1,36,6,m,white european,no,no,others,yes
+1,1,0,1,0,0,1,0,0,0,36,4,m,white european,no,no,family member,yes
+1,1,1,1,0,1,1,1,1,1,36,9,f,white european,yes,no,family member,yes
+1,0,0,0,0,0,0,0,0,0,36,1,m,asian,no,yes,family member,no
+1,0,1,0,0,1,0,0,0,0,36,3,m,asian,no,yes,family member,no
+1,0,1,1,0,0,0,0,0,0,36,3,m,asian,no,yes,family member,no
+0,0,1,1,0,1,0,0,1,0,17,4,m,asian,no,no,family member,yes
+0,0,1,1,0,0,0,0,0,0,17,2,m,asian,no,no,family member,no
+1,0,1,1,1,1,1,1,1,1,22,9,f,white european,no,no,family member,yes
+0,0,1,1,1,0,1,1,0,0,20,5,m,white european,yes,no,family member,yes
+1,1,0,0,0,1,0,0,0,1,36,4,m,white european,yes,no,health care professional,yes
+0,0,0,0,0,0,0,0,0,0,15,0,f,middle eastern,yes,no,family member,no
+1,1,1,1,1,1,1,1,1,0,36,9,f,south asian,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,28,10,m,white european,no,no,family member,yes
+1,0,0,0,1,1,1,1,1,1,30,7,f,asian,yes,no,family member,yes
+1,0,0,0,0,1,1,1,1,1,30,6,f,asian,no,no,family member,yes
+1,1,1,1,1,1,1,0,1,1,28,9,m,middle eastern,no,no,family member,yes
+1,1,0,1,0,1,1,1,1,0,26,7,m,hispanic,no,yes,family member,yes
+1,1,1,1,1,1,0,0,1,1,28,8,m,pacifica,no,no,family member,yes
+1,1,1,1,1,1,1,0,1,1,36,9,f,others,no,no,self,yes
+1,0,0,0,1,1,1,1,1,0,36,6,m,hispanic,no,no,family member,yes
+0,0,0,0,0,1,0,0,0,1,12,2,f,hispanic,no,no,health care professional,no
+1,1,1,1,1,1,1,1,1,1,28,10,m,black,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,36,10,m,black,no,no,family member,yes
+1,0,0,1,1,0,1,0,1,1,28,6,m,white european,yes,no,family member,yes
+0,0,0,0,0,0,1,0,0,0,28,1,m,white european,yes,no,family member,no
+0,1,1,1,1,1,0,1,1,0,24,7,f,asian,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,34,10,m,native indian,yes,no,family member,yes
+0,0,0,1,0,1,1,0,0,0,12,3,f,white european,no,no,family member,no
+1,1,1,1,1,0,1,1,1,0,32,8,m,black,no,no,family member,yes
+1,0,0,1,1,1,0,0,0,1,29,5,m,white european,yes,no,family member,yes
+1,0,0,0,1,1,1,1,1,0,27,6,m,white european,yes,yes,family member,yes
+1,1,1,1,1,1,1,1,1,1,25,10,m,white european,no,no,family member,yes
+1,1,0,0,1,0,0,0,0,1,36,4,m,white european,yes,no,family member,yes
+0,1,1,1,1,1,1,0,1,1,12,8,m,white european,no,yes,family member,yes
+1,1,0,1,1,1,0,1,1,0,36,7,m,white european,no,no,family member,yes
+1,0,1,0,1,0,0,0,0,0,36,3,m,white european,no,no,family member,no
+0,1,1,0,0,0,0,1,0,1,36,4,m,south asian,no,no,family member,yes
+0,1,0,1,0,1,0,0,1,0,36,4,m,asian,no,no,family member,yes
+0,1,0,1,0,1,0,0,1,0,36,4,m,asian,no,no,family member,yes
+0,0,0,0,1,0,0,0,0,1,35,2,m,asian,no,no,family member,no
+0,0,0,0,1,1,1,1,0,1,30,5,f,asian,no,no,family member,yes
+0,0,0,0,1,1,1,1,1,1,35,6,m,asian,no,no,family member,yes
+1,1,1,1,0,1,1,0,1,1,31,8,f,white european,no,no,family member,yes
+1,0,0,0,0,0,0,0,0,1,12,2,f,south asian,no,no,family member,no
+1,0,0,0,1,1,1,0,0,0,36,4,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,36,10,m,black,no,no,family member,yes
+1,0,1,0,0,0,0,0,0,0,36,2,m,asian,no,yes,family member,no
+1,0,1,0,0,0,0,0,0,0,36,2,m,asian,no,yes,family member,no
+1,1,0,0,0,1,1,0,0,1,36,5,f,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,26,10,f,latino,no,no,family member,yes
+1,1,1,0,1,1,1,1,0,1,22,8,m,asian,no,no,family member,yes
+1,1,0,0,0,0,1,0,0,1,24,4,m,asian,yes,no,family member,yes
+0,0,1,1,1,0,0,1,1,0,19,5,m,middle eastern,no,no,family member,yes
+1,1,1,1,0,0,1,1,1,1,24,8,m,black,yes,no,family member,yes
+1,0,1,1,1,1,1,0,1,1,21,8,m,white european,yes,yes,family member,yes
+1,1,1,1,1,1,1,1,1,1,20,10,f,white european,no,no,family member,yes
+0,0,0,1,1,1,0,1,1,0,30,5,m,middle eastern,no,no,family member,yes
+0,0,0,0,1,1,1,0,1,1,13,5,f,asian,no,no,family member,yes
+1,1,1,0,1,1,1,1,1,0,31,8,f,asian,no,no,family member,yes
+1,1,1,0,1,1,1,1,0,0,31,7,f,asian,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,0,17,8,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,12,1,f,middle eastern,no,no,family member,no
+1,1,1,1,1,0,1,1,1,1,12,9,f,middle eastern,no,no,family member,yes
+0,0,0,0,0,1,0,1,0,1,13,3,f,middle eastern,yes,no,family member,no
+1,1,1,1,1,1,1,1,1,0,13,9,m,hispanic,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,13,9,m,hispanic,yes,no,family member,yes
+0,0,0,0,0,0,0,1,0,0,36,1,m,hispanic,no,no,family member,no
+1,0,0,0,0,0,0,0,0,1,36,2,m,hispanic,no,no,family member,no
+1,1,0,1,1,1,0,0,0,0,34,5,m,others,no,no,family member,yes
+1,1,0,1,1,1,1,0,0,1,34,7,m,others,no,no,family member,yes
+0,0,0,0,0,1,0,0,0,0,34,1,f,white european,no,yes,family member,no
+1,1,0,0,0,0,1,0,0,1,36,4,m,hispanic,no,no,family member,yes
+1,1,0,0,1,0,1,0,0,1,25,5,m,middle eastern,yes,no,family member,yes
+1,1,0,0,0,0,1,0,0,1,25,4,m,middle eastern,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,24,10,f,black,no,no,family member,yes
+1,1,0,1,0,1,1,1,0,1,36,7,m,white european,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,36,1,f,white european,no,no,family member,no
+0,0,0,1,1,1,1,1,1,1,35,7,m,asian,no,yes,family member,yes
+0,0,0,0,1,1,1,0,1,1,35,5,m,asian,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,19,10,m,white european,yes,no,family member,yes
+0,1,1,1,0,0,1,0,1,0,12,5,f,middle eastern,yes,no,family member,yes
+1,1,0,0,0,1,0,1,0,1,36,5,m,white european,no,yes,family member,yes
+0,0,1,0,0,1,0,0,0,1,12,3,f,south asian,no,no,family member,no
+1,0,0,0,1,1,1,0,1,1,36,6,m,asian,no,no,family member,yes
+1,1,0,1,1,1,1,1,0,1,36,8,m,white european,yes,yes,family member,yes
+0,1,0,1,1,0,1,0,0,1,36,5,m,white european,yes,yes,family member,yes
+1,0,1,1,1,1,0,1,1,1,33,8,m,white european,yes,no,family member,yes
+1,1,0,1,0,0,1,0,1,1,22,6,m,white european,no,yes,family member,yes
+1,1,0,1,0,1,1,1,1,1,22,8,m,white european,no,no,family member,yes
+0,0,0,0,0,1,1,0,0,0,36,2,f,white european,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,31,10,m,white european,yes,yes,family member,yes
+1,0,1,1,0,1,1,0,1,1,29,7,f,white european,no,no,family member,yes
+1,0,0,0,0,0,1,0,1,1,36,4,m,asian,no,no,family member,yes
+0,0,0,1,1,1,1,0,1,1,36,6,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,1,0,0,36,1,f,black,no,no,family member,no
+1,0,0,0,0,0,0,1,0,0,36,2,f,black,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,36,10,m,white european,no,no,family member,yes
+1,1,1,0,0,1,1,0,1,1,23,7,m,black,yes,no,family member,yes
+1,1,0,0,1,0,0,1,0,1,36,5,m,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,28,10,f,white european,yes,no,family member,yes
+1,1,0,1,0,1,1,1,1,1,35,8,f,asian,no,no,family member,yes
+1,0,0,0,0,0,0,0,0,1,36,2,m,hispanic,no,no,family member,no
+1,0,0,0,0,0,1,0,0,1,16,3,m,white european,no,no,family member,no
+0,1,0,0,0,0,0,1,0,0,36,2,m,white european,yes,no,family member,no
+0,0,1,1,0,1,0,1,0,0,32,4,f,white european,yes,no,family member,yes
+0,1,1,1,1,0,1,1,0,1,36,7,f,white european,yes,yes,family member,yes
+0,0,0,0,1,1,0,0,1,1,35,4,m,asian,yes,no,family member,yes
+1,0,1,0,1,1,0,0,1,0,24,5,m,white european,no,no,family member,yes
+1,0,1,1,1,1,0,0,1,0,24,6,m,white european,no,no,family member,yes
+1,0,1,0,1,1,0,0,1,0,24,5,m,white european,no,no,family member,yes
+1,1,1,1,0,1,1,0,1,1,30,8,f,white european,no,no,family member,yes
+0,0,1,1,0,1,1,0,1,1,26,6,m,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,12,10,m,others,yes,yes,family member,yes
+0,0,0,1,0,0,1,0,0,1,28,3,m,middle eastern,yes,no,family member,no
+0,0,0,0,0,0,0,0,0,1,31,1,m,pacifica,no,no,family member,no
+0,0,1,1,1,1,1,1,1,1,36,8,m,white european,no,no,family member,yes
+1,0,0,0,1,1,1,0,0,1,23,5,m,asian,yes,no,family member,yes
+1,0,0,0,1,1,1,0,1,0,36,5,m,asian,yes,no,family member,yes
+0,0,1,1,1,1,1,1,1,1,34,8,f,white european,no,yes,family member,yes
+0,0,1,1,0,1,0,1,1,1,36,6,m,hispanic,no,no,family member,yes
+1,1,0,0,1,1,1,0,0,1,36,6,m,others,no,no,family member,yes
+1,0,0,1,1,1,1,0,1,1,36,7,m,white european,yes,no,family member,yes
+1,1,0,0,0,1,0,0,1,1,36,5,m,asian,no,no,family member,yes
+1,0,0,0,0,1,0,1,1,1,36,5,m,asian,no,no,family member,yes
+0,0,0,0,0,0,1,0,0,1,36,2,f,latino,no,no,family member,no
+0,1,1,1,1,1,1,1,1,0,36,8,m,black,no,no,family member,yes
+0,0,0,0,0,0,0,1,0,0,36,1,f,black,no,no,family member,no
+0,0,0,0,0,1,0,0,0,1,36,2,m,white european,yes,yes,family member,no
+1,1,0,1,1,1,1,0,1,1,36,8,m,white european,no,no,family member,yes
+1,1,1,1,1,1,1,0,1,1,36,9,m,hispanic,no,no,family member,yes
+1,0,1,0,1,1,1,0,0,1,26,6,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,36,9,m,white european,no,yes,family member,yes
+0,0,0,0,1,0,1,1,0,0,36,3,m,hispanic,no,no,family member,no
+0,0,0,1,0,0,1,1,0,0,36,3,m,hispanic,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,27,10,m,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,36,10,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,36,10,m,asian,no,no,family member,yes
+0,0,0,1,0,0,1,0,1,0,36,3,m,asian,no,no,family member,no
+0,1,0,1,0,0,0,0,1,1,36,4,m,black,yes,yes,family member,yes
+0,1,0,1,0,0,0,0,1,1,36,4,m,black,yes,yes,family member,yes
+1,1,1,1,1,1,1,1,1,1,36,10,m,black,no,yes,family member,yes
+0,1,0,0,1,1,1,1,1,0,30,6,m,white european,no,no,family member,yes
+0,1,0,0,0,0,1,1,0,1,26,4,m,mixed,no,no,family member,yes
+1,1,0,1,1,1,1,1,0,1,25,8,f,pacifica,yes,no,family member,yes
+1,1,0,1,1,1,0,1,1,0,20,7,f,south asian,no,no,family member,yes
+0,0,1,1,1,0,1,1,0,0,20,5,m,asian,yes,no,family member,yes
+0,0,0,0,1,1,1,1,1,0,20,5,f,asian,no,no,health care professional,yes
+1,1,0,1,1,1,1,1,1,1,28,9,m,asian,no,no,family member,yes
+1,0,0,1,1,1,1,1,1,1,28,8,m,asian,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,0,28,8,m,asian,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,1,28,9,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,28,10,m,asian,no,no,family member,yes
+1,1,1,1,0,1,1,0,1,1,36,8,m,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,29,9,f,latino,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,30,10,m,latino,no,no,others,yes
+1,1,0,0,1,1,1,0,1,1,27,7,m,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,22,10,f,white european,no,no,family member,yes
+1,0,0,0,0,0,1,0,0,1,22,3,f,white european,yes,no,family member,no
+1,0,0,0,0,1,1,0,0,1,22,4,m,hispanic,yes,no,family member,yes
+0,0,0,0,0,0,1,1,0,1,36,3,f,asian,no,no,family member,no
+0,0,0,1,0,0,1,1,0,1,36,4,f,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,36,10,m,asian,no,no,family member,yes
+0,0,0,1,1,1,1,0,0,0,36,4,m,asian,no,no,family member,yes
+0,0,0,0,1,1,1,0,1,1,34,5,m,others,yes,no,family member,yes
+1,0,0,1,1,0,0,0,0,1,24,4,m,asian,yes,no,family member,yes
+1,1,1,1,0,1,1,0,0,1,25,7,m,white european,yes,yes,family member,yes
+1,0,1,0,1,1,1,0,1,0,25,6,m,white european,no,yes,family member,yes
+1,0,0,0,0,0,0,0,0,1,30,2,f,middle eastern,no,no,family member,no
+0,0,0,0,0,1,0,1,0,0,36,2,f,asian,no,no,family member,no
+0,0,0,0,1,0,0,1,0,1,32,3,m,black,yes,no,family member,no
+0,0,1,1,0,1,1,1,1,0,33,6,m,white european,yes,no,family member,yes
+0,0,0,0,1,0,0,1,1,1,36,4,m,middle eastern,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,12,1,m,middle eastern,no,no,family member,no
+1,0,1,1,0,1,1,0,1,0,24,6,f,asian,no,no,family member,yes
+0,0,0,1,0,1,1,0,0,0,25,3,f,asian,no,no,family member,no
+0,0,1,1,1,1,0,0,1,0,24,5,f,asian,no,no,family member,yes
+0,0,1,1,1,1,0,0,1,0,24,5,f,asian,no,no,family member,yes
+0,1,0,0,1,1,1,1,0,1,29,6,m,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,28,10,m,south asian,no,no,family member,yes
+0,0,1,1,0,0,0,0,0,1,24,3,m,asian,no,no,family member,no
+0,0,1,1,0,0,0,1,0,1,24,4,m,asian,no,no,family member,yes
+0,0,1,1,0,1,0,0,0,1,24,4,m,asian,no,no,family member,yes
+1,0,1,1,1,0,1,0,1,0,16,6,f,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,12,1,m,white european,yes,yes,family member,no
+1,0,1,1,1,1,1,0,0,0,22,6,f,white european,no,yes,family member,yes
+0,0,1,1,1,1,1,0,0,1,22,6,f,white european,no,yes,family member,yes
+1,0,0,0,1,1,1,1,0,1,32,6,f,asian,no,no,family member,yes
+1,1,1,1,1,1,1,0,1,0,18,8,m,middle eastern,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,28,10,m,white european,no,no,family member,yes
+0,0,1,1,0,1,1,1,1,1,34,7,m,white european,yes,no,family member,yes
+0,0,1,1,1,1,1,0,1,1,24,7,f,asian,no,no,family member,yes
+1,1,1,1,1,1,1,0,1,1,22,9,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,36,1,m,asian,no,no,family member,no
+1,0,0,1,1,1,1,0,0,0,36,5,f,white european,no,no,family member,yes
+1,0,0,0,1,0,1,1,1,0,14,5,m,asian,yes,no,family member,yes
+0,0,0,0,0,1,0,0,0,1,30,2,m,asian,no,no,family member,no
+1,1,0,0,1,1,1,1,1,1,36,8,f,others,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,f,others,yes,no,family member,no
+1,1,1,1,1,0,1,1,0,0,24,7,m,others,no,no,family member,yes
+1,1,1,1,1,1,1,0,1,0,14,8,m,white european,no,no,family member,yes
+1,1,0,1,1,1,1,0,1,0,14,7,m,white european,no,no,family member,yes
+1,1,0,0,0,0,1,0,0,1,26,4,f,middle eastern,no,no,family member,yes
+1,0,0,1,1,0,1,0,1,0,36,5,m,south asian,no,no,family member,yes
+1,1,1,1,1,1,1,0,0,0,24,7,m,others,no,no,family member,yes
+1,0,1,1,1,1,1,1,1,1,33,9,f,asian,no,no,family member,yes
+1,0,1,0,1,1,1,1,1,1,33,8,f,asian,no,no,family member,yes
+0,0,0,0,0,0,0,1,0,0,24,1,m,asian,yes,no,family member,no
+1,1,0,1,0,1,1,1,0,1,32,7,f,white european,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,13,0,f,white european,no,yes,family member,no
+0,0,1,1,1,1,1,0,1,0,31,6,f,white european,no,no,family member,yes
+1,0,1,1,0,1,0,1,0,0,17,5,m,asian,yes,no,family member,yes
+1,1,1,1,1,0,1,1,1,1,19,9,f,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,19,9,f,white european,yes,no,family member,yes
+0,1,0,0,1,1,0,1,0,1,29,5,m,white european,no,no,family member,yes
+1,0,0,0,1,1,1,1,1,1,36,7,m,white european,no,no,health care professional,yes
+1,1,0,1,1,1,1,1,1,1,14,9,m,white european,yes,no,family member,yes
+1,0,1,1,1,0,1,1,1,1,16,8,m,black,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,14,10,m,white european,no,no,family member,yes
+0,0,0,0,0,0,1,0,0,0,30,1,m,white european,no,no,family member,no
+1,0,1,0,1,0,1,1,0,1,24,6,m,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,36,9,m,asian,yes,yes,family member,yes
+1,1,0,0,1,1,1,0,1,0,32,6,m,white european,no,no,family member,yes
+0,0,0,0,0,1,1,0,0,0,21,2,f,white european,no,no,family member,no
+0,0,0,0,0,0,1,0,1,1,36,3,m,south asian,no,no,family member,no
+1,1,1,1,1,1,1,1,0,1,27,9,m,others,yes,yes,family member,yes
+0,0,1,1,1,1,1,1,1,1,33,8,m,white european,no,no,family member,yes
+0,1,0,0,0,0,0,0,0,1,36,2,m,white european,no,no,family member,no
+0,1,0,0,1,0,0,0,0,1,29,3,m,white european,no,no,family member,no
+1,0,0,1,0,1,1,1,0,1,23,6,m,white european,yes,no,family member,yes
+1,0,1,1,1,1,1,0,0,1,34,7,m,white european,yes,no,family member,yes
+1,1,0,0,0,1,1,1,1,1,16,7,f,white european,yes,no,family member,yes
+0,0,1,0,0,0,0,0,0,0,36,1,f,white european,no,yes,family member,no
+0,0,0,0,0,0,0,0,1,1,26,2,f,white european,yes,no,family member,no
+0,1,1,0,0,0,0,0,0,1,35,3,f,black,yes,no,family member,no
+1,0,1,1,1,1,1,0,1,0,36,7,m,white european,yes,yes,family member,yes
+0,0,0,0,0,0,0,0,0,0,12,0,m,asian,no,no,family member,no
+0,0,0,0,0,1,0,1,0,0,36,2,f,middle eastern,no,no,family member,no
+1,0,0,1,0,0,1,0,1,1,24,5,m,white european,yes,yes,family member,yes
+1,1,0,1,0,1,1,1,1,0,35,7,m,middle eastern,no,no,family member,yes
+1,0,1,1,1,0,1,1,1,1,15,8,m,white european,yes,no,family member,yes
+0,0,1,1,1,0,1,1,1,0,15,6,m,white european,yes,no,family member,yes
+1,0,0,1,0,0,1,0,0,0,27,3,m,south asian,no,no,family member,no
+1,1,1,1,1,0,1,0,1,1,12,8,f,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,22,10,m,white european,yes,no,family member,yes
+1,0,0,0,0,1,1,0,1,0,36,4,m,others,no,yes,family member,yes
+0,0,0,0,0,1,0,0,0,0,36,1,m,white european,yes,no,family member,no
+0,0,0,0,0,0,0,0,0,1,15,1,m,asian,no,no,family member,no
+0,1,0,1,0,1,1,0,0,0,30,4,m,asian,yes,no,family member,yes
+1,1,0,1,1,1,1,0,1,1,36,8,m,white european,no,no,family member,yes
+1,1,0,0,0,0,0,0,0,0,17,2,m,asian,no,no,family member,no
+1,1,0,1,0,0,0,0,0,0,17,3,m,middle eastern,no,no,family member,no
+1,1,0,0,0,0,0,0,0,0,17,2,m,middle eastern,no,no,family member,no
+1,1,0,0,1,1,0,1,1,1,29,7,m,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,26,10,m,pacifica,no,no,family member,yes
+1,1,0,0,0,1,1,1,0,1,23,6,m,white european,yes,yes,family member,yes
+0,0,0,0,0,0,1,0,0,1,23,2,m,white european,yes,yes,family member,no
+0,0,0,0,0,0,0,1,0,1,23,2,m,white european,yes,no,family member,no
+0,0,0,0,0,0,0,1,0,1,36,2,f,white european,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,15,10,m,south asian,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,0,25,8,m,white european,no,no,family member,yes
+0,0,0,1,1,1,1,1,1,1,33,7,f,asian,no,no,family member,yes
+0,0,0,0,1,0,0,0,1,1,12,3,f,white european,no,no,family member,no
+0,0,1,1,1,1,1,0,1,1,12,7,f,middle eastern,no,no,family member,yes
+1,1,0,1,0,1,1,0,0,1,28,6,m,white european,no,no,family member,yes
+1,1,0,1,1,0,1,1,1,0,36,7,m,middle eastern,no,no,family member,yes
+0,0,0,0,0,1,0,0,0,1,31,2,m,asian,no,yes,family member,no
+1,1,1,1,1,1,0,1,1,1,30,9,m,asian,no,no,family member,yes
+1,0,0,0,1,1,0,0,1,1,30,5,m,asian,no,no,family member,yes
+1,0,0,0,0,0,0,0,0,1,36,2,m,hispanic,no,no,family member,no
+1,1,1,1,1,1,1,1,1,0,36,9,f,middle eastern,yes,no,family member,yes
+0,0,0,0,0,0,0,0,1,1,30,2,m,asian,no,no,family member,no
+1,1,1,0,1,1,1,0,0,1,29,7,m,pacifica,no,yes,family member,yes
+0,0,0,0,0,0,0,0,0,1,22,1,f,middle eastern,no,no,family member,no
+0,0,1,0,1,1,1,1,0,1,34,6,f,asian,no,no,family member,yes
+0,1,1,1,1,1,1,1,0,1,36,8,f,white european,no,no,self,yes
+1,1,1,1,1,1,1,0,1,1,31,9,m,white european,no,no,family member,yes
+1,1,1,1,0,1,1,0,0,1,36,7,f,white european,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,1,22,1,m,middle eastern,no,no,health care professional,no
+1,0,1,1,1,1,1,0,1,1,36,8,m,middle eastern,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,1,12,9,m,latino,yes,no,family member,yes
+1,0,0,0,1,1,1,0,1,0,26,5,m,asian,no,no,family member,yes
+0,0,0,0,1,1,1,0,1,0,36,4,f,latino,no,no,family member,yes
+1,0,1,1,1,1,1,1,1,0,36,8,m,asian,yes,no,family member,yes
+1,1,0,0,1,1,1,1,1,0,28,7,m,south asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,f,middle eastern,yes,no,family member,no
+1,1,1,1,1,1,0,1,0,1,36,8,f,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,12,9,m,white european,no,yes,health care professional,yes
+1,0,0,0,0,0,1,1,0,0,36,3,m,white european,no,no,family member,no
+0,0,1,1,1,1,1,0,0,0,31,5,m,white european,no,no,family member,yes
+0,0,1,1,1,1,1,0,0,0,31,5,m,white european,yes,no,family member,yes
+1,1,1,1,1,0,1,1,0,1,22,8,m,south asian,no,no,family member,yes
+0,0,0,1,0,0,1,0,0,1,36,3,m,south asian,no,no,family member,no
+1,1,0,0,1,0,1,1,1,1,36,7,m,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,15,10,f,middle eastern,no,yes,family member,yes
+0,0,1,0,1,1,1,1,0,1,34,6,f,asian,no,no,family member,yes
+0,0,1,1,1,1,1,1,1,0,14,7,m,white european,yes,no,family member,yes
+1,0,1,0,0,0,1,1,1,0,27,5,m,asian,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,1,28,9,m,white european,no,no,family member,yes
+0,0,1,1,1,1,1,1,1,0,14,7,m,white european,yes,no,family member,yes
+0,0,0,0,0,0,1,0,0,0,15,1,f,asian,no,yes,family member,no
+0,0,1,1,1,0,1,0,0,0,31,4,m,white european,yes,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,17,0,f,asian,no,yes,family member,no
+1,1,1,1,1,1,1,1,1,0,28,9,m,others,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,0,36,8,f,asian,no,no,family member,yes
+1,0,0,0,0,1,1,0,0,1,26,4,f,others,no,no,family member,yes
+1,0,1,1,1,1,1,0,1,0,15,7,m,white european,no,no,family member,yes
+0,1,1,1,0,1,1,1,1,0,12,7,m,hispanic,no,no,family member,yes
+0,1,0,0,0,0,1,1,0,1,16,4,m,white european,yes,no,family member,yes
+1,0,1,1,1,1,1,1,1,1,28,9,m,white european,no,no,family member,yes
+0,0,1,0,1,1,1,1,0,1,34,6,f,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,24,9,m,asian,no,no,family member,yes
+1,1,1,1,0,1,1,0,0,1,22,7,m,middle eastern,yes,yes,family member,yes
+0,0,1,1,0,0,1,0,0,1,36,4,f,asian,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,29,10,m,white european,no,no,family member,yes
+0,0,0,0,0,0,1,1,0,1,36,3,m,white european,no,no,family member,no
+0,0,0,0,0,0,1,0,0,1,22,2,m,white european,yes,yes,family member,no
+0,0,1,1,1,1,1,1,1,0,14,7,m,white european,yes,no,family member,yes
+1,0,0,0,0,0,0,0,0,0,34,1,m,white european,yes,yes,family member,no
+0,0,0,1,1,0,1,1,1,0,36,5,m,asian,no,no,family member,yes
+1,1,1,0,1,0,1,0,0,0,35,5,m,others,no,no,family member,yes
+1,0,0,0,0,0,1,1,0,1,35,4,f,white european,yes,no,family member,yes
+1,0,0,0,0,1,1,0,0,1,31,4,f,white european,no,yes,family member,yes
+1,1,0,1,1,1,1,0,1,1,36,8,m,asian,yes,no,family member,yes
+1,0,0,0,0,1,1,0,0,0,36,3,m,asian,no,no,family member,no
+1,1,1,1,1,1,1,0,1,1,15,9,m,mixed,no,no,family member,yes
+1,1,1,1,0,1,1,0,1,1,36,8,f,white european,no,no,family member,yes
+0,0,1,0,0,1,1,1,1,1,36,6,f,middle eastern,no,yes,family member,yes
+1,1,1,1,1,1,1,1,1,1,36,10,f,middle eastern,yes,no,family member,yes
+1,0,0,0,0,0,1,0,0,1,27,3,m,white european,no,no,family member,no
+0,0,0,0,1,0,1,0,1,1,36,4,m,others,yes,no,family member,yes
+1,1,0,1,1,1,1,1,1,1,24,9,f,south asian,no,no,family member,yes
+1,1,0,1,1,1,1,0,0,0,24,6,f,south asian,no,no,family member,yes
+1,0,0,1,0,1,1,0,0,1,23,5,f,asian,no,no,family member,yes
+1,0,0,0,1,1,1,1,1,0,34,6,f,asian,no,no,family member,yes
+1,0,1,1,1,1,1,1,1,1,13,9,m,black,yes,yes,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,f,black,no,yes,family member,no
+1,1,0,0,1,1,1,0,1,1,36,7,m,white european,no,no,family member,yes
+1,1,0,0,1,1,1,0,1,1,36,7,m,white european,no,yes,family member,yes
+1,1,0,0,1,1,1,0,1,1,36,7,m,white european,no,yes,family member,yes
+1,1,1,1,1,1,1,0,1,1,16,9,m,middle eastern,no,no,family member,yes
+1,1,1,1,0,1,1,0,1,1,24,8,f,white european,no,no,family member,yes
+0,0,0,0,0,0,1,0,0,1,36,2,m,white european,no,yes,family member,no
+1,1,1,1,0,1,0,0,0,1,20,6,m,white european,yes,yes,family member,yes
+1,0,1,1,1,1,1,1,0,1,28,8,m,middle eastern,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,29,9,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,25,0,m,asian,no,no,family member,no
+0,0,0,0,0,0,1,0,1,0,24,2,f,middle eastern,no,no,family member,no
+1,0,0,0,1,0,1,1,1,0,24,5,m,white european,no,no,family member,yes
+1,1,0,0,0,1,0,0,0,0,36,3,m,middle eastern,no,no,family member,no
+1,1,1,1,1,1,1,1,1,0,19,9,m,middle eastern,no,no,health care professional,yes
+1,0,0,0,1,1,1,1,1,1,34,7,f,asian,no,no,family member,yes
+0,0,0,1,0,1,1,1,1,0,18,5,m,asian,no,yes,family member,yes
+0,0,1,1,0,0,0,0,1,0,36,3,m,white european,no,no,family member,no
+0,0,0,0,0,1,1,0,1,0,24,3,f,middle eastern,no,no,family member,no
+1,1,0,0,0,0,1,0,1,1,36,5,f,white european,no,yes,family member,yes
+0,0,0,0,0,0,0,1,0,0,30,1,f,middle eastern,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,36,1,m,white european,no,no,family member,no
+1,0,0,0,0,0,1,0,0,0,25,2,f,asian,no,no,family member,no
+0,0,0,0,0,0,1,0,0,1,14,2,m,middle eastern,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,14,10,m,middle eastern,no,no,family member,yes
+0,0,1,1,1,0,1,1,1,0,14,6,m,white european,yes,no,family member,yes
+0,0,1,1,1,0,0,1,0,0,35,4,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,35,10,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,0,19,9,f,hispanic,no,no,family member,yes
+0,0,0,1,0,0,0,0,0,0,31,1,f,middle eastern,yes,no,family member,no
+0,0,0,1,0,0,0,0,0,0,31,1,f,middle eastern,yes,no,family member,no
+0,0,0,1,0,0,0,0,0,0,31,1,f,middle eastern,yes,no,family member,no
+1,1,1,1,1,1,1,1,1,1,29,10,m,white european,no,no,family member,yes
+1,0,0,0,1,1,1,1,1,0,36,6,m,white european,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,28,0,m,middle eastern,no,no,family member,no
+1,0,1,1,0,1,1,0,0,0,26,5,m,white european,no,no,family member,yes
+1,1,0,0,0,0,1,1,0,0,28,4,m,middle eastern,no,no,family member,yes
+0,1,0,0,1,0,0,0,0,0,32,2,m,middle eastern,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,36,10,m,latino,no,no,family member,yes
+0,1,0,0,1,1,0,0,1,0,36,4,m,white european,no,no,family member,yes
+0,0,1,1,1,1,1,1,1,1,18,8,m,hispanic,no,no,family member,yes
+0,0,0,0,0,0,1,0,0,1,21,2,m,middle eastern,yes,no,family member,no
+0,0,0,0,0,0,1,0,0,1,21,2,m,middle eastern,yes,no,family member,no
+1,0,0,0,0,1,1,0,0,1,21,4,m,middle eastern,yes,no,family member,yes
+1,1,1,1,1,1,1,0,1,1,32,9,m,hispanic,no,no,family member,yes
+0,0,0,0,0,1,1,1,1,0,36,4,m,asian,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,20,0,m,asian,yes,no,family member,no
+1,1,1,0,1,0,1,0,1,1,27,7,m,asian,yes,no,family member,yes
+1,1,0,1,1,0,1,1,1,0,18,7,m,black,yes,yes,family member,yes
+0,0,0,1,1,1,0,1,0,0,24,4,m,asian,no,no,family member,yes
+0,1,0,0,0,1,0,0,0,0,36,2,f,white european,yes,no,family member,no
+0,0,0,0,0,0,0,0,0,0,36,0,f,white european,yes,no,family member,no
+1,1,0,0,1,1,1,0,0,0,36,5,m,asian,no,no,family member,yes
+0,0,1,1,1,1,1,0,1,0,22,6,f,others,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,30,10,m,white european,yes,yes,family member,yes
+1,1,1,1,1,1,1,1,1,1,19,10,m,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,16,10,m,white european,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,1,26,9,f,middle eastern,no,no,family member,yes
+1,1,1,1,1,1,0,1,1,1,24,9,f,hispanic,no,no,family member,yes
+0,0,1,0,1,1,1,0,1,1,30,6,f,others,yes,no,family member,yes
+1,0,0,0,1,0,0,0,0,1,12,3,m,middle eastern,yes,no,family member,no
+1,1,0,1,1,1,1,0,1,0,26,7,f,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,30,10,m,white european,yes,yes,family member,yes
+0,0,0,0,0,0,0,0,0,1,36,1,m,white european,no,no,family member,no
+1,1,1,1,0,0,1,1,0,1,36,7,f,mixed,yes,no,family member,yes
+0,1,0,1,0,1,1,1,1,1,36,7,f,mixed,yes,no,family member,yes
+0,0,0,0,0,0,1,0,0,0,30,1,f,latino,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,21,10,m,white european,yes,no,family member,yes
+1,1,0,0,0,1,1,1,1,1,36,7,m,white european,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,m,others,no,no,family member,no
+0,0,1,1,0,0,0,1,1,0,31,4,m,south asian,no,no,family member,yes
+0,0,1,1,1,1,1,0,1,1,30,7,f,others,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,30,10,f,others,no,no,family member,yes
+0,0,0,1,1,1,0,0,1,1,33,5,m,white european,no,no,family member,yes
+1,1,0,0,1,1,1,1,1,0,26,7,m,white european,no,yes,family member,yes
+1,0,0,0,0,0,0,0,0,1,12,2,f,middle eastern,no,no,family member,no
+1,1,0,0,0,1,1,0,0,1,36,5,m,white european,yes,no,family member,yes
+1,1,0,0,0,0,1,0,0,0,36,3,m,hispanic,no,no,family member,no
+1,1,1,1,1,0,1,0,1,0,36,7,m,asian,no,no,family member,yes
+0,0,0,1,1,1,1,1,0,0,24,5,f,white european,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,m,others,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,24,10,m,south asian,no,no,family member,yes
+0,0,1,1,1,0,0,1,0,1,36,5,m,others,no,no,family member,yes
+0,1,1,0,1,0,1,0,1,0,34,5,f,black,no,no,family member,yes
+0,1,1,0,1,0,0,0,0,0,34,3,f,black,yes,no,family member,no
+0,1,1,0,1,0,0,0,0,0,34,3,f,black,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,24,10,m,white european,no,no,health care professional,yes
+0,0,0,0,0,0,0,0,0,0,24,0,m,black,no,no,family member,no
+0,0,0,1,1,1,0,1,0,1,29,5,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,20,10,m,middle eastern,no,yes,family member,yes
+0,0,0,0,1,1,1,1,0,1,30,5,m,latino,yes,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,26,0,f,south asian,no,no,family member,no
+0,1,1,1,0,1,1,1,1,1,36,8,m,middle eastern,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,30,10,m,white european,yes,no,family member,yes
+1,1,1,1,0,1,1,1,1,1,27,9,f,white european,no,no,family member,yes
+1,0,1,1,1,1,1,1,1,1,23,9,m,latino,no,no,family member,yes
+1,0,1,1,0,1,1,1,1,1,23,8,m,latino,no,no,health care professional,yes
+0,0,1,1,1,0,1,0,1,0,36,5,f,south asian,no,no,family member,yes
+1,1,1,1,0,1,1,0,1,1,22,8,f,pacifica,yes,no,family member,yes
+1,1,0,1,0,1,1,0,1,1,36,7,f,white european,no,no,family member,yes
+1,1,0,0,1,0,1,1,1,0,36,6,m,hispanic,no,no,family member,yes
+0,0,0,1,0,1,1,1,1,1,26,6,m,black,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,28,0,f,black,no,no,family member,no
+1,1,1,1,1,1,1,1,1,1,21,10,m,asian,no,no,family member,yes
+1,1,0,0,0,0,1,0,1,1,25,5,m,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,28,10,f,white european,yes,no,family member,yes
+1,1,1,0,0,0,1,0,1,0,13,5,f,latino,no,no,family member,yes
+0,0,1,1,1,1,1,1,1,0,15,7,m,white european,yes,no,family member,yes
+1,1,0,0,0,1,1,0,0,1,23,5,m,white european,no,no,family member,yes
+0,0,0,0,0,0,0,0,1,0,24,1,m,asian,no,no,family member,no
+0,0,1,1,0,0,0,0,1,1,24,4,m,asian,no,no,family member,yes
+1,0,1,1,1,1,1,0,1,1,36,8,m,hispanic,no,yes,family member,yes
+0,0,0,0,0,0,1,0,0,1,12,2,m,asian,yes,no,family member,no
+1,0,1,1,1,1,1,1,1,0,29,8,m,white european,yes,no,family member,yes
+0,1,1,1,1,1,1,1,1,0,36,8,m,middle eastern,yes,yes,family member,yes
+0,0,0,0,1,0,1,0,0,1,36,3,m,south asian,no,no,family member,no
+0,0,0,0,0,0,0,1,0,1,27,2,m,asian,no,yes,family member,no
+1,1,1,1,0,0,1,1,0,1,32,7,m,asian,no,no,family member,yes
+0,0,0,0,0,1,1,1,0,0,12,3,m,latino,no,no,family member,no
+1,0,0,1,0,1,1,1,1,0,36,6,m,white european,yes,no,family member,yes
+1,0,0,1,0,1,1,0,1,0,36,5,m,others,yes,no,family member,yes
+1,1,0,0,1,1,1,0,1,1,36,7,m,asian,no,no,family member,yes
+1,0,1,1,0,0,0,0,1,0,12,4,m,white european,no,no,family member,yes
+0,0,1,1,1,0,0,0,0,0,12,3,m,white european,no,no,family member,no
+1,0,0,1,0,0,0,0,1,0,12,3,m,white european,no,no,family member,no
+0,0,1,1,1,0,0,0,1,0,12,4,m,white european,no,no,family member,yes
+0,0,1,1,1,0,0,0,0,0,12,3,m,white european,no,no,family member,no
+0,0,0,0,0,1,1,0,0,1,20,3,m,south asian,no,no,family member,no
+0,0,0,0,0,1,1,0,0,1,36,3,f,asian,no,no,family member,no
+0,0,0,0,0,1,1,0,0,1,36,3,f,asian,no,no,family member,no
+0,0,0,1,0,0,0,1,0,0,36,2,m,white european,yes,no,family member,no
+1,1,0,1,1,1,1,0,1,1,32,8,m,asian,no,no,family member,yes
+0,0,0,0,1,1,0,1,0,1,35,4,f,asian,no,no,family member,yes
+0,0,1,0,0,0,0,0,0,1,19,2,m,middle eastern,no,no,family member,no
+1,0,1,0,0,0,1,0,0,1,20,4,m,middle eastern,no,no,family member,yes
+1,0,1,0,0,0,0,0,0,1,20,3,m,middle eastern,no,no,family member,no
+1,0,0,0,0,0,0,0,0,0,12,1,m,white european,no,no,family member,no
+1,0,0,0,0,0,0,0,0,1,12,2,m,white european,no,no,family member,no
+0,0,0,0,0,0,0,0,0,0,12,0,m,white european,no,no,family member,no
+1,1,1,1,1,1,1,1,1,0,12,9,m,white european,no,no,family member,yes
+1,1,0,0,0,1,0,0,0,1,36,4,m,asian,no,no,health care professional,yes
+0,0,1,1,1,1,1,1,1,0,15,7,m,white european,yes,no,family member,yes
+1,1,0,0,1,0,1,1,1,1,36,7,m,white european,no,no,family member,yes
+0,0,0,0,1,1,0,0,1,1,36,4,m,native indian,no,no,family member,yes
+0,0,0,0,0,0,1,0,0,1,24,2,m,middle eastern,no,no,family member,no
+0,0,0,0,1,0,1,0,0,1,36,3,f,white european,no,no,family member,no
+1,1,1,1,1,1,1,1,0,1,27,9,m,black,no,yes,family member,yes
+1,1,1,1,1,1,1,1,0,1,27,9,m,black,no,yes,family member,yes
+1,1,0,0,1,0,0,1,1,0,36,5,m,south asian,no,no,family member,yes
+1,0,0,0,1,1,0,1,0,1,35,5,f,asian,no,no,family member,yes
+1,0,0,0,1,0,0,0,0,0,18,2,m,black,no,no,family member,no
+1,1,1,1,1,1,1,1,1,0,36,9,f,white european,no,no,family member,yes
+1,1,1,1,0,0,0,1,0,0,22,5,f,hispanic,no,no,family member,yes
+1,1,0,1,1,1,1,1,1,1,29,9,m,south asian,yes,no,family member,yes
+0,1,0,0,0,0,1,0,0,0,36,2,m,asian,no,no,family member,no
+0,1,0,0,1,1,1,0,0,0,36,4,m,asian,no,no,family member,yes
+1,1,0,1,1,1,1,0,0,0,27,6,m,white european,no,yes,family member,yes
+0,0,1,1,1,0,1,1,1,0,26,6,f,white european,no,no,family member,yes
+1,1,0,1,0,1,1,1,1,1,26,8,m,middle eastern,yes,no,family member,yes
+0,0,0,0,1,0,0,0,0,1,36,2,m,south asian,yes,no,family member,no
+1,0,1,1,1,1,1,0,1,0,16,7,m,white european,no,yes,family member,yes
+1,0,1,1,0,1,1,1,0,0,28,6,m,asian,no,no,family member,yes
+1,0,1,1,1,1,0,1,1,0,18,7,m,white european,no,no,family member,yes
+1,0,0,0,0,0,1,0,1,0,36,3,m,south asian,no,no,family member,no
+0,0,0,0,1,1,0,1,0,1,35,4,f,asian,no,no,family member,yes
+1,0,0,0,0,0,1,0,0,1,30,3,m,middle eastern,no,no,family member,no
+1,0,0,0,0,0,1,1,0,1,30,4,m,middle eastern,no,no,family member,yes
+1,1,0,0,0,1,0,1,0,1,33,5,m,middle eastern,no,no,family member,yes
+0,0,0,1,0,0,0,0,0,0,24,1,m,white european,no,no,family member,no
+1,1,0,1,1,1,0,1,0,1,36,7,m,white european,yes,yes,family member,yes
+1,0,0,0,0,0,1,1,1,1,36,5,m,white european,no,yes,family member,yes
+1,1,1,0,0,0,1,1,0,0,24,5,m,black,no,no,others,yes
+1,1,0,1,0,0,0,0,0,1,16,4,f,latino,no,no,family member,yes
+0,0,0,0,0,1,1,0,0,1,24,3,m,white european,no,no,family member,no
+1,0,1,1,1,1,0,1,1,0,30,7,m,white european,yes,no,family member,yes
+1,1,1,1,1,1,1,0,0,0,36,7,m,asian,no,no,family member,yes
+1,0,1,0,1,1,1,0,1,1,24,7,m,middle eastern,yes,no,family member,yes
+0,0,0,1,1,0,1,1,0,1,36,5,m,south asian,yes,no,family member,yes
+1,1,1,1,1,1,1,0,1,0,36,8,m,asian,no,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,34,10,f,white european,no,no,family member,yes
+1,0,1,1,0,1,1,0,1,0,24,6,m,white european,no,no,family member,yes
+1,1,1,0,1,1,0,0,1,1,23,7,m,white european,no,no,family member,yes
+1,0,0,1,0,0,0,0,0,0,12,2,m,white european,no,no,family member,no
+1,1,1,1,1,1,1,0,1,1,30,9,f,middle eastern,no,no,family member,yes
+0,0,0,0,1,0,1,1,0,1,36,4,m,south asian,yes,no,family member,yes
+1,0,1,1,1,1,1,1,1,1,35,9,f,middle eastern,no,no,family member,yes
+1,0,1,1,1,1,1,0,1,1,35,8,f,middle eastern,no,no,family member,yes
+1,1,1,1,1,1,1,0,0,1,33,8,m,white european,no,no,family member,yes
+1,0,0,1,0,0,1,0,0,1,34,4,m,asian,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,24,10,f,latino,no,no,health care professional,yes
+1,1,0,0,0,0,0,0,1,1,36,4,m,white european,yes,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,m,middle eastern,no,no,family member,no
+0,1,0,0,0,0,0,0,0,1,36,2,m,middle eastern,yes,no,family member,no
+0,0,0,1,0,0,0,0,1,1,36,3,m,asian,no,no,family member,no
+1,0,1,1,1,0,1,0,1,1,33,7,f,middle eastern,no,no,family member,yes
+0,1,1,1,0,1,0,0,0,0,23,4,f,pacifica,yes,no,family member,yes
+0,0,0,0,0,1,0,0,0,1,36,2,m,latino,no,no,family member,no
+1,0,0,0,1,1,0,1,0,1,34,5,f,asian,no,no,family member,yes
+0,0,0,0,1,1,1,1,0,0,36,4,m,black,yes,no,self,yes
+1,0,0,1,1,0,1,0,1,0,27,5,m,white european,no,no,family member,yes
+1,1,1,1,1,1,1,1,0,0,36,8,m,black,no,yes,family member,yes
+1,0,1,1,1,0,1,0,0,1,24,6,m,asian,no,no,family member,yes
+1,0,1,1,1,0,1,0,0,1,24,6,m,asian,no,no,family member,yes
+0,0,0,1,0,0,1,0,0,1,34,3,f,white european,no,yes,family member,no
+1,1,1,1,1,1,1,1,1,0,32,9,m,south asian,yes,yes,family member,yes
+1,0,1,1,0,0,1,0,0,1,24,5,m,asian,no,no,family member,yes
+0,1,1,1,1,1,1,1,1,1,30,9,m,latino,no,no,family member,yes
+0,1,0,0,1,1,0,0,1,0,36,4,m,white european,no,yes,family member,yes
+0,0,0,0,0,0,1,0,0,1,32,2,m,south asian,no,no,family member,no
+1,1,1,1,1,1,1,1,1,0,30,9,m,middle eastern,no,no,family member,yes
+1,0,0,0,0,1,1,1,1,0,30,5,f,white european,no,no,family member,yes
+0,0,1,1,0,0,1,0,1,0,24,4,m,latino,no,no,family member,yes
+0,1,0,0,1,0,1,1,0,1,36,5,m,hispanic,no,no,family member,yes
+1,1,0,0,0,1,1,1,0,1,36,6,f,asian,no,no,family member,yes
+0,0,1,1,0,0,0,0,1,0,21,3,m,asian,no,no,family member,no
+1,1,0,0,1,1,1,0,0,1,36,6,m,asian,no,no,family member,yes
+0,0,0,0,1,0,0,0,1,0,19,2,f,white european,yes,yes,family member,no
+0,1,1,1,1,1,1,1,0,0,12,7,m,white european,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,36,0,f,white european,no,yes,family member,no
+1,1,0,0,0,0,0,1,0,1,36,4,m,white european,no,yes,family member,yes
+0,0,0,0,0,0,0,0,0,1,35,1,m,asian,yes,no,family member,no
+0,0,0,0,0,0,1,1,0,1,23,3,m,asian,yes,no,family member,no
+0,0,0,0,0,0,0,0,0,1,36,1,m,white european,no,no,family member,no
+0,0,1,1,1,0,0,1,1,0,29,5,m,white european,no,no,family member,yes
+0,0,1,1,1,1,0,0,1,0,22,5,f,latino,no,no,family member,yes
+1,1,0,1,0,1,1,1,1,1,36,8,m,white european,no,yes,family member,yes
+0,0,0,0,1,0,0,1,0,1,36,3,m,south asian,yes,no,family member,no
+1,1,0,0,0,1,1,1,0,1,36,6,f,others,no,yes,family member,yes
+1,0,1,1,1,0,1,0,0,0,32,5,m,white european,yes,no,family member,yes
+0,0,0,0,0,1,0,0,0,1,16,2,m,south asian,yes,yes,health care professional,no
+0,0,0,0,0,0,0,1,0,0,28,1,m,white european,no,no,family member,no
+1,0,0,1,0,1,1,1,0,0,18,5,m,others,yes,no,family member,yes
+1,1,0,1,0,1,1,1,0,0,14,6,f,asian,no,no,family member,yes
+0,0,1,0,0,0,0,0,0,0,12,1,m,white european,no,no,family member,no
+1,1,0,0,0,0,1,0,1,0,26,4,m,asian,no,yes,family member,yes
+0,0,0,0,1,1,1,0,1,0,26,4,m,asian,no,yes,family member,yes
+0,0,0,0,0,0,0,0,0,1,25,1,m,white european,no,no,family member,no
+0,0,0,1,0,0,1,0,0,0,25,2,m,white european,yes,no,family member,no
+1,1,1,1,0,0,1,1,1,1,30,8,m,hispanic,yes,no,family member,yes
+1,1,1,1,1,1,1,1,1,1,25,10,m,asian,no,yes,family member,yes
+1,1,1,1,1,1,1,1,1,1,25,10,m,asian,no,yes,family member,yes
+1,1,1,1,1,1,1,1,1,1,30,10,m,middle eastern,no,no,health care professional,yes
+0,1,0,1,1,1,1,1,1,0,24,7,f,middle eastern,no,no,family member,yes
+1,1,0,0,1,1,1,0,0,0,30,5,f,white european,no,no,family member,yes
+0,0,0,0,0,0,0,0,0,0,30,0,f,white european,no,no,family member,no
+0,0,0,0,0,0,0,0,0,1,24,1,f,white european,no,yes,family member,no
+0,0,1,1,1,0,1,0,1,0,12,5,m,black,yes,no,family member,yes
+1,0,1,1,1,1,1,1,1,1,18,9,m,middle eastern,yes,no,family member,yes
+1,0,0,0,0,0,0,1,0,1,19,3,m,white european,no,yes,family member,no
+1,1,0,0,1,1,0,1,1,0,24,6,m,asian,yes,yes,family member,yes
