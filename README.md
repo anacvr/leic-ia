@@ -35,3 +35,19 @@
 * Music when the player wins
 * Instructions and game legend
 * Menu to allow the user to play again in the same mode
+
+
+
+## Assignment No. 2
+* Supervised Learning
+
+### [Project 2: Prediction of Autism Spectrum Disorder in Toddlers](machine learning/README.md)
+
+***Topic:** Application of Machine Learning Models and Algorithms Related to Supervised Learning*
+
+* Conduct exploratory data analysis to understand class distribution and attribute values.
+* Utilize various supervised learning algorithms (e.g., Decision Trees, Neural Networks, K-NN, SVM).
+* Compare algorithm performance using evaluation metrics such as accuracy, precision, recall, and F1 measure.
+* Evaluate models on both training and test sets.
+
+**Dataset: [Autism Dataset for Toddlers](https://www.kaggle.com/datasets/vaishnavisirigiri/autism-dataset-for-toddlers)**
