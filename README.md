@@ -41,7 +41,7 @@
 ## Assignment No. 2
 * Supervised Learning
 
-### [Project 2: Prediction of Autism Spectrum Disorder in Toddlers](machine learning/README.md)
+### [Project 2: Prediction of Autism Spectrum Disorder in Toddlers](machine%20learning/README.md)
 
 ***Topic:** Application of Machine Learning Models and Algorithms Related to Supervised Learning*
 
